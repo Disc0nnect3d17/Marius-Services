@@ -1,6 +1,6 @@
 /**
  * Pro Fit Bathroom and Kitchen - Main JavaScript
- * Handles animations, interactions, and responsive behavior
+ * Modern animations and interactions inspired by Bath Kitchen London
  */
 
 (function() {
@@ -15,20 +15,29 @@
         // Smooth Scrolling for anchor links
         initSmoothScroll();
         
-        // Scroll animations
-        initScrollAnimations();
+        // Modern scroll reveal animations
+        initModernScrollAnimations();
         
         // Parallax effect on hero section
         initParallaxEffect();
         
-        // Add animation on scroll for service cards
-        observeElements();
+        // Scroll progress indicator
+        initScrollProgress();
         
-        // Header scroll effect
+        // Enhanced header scroll effect
         initHeaderScroll();
+        
+        // Staggered animations for cards
+        initStaggeredAnimations();
         
         // Initialize counters if needed
         initCounters();
+        
+        // Image lazy loading with fade effect
+        initLazyLoadImages();
+        
+        // Add smooth page load animation
+        pageLoadAnimation();
     });
 
     /**
@@ -102,97 +111,174 @@
     }
 
     /**
-     * Scroll Animations
+     * Modern Scroll Reveal Animations
+     * Inspired by Bath Kitchen London's smooth reveal effects
      */
-    function initScrollAnimations() {
-        const animatedElements = document.querySelectorAll('.service-card, .review-card, .about-text, .about-image');
+    function initModernScrollAnimations() {
+        // Select all elements to animate
+        const animateElements = document.querySelectorAll('.service-card, .review-card, .section-title, .about-text, .about-image, .animate-on-scroll');
         
+        // Intersection Observer options
         const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -100px 0px'
+            threshold: 0.1,
+            rootMargin: '0px 0px -80px 0px'
         };
         
+        // Create observer
         const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
+            entries.forEach(function(entry, index) {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '0';
-                    entry.target.style.transform = 'translateY(30px)';
-                    
-                    // Trigger animation
+                    // Add a slight delay for stagger effect
                     setTimeout(function() {
-                        entry.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                        entry.target.classList.add('visible', 'animated');
+                        
+                        // Add smooth transform
                         entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }, 100);
+                        entry.target.style.transform = 'translateY(0) scale(1)';
+                    }, index * 50); // Stagger delay
                     
+                    // Unobserve after animation
                     observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
         
-        animatedElements.forEach(function(element) {
+        // Observe all elements
+        animateElements.forEach(function(element) {
             observer.observe(element);
         });
     }
 
     /**
-     * Parallax Effect on Hero Section
+     * Staggered Animations for Card Grids
+     */
+    function initStaggeredAnimations() {
+        const serviceCards = document.querySelectorAll('.service-card');
+        const reviewCards = document.querySelectorAll('.review-card');
+        
+        const staggerObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    const cards = entry.target.querySelectorAll('.service-card, .review-card');
+                    cards.forEach(function(card, index) {
+                        setTimeout(function() {
+                            card.classList.add('visible');
+                        }, index * 100); // 100ms stagger between each card
+                    });
+                    staggerObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        // Observe grid containers
+        const servicesSection = document.querySelector('.services-grid');
+        const reviewsSection = document.querySelector('.reviews-grid');
+        
+        if (servicesSection) staggerObserver.observe(servicesSection);
+        if (reviewsSection) staggerObserver.observe(reviewsSection);
+    }
+
+    /**
+     * Scroll Progress Indicator
+     */
+    function initScrollProgress() {
+        // Create progress bar element
+        const progressBar = document.createElement('div');
+        progressBar.className = 'scroll-progress';
+        document.body.appendChild(progressBar);
+        
+        // Update progress on scroll
+        window.addEventListener('scroll', function() {
+            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (window.pageYOffset / windowHeight) * 100;
+            progressBar.style.width = scrolled + '%';
+        });
+    }
+
+    /**
+     * Page Load Animation
+     */
+    function pageLoadAnimation() {
+        document.body.style.opacity = '0';
+        
+        setTimeout(function() {
+            document.body.style.transition = 'opacity 0.6s ease-in';
+            document.body.style.opacity = '1';
+        }, 100);
+    }
+
+    /**
+     * Lazy Load Images with Fade Effect
+     */
+    function initLazyLoadImages() {
+        const images = document.querySelectorAll('img[data-src]');
+        
+        const imageObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.add('loaded');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        images.forEach(function(img) {
+            imageObserver.observe(img);
+        });
+    }
+
+    /**
+     * Enhanced Parallax Effect on Hero Section
+     * Smooth, modern parallax with transform3d for better performance
      */
     function initParallaxEffect() {
         const hero = document.querySelector('.hero-section');
+        const heroContent = document.querySelector('.hero-content');
         
         if (hero) {
+            let ticking = false;
+            
             window.addEventListener('scroll', function() {
-                const scrolled = window.pageYOffset;
-                const parallaxSpeed = 0.5;
-                
-                if (scrolled < hero.offsetHeight) {
-                    hero.style.transform = 'translateY(' + (scrolled * parallaxSpeed) + 'px)';
+                if (!ticking) {
+                    window.requestAnimationFrame(function() {
+                        const scrolled = window.pageYOffset;
+                        const heroHeight = hero.offsetHeight;
+                        
+                        if (scrolled < heroHeight) {
+                            // Parallax speed for different layers
+                            const parallaxSpeed = 0.5;
+                            const contentSpeed = 0.3;
+                            
+                            // Apply transforms with GPU acceleration
+                            hero.style.transform = 'translate3d(0, ' + (scrolled * parallaxSpeed) + 'px, 0)';
+                            
+                            if (heroContent) {
+                                heroContent.style.transform = 'translate3d(0, ' + (scrolled * contentSpeed) + 'px, 0)';
+                                heroContent.style.opacity = 1 - (scrolled / heroHeight) * 1.5;
+                            }
+                        }
+                        
+                        ticking = false;
+                    });
+                    
+                    ticking = true;
                 }
             });
         }
     }
 
     /**
-     * Observe Elements for Animation
-     */
-    function observeElements() {
-        const cards = document.querySelectorAll('.service-card, .review-card');
-        
-        cards.forEach(function(card, index) {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(50px)';
-            
-            setTimeout(function() {
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                
-                const observer = new IntersectionObserver(function(entries) {
-                    entries.forEach(function(entry) {
-                        if (entry.isIntersecting) {
-                            setTimeout(function() {
-                                entry.target.style.opacity = '1';
-                                entry.target.style.transform = 'translateY(0)';
-                            }, index * 100);
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, {
-                    threshold: 0.1
-                });
-                
-                observer.observe(card);
-            }, 100);
-        });
-    }
-
-    /**
-     * Header Scroll Effect
+     * Enhanced Header Scroll Effect
+     * Adds shadow and backdrop blur on scroll
      */
     function initHeaderScroll() {
         const header = document.querySelector('.site-header');
-        let lastScroll = 0;
         
         if (header) {
+            let lastScroll = 0;
+            
             window.addEventListener('scroll', function() {
                 const currentScroll = window.pageYOffset;
                 
@@ -204,8 +290,18 @@
                     header.style.padding = '1rem 0';
                 }
                 
+                // Hide header on scroll down, show on scroll up
+                if (currentScroll > lastScroll && currentScroll > 300) {
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    header.style.transform = 'translateY(0)';
+                }
+                
                 lastScroll = currentScroll;
             });
+            
+            // Add transition to header
+            header.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
         }
     }
 
