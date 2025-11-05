@@ -24,15 +24,15 @@ Pro Fit Bathroom and Kitchen WordPress Theme
 }
 
 :root {
-    --primary-blue: #115e24;
-    --secondary-blue: #f6413b;
-    --light-blue: #5dd110;
-    --dark-blue: #bd2fca;
-    --white: #daff56;
-    --light-gray: #b81265;
-    --medium-gray: #806b6b;
-    --dark-gray: rgb(223, 25, 25);
-    --accent-color: #dbe6f5;
+    --primary-blue: #1e40af;
+    --secondary-blue: #3b82f6;
+    --light-blue: #dbeafe;
+    --dark-blue: #1e3a8a;
+    --white: #ffffff;
+    --light-gray: #f3f4f6;
+    --medium-gray: #6b7280;
+    --dark-gray: #1f2937;
+    --accent-color: #60a5fa;
 }
 
 html {
