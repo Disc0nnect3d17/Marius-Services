@@ -16,7 +16,7 @@
     <div class="container">
         <div class="header-content">
             <div class="site-branding">
-                <img src="http://localhost/Marius/wp-content/uploads/2025/11/rubat-ai-logo-01.png" alt="Site Logo">
+                <img width="150"src="http://localhost/Marius/wp-content/uploads/2025/11/rubat-ai-logo-01.png" alt="Site Logo">
                 <?php if (has_custom_logo()) : ?>
                     <?php the_custom_logo(); ?>
                 <?php else : ?>
