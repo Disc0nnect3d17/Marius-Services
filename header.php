@@ -17,13 +17,12 @@
         <div class="header-content">
             <div class="site-branding">
                 <img width="150"src="http://localhost/Marius/wp-content/uploads/2025/11/1_uhDNWOUENopISF28W7UeOw.gif" alt="Site Logo">
-                <p>nfnfn</p>
                 <?php if (has_custom_logo()) : ?>
                     <?php the_custom_logo(); ?>
                 <?php else : ?>
                     <h1 class="site-title">
                         <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-                            <?php bloginfo('name'); ?>Hhffhfh
+                            <?php bloginfo('name'); ?>
                         </a>
                     </h1>
                 <?php endif; ?>
