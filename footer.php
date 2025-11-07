@@ -52,6 +52,11 @@
     </div>
 </footer>
 
+<!-- Back to Top Button -->
+<a href="#" id="back-to-top" style="display:none; position:fixed; bottom:40px; right:40px; background: var(--accent-color); color:#fff; padding:1rem; border-radius:50%; z-index:999; box-shadow: 0 4px 12px rgba(252, 163, 17, 0.4); transition: all 0.3s ease;">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
 <?php wp_footer(); ?>
 </body>
 </html>

@@ -435,4 +435,51 @@
     `;
     document.head.appendChild(style);
 
+    /**
+     * Back to Top Button
+     */
+    function initBackToTop() {
+        const backToTop = document.getElementById('back-to-top');
+        
+        if (backToTop) {
+            // Show/hide button based on scroll position
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = 'block';
+                    backToTop.style.opacity = '1';
+                } else {
+                    backToTop.style.opacity = '0';
+                    setTimeout(function() {
+                        if (window.scrollY <= 300) {
+                            backToTop.style.display = 'none';
+                        }
+                    }, 300);
+                }
+            });
+            
+            // Smooth scroll to top on click
+            backToTop.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({ 
+                    top: 0, 
+                    behavior: 'smooth' 
+                });
+            });
+            
+            // Add hover effect
+            backToTop.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 8px 20px rgba(252, 163, 17, 0.6)';
+            });
+            
+            backToTop.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 4px 12px rgba(252, 163, 17, 0.4)';
+            });
+        }
+    }
+    
+    // Initialize back to top button
+    initBackToTop();
+
 })();
