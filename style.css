@@ -4,7 +4,7 @@ Theme URI: https://github.com/Disc0nnect3d17/Marius-Services
 Author: Pro Fit Team
 Author URI: https://profitbathroomandkitchen.com
 Description: A modern, responsive WordPress theme for Pro Fit Bathroom and Kitchen - specialists in full bathroom and kitchen renovations including tiles, plumbing, electric, painting, carpentry, and plastering.
-Version: 1.3.8
+Version: 1.3.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: profitkitchenbath
@@ -1237,14 +1237,15 @@ mark {
     z-index: 1;
 }
 
-/* Subtle Inner-Shadow for Front Page Edges */
-/* Creates a visible vignette effect around the viewport edges */
-body.home, body.front-page {
+/* Elegant Inner Vignette Effect for Luxury Feel */
+body.home,
+body.front-page {
     position: relative;
     min-height: 100vh;
 }
 
-body.home::before, body.front-page::before {
+body.home::before,
+body.front-page::before {
     content: '';
     position: fixed;
     top: 0;
@@ -1252,10 +1253,12 @@ body.home::before, body.front-page::before {
     right: 0;
     bottom: 0;
     pointer-events: none;
-    z-index: 9998;
-    /* Much more visible dark vignette from all edges */
-    box-shadow: inset 0 0 150px 20px rgba(0, 0, 0, 0.35),
-                inset 0 0 100px 10px rgba(10, 31, 68, 0.25);
+    z-index: 2; /* slightly above content, below header */
+    box-shadow:
+        inset 0 0 180px rgba(0, 0, 0, 0.45),
+        inset 0 0 100px rgba(10, 31, 68, 0.35),
+        inset 0 0 60px rgba(201, 162, 39, 0.1); /* subtle gold tone */
+    mix-blend-mode: multiply;
 }
 
 
