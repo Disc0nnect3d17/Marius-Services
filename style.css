@@ -4,7 +4,7 @@ Theme URI: https://github.com/Disc0nnect3d17/Marius-Services
 Author: Pro Fit Team
 Author URI: https://profitbathroomandkitchen.com
 Description: A modern, responsive WordPress theme for Pro Fit Bathroom and Kitchen - specialists in full bathroom and kitchen renovations including tiles, plumbing, electric, painting, carpentry, and plastering.
-Version: 1.6.1
+Version: 1.6.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: profitkitchenbath
@@ -477,16 +477,17 @@ a {
     z-index: 1;
 }
 
-/* Footer Styles */
+/* -------------------- Footer Styling Improvements -------------------- */
 .site-footer {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+    background: #0f1c33; /* slightly darker than original primary-blue */
     color: var(--white);
     padding: 4rem 0 1.5rem;
     position: relative;
     overflow: hidden;
+    font-family: var(--body-font);
 }
 
-/* Subtle texture overlay for footer */
+/* Optional subtle overlay */
 .site-footer::before {
     content: '';
     position: absolute;
@@ -494,7 +495,7 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at top right, rgba(31, 122, 140, 0.1) 0%, transparent 50%);
+    background: radial-gradient(circle at top right, rgba(15,28,51,0.2) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -507,8 +508,9 @@ a {
     z-index: 1;
 }
 
+/* Footer headings */
 .footer-section h3 {
-    color: var(--accent-color);
+    color: var(--primary-blue);
     margin-bottom: 1rem;
     font-size: 1.3rem;
     font-family: var(--heading-font);
@@ -525,7 +527,7 @@ a {
     left: 0;
     width: 40px;
     height: 2px;
-    background: var(--accent-color);
+    background: var(--secondary-blue);
 }
 
 .footer-section p,
@@ -536,22 +538,34 @@ a {
     transition: all 0.3s ease;
 }
 
-.footer-section a {
+/* Footer links */
+.site-footer a {
+    color: var(--white);
+    text-decoration: none;
+    transition: all 0.3s ease;
     display: inline-block;
+    position: relative;
 }
 
-.footer-section a:hover {
-    color: var(--accent-color);
+.site-footer a:hover {
+    color: var(--secondary-blue);
     transform: translateX(5px);
 }
 
-.footer-section ul li {
+/* Footer lists */
+.site-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.site-footer ul li {
     margin-bottom: 0.5rem;
     transition: all 0.3s ease;
 }
 
-.footer-section ul li:hover {
-    transform: translateX(5px);
+.site-footer ul li:hover {
+    transform: translateX(3px);
 }
 
 /* Social Links Enhancements */
@@ -561,31 +575,34 @@ a {
     margin-top: 1rem;
 }
 
-.social-links a {
+.social-links a,
+.site-footer .social-icons a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 40px;
     height: 40px;
+    margin-right: 0.5rem;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
     color: var(--white);
     font-size: 1.2rem;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.4s cubic-bezier(.68,-0.55,.27,1.55);
     border: 1px solid transparent;
 }
 
-.social-links a:hover {
-    background: var(--accent-color);
-    color: var(--white);
+.social-links a:hover,
+.site-footer .social-icons a:hover {
     transform: scale(1.2) rotate(5deg);
-    box-shadow: 0 5px 15px rgba(252, 163, 17, 0.4);
-    border-color: var(--accent-color);
+    background: var(--secondary-blue);
+    box-shadow: 0 0 10px rgba(31, 122, 140, 0.5);
+    color: var(--white);
 }
 
 /* Contact info icons */
-.footer-section p i {
-    color: var(--accent-color);
+.footer-section p i,
+.site-footer .contact-icons i {
+    color: var(--secondary-blue);
     margin-right: 0.5rem;
     width: 20px;
     display: inline-block;
@@ -598,6 +615,25 @@ a {
     color: #9ca3af;
     position: relative;
     z-index: 1;
+}
+
+/* Scrollbar & selection styling for luxury feel */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-blue);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-gray);
+}
+
+::selection {
+    background: var(--secondary-blue);
+    color: var(--white);
 }
 
 /* Animations */
