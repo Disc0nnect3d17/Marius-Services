@@ -23,7 +23,7 @@ get_header();
 <!-- Services Section -->
 <section class="services-section" id="services">
     <div class="container">
-        <h2 class="section-title">Our Services</h2>
+        <h2 class="section-title">My Services</h2>
         <div class="services-grid">
             <?php
             $services = get_profitkitchenbath_services();
@@ -44,7 +44,7 @@ get_header();
 <!-- Google Reviews Section -->
 <section class="reviews-section" id="reviews">
     <div class="container reviews-container">
-        <h2 class="section-title">What Our Customers Say</h2>
+        <h2 class="section-title">What My Customers Say</h2>
         <div class="reviews-grid">
             <?php
             $reviews = get_profitkitchenbath_reviews();
@@ -64,7 +64,7 @@ get_header();
         <div class="google-logo">
             <p style="color: var(--medium-gray); margin-top: 2rem;">
                 <i class="fab fa-google" style="font-size: 2rem; color: #4285f4;"></i><br>
-                <strong>Find us on Google Reviews</strong>
+                <strong>Find me on Google Reviews</strong>
             </p>
         </div>
     </div>
@@ -76,9 +76,9 @@ get_header();
         <div class="about-content">
             <div class="about-text" data-aos="slide-right">
                 <h2>Why Choose Pro Fit?</h2>
-                <p>With years of experience in the renovation industry, Pro Fit Bathroom and Kitchen has built a reputation for excellence and reliability. We specialize in complete bathroom and kitchen renovations, handling every aspect from initial design to final touches.</p>
-                <p>Our comprehensive services include professional tiling, expert plumbing, certified electrical work, quality painting and decorating, skilled carpentry, and precision plastering. We take pride in our attention to detail and commitment to customer satisfaction.</p>
-                <p>Every project is managed by experienced professionals who understand the importance of quality workmanship, timely completion, and staying within budget. We use only the best materials and latest techniques to ensure your renovation stands the test of time.</p>
+                <p>With decades of experience in the renovation industry, Pro Fit Bathroom and Kitchen has built a reputation for excellence and reliability. I specialize in complete bathroom and kitchen renovations, handling every aspect from initial design to final touches.</p>
+                <p>My comprehensive services include professional tiling, expert plumbing, certified electrical work, quality painting and decorating, skilled carpentry, and precision plastering. I take pride in my attention to detail and commitment to customer satisfaction.</p>
+                <p>Every project is done to your needs and vision. I work closely with you to ensure your ideas are brought to life and you have something to cherish for years to come.</p>
                 <a href="tel:+447454933651" class="btn" style="margin-top: 1rem;">Get a Free Quote</a>
             </div>
             <div class="about-image" data-aos="slide-left">
@@ -94,7 +94,7 @@ get_header();
 <section class="cta-section" id="contact">
     <div class="container">
         <h2>Ready to Transform Your Space?</h2>
-        <p>Contact us today for a free consultation and quote</p>
+        <p>Contact Pro Fit Bathrooms & Kitchen today for a free consultation and quote</p>
         <div class="cta-buttons" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
             <a href="tel:+447454933651" class="btn">
                 <i class="fas fa-phone"></i> Call: +44 7454 933651
