@@ -4,7 +4,7 @@ Theme URI: https://github.com/Disc0nnect3d17/Marius-Services
 Author: Pro Fit Team
 Author URI: https://profitbathroomandkitchen.com
 Description: A modern, responsive WordPress theme for Pro Fit Bathroom and Kitchen - specialists in full bathroom and kitchen renovations including tiles, plumbing, electric, painting, carpentry, and plastering.
-Version: 1.4.2
+Version: 1.5.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: profitkitchenbath
@@ -24,17 +24,17 @@ Pro Fit Bathroom and Kitchen WordPress Theme
 }
 
 :root {
-    /* Luxury Color Palette */
-    --primary-blue: #0A1F44;
-    --secondary-blue: #0A1F44;
+    /* Palette 2: Cool & Fresh */
+    --primary-blue: #14213D;      /* Dark Navy */
+    --secondary-blue: #1F7A8C;    /* Teal Blue */
     --light-blue: #E8EDF4;
-    --dark-blue: #051129;
-    --accent-color: #C9A227; /* Soft Gold */
-    --accent-gold: #D4AF37; /* Champagne Gold */
+    --dark-blue: #0A1628;
+    --accent-color: #FCA311;      /* Warm Yellow/Gold */
+    --accent-gold: #FFBA08;       /* Bright Gold */
     --accent-silver: #A3A3A3;
-    --white: #ffffff;
+    --white: #FFFFFF;             /* Pure White */
     --off-white: #FAFAFA;
-    --light-gray: #F5F5F5;
+    --light-gray: #E5E5E5;        /* Soft Gray */
     --medium-gray: #6b7280;
     --dark-gray: #1A1A1A;
     
@@ -86,7 +86,7 @@ a {
     z-index: 1000;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
     backdrop-filter: blur(10px);
-    background: linear-gradient(135deg, rgba(10, 31, 68, 0.97) 0%, rgba(5, 17, 41, 0.97) 100%);
+    background: linear-gradient(135deg, rgba(20, 33, 61, 0.97) 0%, rgba(10, 22, 40, 0.97) 100%);
 }
 
 .header-content {
@@ -167,7 +167,7 @@ a {
 }
 
 .main-navigation a:hover {
-    background-color: rgba(201, 162, 39, 0.15);
+    background-color: rgba(31, 122, 140, 0.2);
     transform: translateY(-2px);
     color: var(--accent-color);
 }
@@ -253,7 +253,7 @@ a {
     background-color: var(--accent-color);
     color: var(--white);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(201, 162, 39, 0.3);
+    box-shadow: 0 8px 20px rgba(252, 163, 17, 0.4);
 }
 
 .btn-secondary {
@@ -313,12 +313,12 @@ a {
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
     transition: all 0.5s ease;
     text-align: center;
-    border: 1px solid rgba(201, 162, 39, 0.1);
+    border: 1px solid rgba(252, 163, 17, 0.15);
 }
 
 .service-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(10, 31, 68, 0.12);
+    box-shadow: 0 12px 30px rgba(31, 122, 140, 0.15);
     border-color: var(--accent-color);
 }
 
@@ -372,7 +372,7 @@ a {
 
 .review-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(10, 31, 68, 0.1);
+    box-shadow: 0 10px 25px rgba(31, 122, 140, 0.12);
 }
 
 .review-stars {
@@ -795,7 +795,7 @@ a {
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: rgba(201, 162, 39, 0.2);
+    background: rgba(252, 163, 17, 0.2);
     transform: translate(-50%, -50%);
     transition: width 0.8s ease, height 0.8s ease;
     z-index: -1;
@@ -819,7 +819,7 @@ a {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(201, 162, 39, 0.08), transparent);
+    background: linear-gradient(90deg, transparent, rgba(252, 163, 17, 0.12), transparent);
     transition: left 0.8s ease;
 }
 
@@ -905,7 +905,7 @@ body {
 
 .review-card:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(10, 31, 68, 0.12);
+    box-shadow: 0 20px 40px rgba(31, 122, 140, 0.15);
 }
 
 /* Loading Animation for Images */
@@ -985,12 +985,12 @@ h1, h2, h3, h4, h5, h6 {
     padding: 3rem;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(201, 162, 39, 0.1);
+    border: 1px solid rgba(252, 163, 17, 0.15);
     transition: all 0.5s ease;
 }
 
 .luxury-card:hover {
-    box-shadow: 0 12px 35px rgba(10, 31, 68, 0.12);
+    box-shadow: 0 12px 35px rgba(31, 122, 140, 0.15);
     border-color: var(--accent-color);
 }
 
@@ -1022,7 +1022,7 @@ input[type="text"],
 input[type="email"],
 input[type="tel"],
 textarea {
-    border: 1px solid rgba(201, 162, 39, 0.2);
+    border: 1px solid rgba(252, 163, 17, 0.25);
     border-radius: 4px;
     padding: 0.75rem 1rem;
     font-family: var(--body-font);
@@ -1036,7 +1036,7 @@ input[type="tel"]:focus,
 textarea:focus {
     outline: none;
     border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.1);
+    box-shadow: 0 0 0 3px rgba(252, 163, 17, 0.15);
 }
 
 /* Elegant Badge/Tag Styling */
@@ -1110,7 +1110,7 @@ section + section {
     background: var(--accent-color);
     color: var(--white);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(201, 162, 39, 0.25);
+    box-shadow: 0 8px 20px rgba(252, 163, 17, 0.35);
 }
 
 /* Elegant Loading State */
@@ -1122,7 +1122,7 @@ section + section {
 
 /* Luxury Text Highlight */
 mark {
-    background: linear-gradient(135deg, rgba(201, 162, 39, 0.15) 0%, rgba(212, 175, 55, 0.15) 100%);
+    background: linear-gradient(135deg, rgba(252, 163, 17, 0.2) 0%, rgba(255, 186, 8, 0.2) 100%);
     padding: 2px 6px;
     border-radius: 2px;
     color: var(--dark-gray);
@@ -1169,7 +1169,7 @@ mark {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(10, 31, 68, 0.8) 0%, rgba(30, 58, 95, 0.8) 100%);
+    background: linear-gradient(135deg, rgba(20, 33, 61, 0.85) 0%, rgba(31, 122, 140, 0.75) 100%);
     z-index: 1;
 }
 
@@ -1184,11 +1184,11 @@ mark {
 }
 
 .shadow-medium {
-    box-shadow: 0 8px 30px rgba(10, 31, 68, 0.1);
+    box-shadow: 0 8px 30px rgba(31, 122, 140, 0.12);
 }
 
 .shadow-strong {
-    box-shadow: 0 15px 45px rgba(10, 31, 68, 0.15);
+    box-shadow: 0 15px 45px rgba(31, 122, 140, 0.18);
 }
 
 /* Elegant Spacing Utilities */
@@ -1249,8 +1249,8 @@ body::before {
     z-index: 2; /* slightly above content, below header */
     box-shadow:
         inset 0 0 180px rgba(0, 0, 0, 0.45),
-        inset 0 0 100px rgba(10, 31, 68, 0.35),
-        inset 0 0 60px rgba(201, 162, 39, 0.1); /* subtle gold tone */
+        inset 0 0 100px rgba(20, 33, 61, 0.35),
+        inset 0 0 60px rgba(252, 163, 17, 0.08); /* subtle warm yellow tone */
     mix-blend-mode: multiply;
 }
 
@@ -1263,10 +1263,11 @@ body::before {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    background-color: rgba(10, 31, 68, 0.85);
+    background-color: rgba(20, 33, 61, 0.9);
     padding: 0.5rem 20px;
     font-size: 0.9rem;
     color: var(--white);
+    border-bottom: 1px solid rgba(31, 122, 140, 0.3);
 }
 
 .top-bar a {
@@ -1276,7 +1277,7 @@ body::before {
 }
 
 .top-bar a:hover {
-    color: var(--accent-gold);
+    color: var(--accent-color);
     transform: translateY(-2px);
 }
 
