@@ -4,7 +4,7 @@ Theme URI: https://github.com/Disc0nnect3d17/Marius-Services
 Author: Pro Fit Team
 Author URI: https://profitbathroomandkitchen.com
 Description: A modern, responsive WordPress theme for Pro Fit Bathroom and Kitchen - specialists in full bathroom and kitchen renovations including tiles, plumbing, electric, painting, carpentry, and plastering.
-Version: 1.6.0
+Version: 1.6.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: profitkitchenbath
@@ -479,9 +479,23 @@ a {
 
 /* Footer Styles */
 .site-footer {
-    background-color: var(--dark-gray);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
     color: var(--white);
     padding: 4rem 0 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle texture overlay for footer */
+.site-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top right, rgba(31, 122, 140, 0.1) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .footer-content {
@@ -489,6 +503,8 @@ a {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 .footer-section h3 {
@@ -498,6 +514,18 @@ a {
     font-family: var(--heading-font);
     font-weight: 600;
     letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--accent-color);
 }
 
 .footer-section p,
@@ -505,10 +533,62 @@ a {
     color: #d1d5db;
     line-height: 1.8;
     font-weight: 300;
+    transition: all 0.3s ease;
+}
+
+.footer-section a {
+    display: inline-block;
 }
 
 .footer-section a:hover {
     color: var(--accent-color);
+    transform: translateX(5px);
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.footer-section ul li:hover {
+    transform: translateX(5px);
+}
+
+/* Social Links Enhancements */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    font-size: 1.2rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid transparent;
+}
+
+.social-links a:hover {
+    background: var(--accent-color);
+    color: var(--white);
+    transform: scale(1.2) rotate(5deg);
+    box-shadow: 0 5px 15px rgba(252, 163, 17, 0.4);
+    border-color: var(--accent-color);
+}
+
+/* Contact info icons */
+.footer-section p i {
+    color: var(--accent-color);
+    margin-right: 0.5rem;
+    width: 20px;
+    display: inline-block;
 }
 
 .footer-bottom {
@@ -516,6 +596,8 @@ a {
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: #9ca3af;
+    position: relative;
+    z-index: 1;
 }
 
 /* Animations */
