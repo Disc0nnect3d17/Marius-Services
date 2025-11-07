@@ -10,7 +10,7 @@ get_header();
 <section class="hero-section">
     <div class="container">
         <div class="hero-content">
-            <h1>Professional Bathroom & Kitchen Renovations 1.5.1 </h1>
+            <h1>Professional Bathroom & Kitchen Renovations 1.5.2 </h1>
             <p>Expert craftsmen delivering complete renovation solutions in London and surrounding areas</p>
             <div class="hero-buttons">
                 <a href="tel:+447454933651" class="btn">Call Now</a>
