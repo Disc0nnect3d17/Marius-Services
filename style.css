@@ -4,7 +4,7 @@ Theme URI: https://github.com/Disc0nnect3d17/Marius-Services
 Author: Pro Fit Team
 Author URI: https://profitbathroomandkitchen.com
 Description: A modern, responsive WordPress theme for Pro Fit Bathroom and Kitchen - specialists in full bathroom and kitchen renovations including tiles, plumbing, electric, painting, carpentry, and plastering.
-Version: 1.4.0
+Version: 1.4.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: profitkitchenbath
@@ -1252,6 +1252,68 @@ body::before {
         inset 0 0 100px rgba(10, 31, 68, 0.35),
         inset 0 0 60px rgba(201, 162, 39, 0.1); /* subtle gold tone */
     mix-blend-mode: multiply;
+}
+
+/* =========================
+   PREMIUM HEADER ENHANCEMENTS
+   ========================= */
+
+/* Top Bar Styling */
+.top-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgba(10, 31, 68, 0.85);
+    padding: 0.5rem 20px;
+    font-size: 0.9rem;
+    color: var(--white);
+}
+
+.top-bar a {
+    margin-left: 1.5rem;
+    color: var(--white);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.top-bar a:hover {
+    color: var(--accent-gold);
+    transform: translateY(-2px);
+}
+
+/* Gold Divider Under Header */
+.site-header::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: var(--accent-color);
+}
+
+/* Pulse animation for icons in top-bar */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.top-bar a i {
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+/* Adjust header spacing */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+}
+
+/* Sticky + backdrop blur (already in your CSS, just confirming) */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
 }
 
 

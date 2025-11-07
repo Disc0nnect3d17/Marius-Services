@@ -13,31 +13,31 @@
 <?php wp_body_open(); ?>
 
 <header class="site-header">
-    <div class="container">
-        <div class="header-content">
-            <div class="site-branding">
-                <img width="150"src="http://localhost/Marius/wp-content/uploads/2025/11/1_uhDNWOUENopISF28W7UeOw.gif" alt="Site Logo">
-                <?php if (has_custom_logo()) : ?>
-                    <?php the_custom_logo(); ?>
-                <?php else : ?>
-                    <h1 class="site-title">
-                        <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-                            <?php bloginfo('name'); ?>
-                        </a>
-                    </h1>
-                <?php endif; ?>
-            </div>
+    <div class="top-bar">
+        <div class="contact-info">
+            <a href="tel:+447454933651">
+                <i class="fas fa-phone"></i>
+                <span>+44 7454 933651</span>
+            </a>
+            <a href="mailto:info@hotmail.com">
+                <i class="fas fa-envelope"></i>
+                <span>info@hotmail.com</span>
+            </a>
+        </div>
+    </div>
 
-            <div class="contact-info">
-                <a href="tel:+447454933651">
-                    <i class="fas fa-phone"></i>
-                    <span>+44 7454 933651</span>
-                </a>
-                <a href="mailto:info@hotmail.com">
-                    <i class="fas fa-envelope"></i>
-                    <span>info@hotmail.com</span>
-                </a>
-            </div>
+    <div class="header-content">
+        <div class="site-branding">
+            <img width="150" src="http://localhost/Marius/wp-content/uploads/2025/11/1_uhDNWOUENopISF28W7UeOw.gif" alt="Site Logo">
+            <?php if (has_custom_logo()) : ?>
+                <?php the_custom_logo(); ?>
+            <?php else : ?>
+                <h1 class="site-title">
+                    <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+                        <?php bloginfo('name'); ?>
+                    </a>
+                </h1>
+            <?php endif; ?>
         </div>
 
         <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
