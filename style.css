@@ -4,7 +4,7 @@ Theme URI: https://github.com/Disc0nnect3d17/Marius-Services
 Author: Pro Fit Team
 Author URI: https://profitbathroomandkitchen.com
 Description: A modern, responsive WordPress theme for Pro Fit Bathroom and Kitchen - specialists in full bathroom and kitchen renovations including tiles, plumbing, electric, painting, carpentry, and plastering.
-Version: 1.6.3
+Version: 1.6.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: profitkitchenbath
@@ -508,9 +508,13 @@ a {
     z-index: 1;
 }
 
-/* Footer headings */
-.footer-section h3 {
-    color: var(--primary-blue);
+/* =========================================================
+   Footer Heading + Underline Fix – v1.6.3
+   White headings + gold underline for luxury contrast
+========================================================= */
+
+.site-footer .footer-section h3 {
+    color: var(--white) !important;
     margin-bottom: 1rem;
     font-size: 1.3rem;
     font-family: var(--heading-font);
@@ -520,14 +524,26 @@ a {
     padding-bottom: 0.5rem;
 }
 
-.footer-section h3::after {
+.site-footer .footer-section h3::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 40px;
     height: 2px;
-    background: var(--secondary-blue);
+    background: var(--accent-gold);
+    transition: width 0.4s ease, background 0.3s ease;
+}
+
+/* Animation: expand underline on hover */
+.site-footer .footer-section h3:hover::after {
+    width: 70px;
+}
+
+/* Ensure no global overrides from other h3 styles */
+.site-footer h3,
+.site-footer h3::after {
+    color: var(--white) !important;
 }
 
 .footer-section p,
