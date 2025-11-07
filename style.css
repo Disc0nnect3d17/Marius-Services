@@ -4,7 +4,7 @@ Theme URI: https://github.com/Disc0nnect3d17/Marius-Services
 Author: Pro Fit Team
 Author URI: https://profitbathroomandkitchen.com
 Description: A modern, responsive WordPress theme for Pro Fit Bathroom and Kitchen - specialists in full bathroom and kitchen renovations including tiles, plumbing, electric, painting, carpentry, and plastering.
-Version: 1.6.2
+Version: 1.6.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: profitkitchenbath
@@ -634,6 +634,51 @@ a {
 ::selection {
     background: var(--secondary-blue);
     color: var(--white);
+}
+
+/* =========================================================
+   Footer Icon Styling – v1.6.2
+   Consistent accent gold icons + hover animations
+========================================================= */
+
+/* 1️⃣ Social Media Icons */
+.site-footer .social-icons a i {
+    color: var(--accent-gold);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.site-footer .social-icons a:hover i {
+    transform: scale(1.2) rotate(5deg);
+    background: var(--accent-gold);
+    color: var(--dark-blue);
+    box-shadow: 0 0 10px var(--accent-gold);
+}
+
+/* 2️⃣ Contact Icons (phone, email, clock) */
+.site-footer i.fa-phone,
+.site-footer i.fa-envelope,
+.site-footer i.fa-clock {
+    color: var(--accent-gold);
+    margin-right: 8px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.site-footer i.fa-phone:hover,
+.site-footer i.fa-envelope:hover,
+.site-footer i.fa-clock:hover {
+    transform: scale(1.2);
+}
+
+/* Optional: subtle hover glow for consistent polish */
+.site-footer .social-icons a i:hover {
+    box-shadow: 0 0 8px var(--accent-gold);
 }
 
 /* Animations */
