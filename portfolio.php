@@ -7,10 +7,9 @@
 get_header(); 
 ?>
 
-<!-- 1️⃣ Parallax Hero Section -->
-<section class="portfolio-hero" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/renovation-team.jpg'); background-attachment: fixed; background-position: center; background-size: cover; height: 600px; display: flex; align-items: center; justify-content: center; position: relative;">
-    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5);"></div>
-    <h1 style="color: #fff; font-size: 5rem; text-transform: uppercase; text-align: center; letter-spacing: 0.2em; position: relative; z-index: 1; font-family: var(--heading-font);">Bathroom Portfolio</h1>
+<!-- Portfolio Hero Section -->
+<section class="portfolio-hero">
+    <h1>Bathroom Portfolio</h1>
 </section>
 
 <!-- 2️⃣ Section Title & Description -->
