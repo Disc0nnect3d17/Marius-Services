@@ -1518,7 +1518,7 @@ body::before {
     background: url("http://localhost/Marius/wp-content/uploads/2025/11/bg-portoflio.jpg") 
         center / cover no-repeat;
     color: var(--white);
-    padding: 4rem 2rem;   /* smaller height */
+    padding: 8rem 4rem;   /* smaller height */
     text-align: center;
     overflow: hidden;
 }
