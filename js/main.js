@@ -21,9 +21,6 @@
         // Parallax effect on hero section
         initParallaxEffect();
         
-        // Parallax effect on portfolio hero
-        initPortfolioParallax();
-        
         // Scroll progress indicator
         initScrollProgress();
         
@@ -437,31 +434,6 @@
         }
     `;
     document.head.appendChild(style);
-
-    /**
-     * Parallax for Portfolio Hero Section
-     */
-    function initPortfolioParallax() {
-        const portfolioHero = document.querySelector('.portfolio-hero');
-
-        if (!portfolioHero) return;
-
-        let ticking = false;
-
-        window.addEventListener('scroll', function() {
-            if (!ticking) {
-                window.requestAnimationFrame(function() {
-                    const scrolled = window.pageYOffset;
-                    const speed = 0.35; // adjust parallax strength
-
-                    portfolioHero.style.backgroundPosition = 'center ' + (scrolled * speed) + 'px';
-
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        });
-    }
 
     /**
      * Back to Top Button
