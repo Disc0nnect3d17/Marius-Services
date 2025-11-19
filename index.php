@@ -79,7 +79,9 @@ get_header();
                 <p>With decades of experience in the renovation industry, Pro Fit Bathroom and Kitchen has built a reputation for excellence and reliability. I specialize in complete bathroom and kitchen renovations, handling every aspect from initial design to final touches.</p>
                 <p>My comprehensive services include professional tiling, expert plumbing, certified electrical work, quality painting and decorating, skilled carpentry, and precision plastering. I take pride in my attention to detail and commitment to customer satisfaction.</p>
                 <p>Every project is done to your needs and vision. I work closely with you to ensure your ideas are brought to life and you have something to cherish for years to come.</p>
-                <a href="tel:+447454933651" class="btn" style="margin-top: 1rem;">Get a Free Quote</a>
+                <a href="/Marius/portfolio/" class="btn" style="margin-top: 1rem; transform: translateY(0px) scale(1);">
+                    View Our Portfolio
+                </a>
             </div>
             <div class="about-image" data-aos="slide-left">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/renovation-team.jpg" 
