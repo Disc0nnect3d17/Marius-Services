@@ -8,7 +8,7 @@ get_header();
 ?>
 
 <!-- Portfolio Hero Section -->
-<section class="portfolio-hero">
+<section class="portfolio-hero rellax" data-rellax-speed="-2">
     <h1>Bathroom Portfolio</h1>
 </section>
 
