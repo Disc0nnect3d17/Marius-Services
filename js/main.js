@@ -51,7 +51,7 @@
             const heroWrapper = document.querySelector('.hero-image-wrapper');
             if (heroWrapper) {
                 new Rellax('.hero-image-wrapper', {
-                    speed: -2,
+                    speed: -1,
                     center: false,
                     round: true,
                     vertical: true,

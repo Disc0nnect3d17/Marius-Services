@@ -9,7 +9,7 @@ get_header();
 
 <!-- Portfolio Hero Section -->
 <section class="portfolio-hero">
-    <div class="hero-image-wrapper rellax" data-rellax-speed="-2">
+    <div class="hero-image-wrapper rellax" data-rellax-speed="-1">
         <?php
         if (has_post_thumbnail()) {
             the_post_thumbnail('full', [
