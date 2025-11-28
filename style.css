@@ -1531,6 +1531,8 @@ body::before {
     inset: 0;              /* fills the entire hero section */
     overflow: hidden;
     z-index: 0;            /* below text */
+    will-change: transform;
+    transition: transform 0.1s ease-out;
 }
 
 .hero-image-wrapper::before {
