@@ -19,9 +19,9 @@ get_header();
                 'loading' => 'eager' // loads immediately since it's above-the-fold
             ]);
         } else {
-            // Fallback to static URL
+            // Fallback to WordPress uploads directory
             ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/images/bg-portoflio.jpg" 
+            <img src="http://localhost/Marius/wp-content/uploads/2025/11/bg-portoflio.jpg" 
                  class="hero-image" 
                  alt="Portfolio Hero" 
                  loading="eager">
