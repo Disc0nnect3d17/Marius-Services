@@ -50,8 +50,8 @@
         if (typeof Rellax !== 'undefined') {
             const heroWrapper = document.querySelector('.hero-image-wrapper');
             if (heroWrapper) {
-                const heroParallax = new Rellax('.hero-image-wrapper', {
-                    speed: -2,       // Adjust parallax intensity
+                new Rellax('.hero-image-wrapper', {
+                    speed: -2,
                     center: false,
                     round: true,
                     vertical: true,

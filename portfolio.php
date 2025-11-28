@@ -9,7 +9,7 @@ get_header();
 
 <!-- Portfolio Hero Section -->
 <section class="portfolio-hero">
-    <div class="hero-image-wrapper">
+    <div class="hero-image-wrapper rellax" data-rellax-speed="-2">
         <?php
         if (has_post_thumbnail()) {
             the_post_thumbnail('full', [
@@ -18,7 +18,7 @@ get_header();
                 'loading' => 'eager'
             ]);
         } else { ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-portoflio.jpg" 
+            <img src="http://localhost/Marius/wp-content/uploads/2025/11/bg-portoflio.jpg" 
                  class="hero-image" alt="Portfolio Hero" loading="eager">
         <?php } ?>
     </div>
