@@ -10,14 +10,25 @@ get_header();
 <!-- Portfolio Hero Section -->
 <section class="portfolio-hero">
     <div class="hero-image-wrapper rellax" data-rellax-speed="-2">
-        <?php if (has_post_thumbnail()) : ?>
-            <?php the_post_thumbnail('full', ['class' => 'hero-image', 'alt' => 'Bathroom Portfolio Hero']); ?>
-        <?php else : ?>
-            <img src="http://localhost/Marius/wp-content/uploads/2025/11/bg-portoflio.jpg" class="hero-image" alt="Bathroom Portfolio Hero">
-        <?php endif; ?>
+        <?php
+        // If page has featured image
+        if (has_post_thumbnail()) {
+            the_post_thumbnail('full', [
+                'class' => 'hero-image',
+                'alt' => get_the_title(),
+                'loading' => 'eager' // loads immediately since it's above-the-fold
+            ]);
+        } else {
+            // Fallback to static URL
+            ?>
+            <img src="<?php echo get_template_directory_uri(); ?>/images/bg-portoflio.jpg" 
+                 class="hero-image" 
+                 alt="Portfolio Hero" 
+                 loading="eager">
+        <?php } ?>
     </div>
 
-    <h1>Bathroom Portfolio</h1>
+    <h1 class="portfolio-hero-title"><?php the_title(); ?></h1>
 </section>
 
 <!-- 2️⃣ Section Title & Description -->
