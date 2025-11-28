@@ -295,28 +295,17 @@
         
         // Portfolio hero text fade on scroll
         if (portfolioHero && portfolioTitle) {
-            const portfolioImageWrapper = document.querySelector('.hero-image-wrapper');
             let ticking = false;
-            let lastScrollY = 0;
             
             window.addEventListener('scroll', function() {
-                lastScrollY = window.pageYOffset;
-                
                 if (!ticking) {
                     window.requestAnimationFrame(function() {
-                        const scrolled = lastScrollY;
+                        const scrolled = window.pageYOffset;
                         const heroHeight = portfolioHero.offsetHeight;
                         
                         if (scrolled < heroHeight) {
-                            // Slower parallax speed for smoother movement
-                            const imageSpeed = 0.3;
+                            // Only animate title, not the background wrapper
                             const titleSpeed = 0.2;
-                            
-                            // Move background image with parallax
-                            if (portfolioImageWrapper) {
-                                const translateY = Math.round(scrolled * imageSpeed);
-                                portfolioImageWrapper.style.transform = 'translate3d(0, ' + translateY + 'px, 0)';
-                            }
                             
                             // Fade out and move title as user scrolls
                             const opacity = 1 - (scrolled / heroHeight) * 1.5;
