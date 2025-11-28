@@ -258,6 +258,10 @@
         const hero = document.querySelector('.hero-section');
         const heroContent = document.querySelector('.hero-content');
         
+        // Portfolio hero fade effect
+        const portfolioHero = document.querySelector('.portfolio-hero');
+        const portfolioTitle = document.querySelector('.portfolio-hero-title');
+        
         if (hero) {
             let ticking = false;
             
@@ -279,6 +283,33 @@
                                 heroContent.style.transform = 'translate3d(0, ' + (scrolled * contentSpeed) + 'px, 0)';
                                 heroContent.style.opacity = 1 - (scrolled / heroHeight) * 1.5;
                             }
+                        }
+                        
+                        ticking = false;
+                    });
+                    
+                    ticking = true;
+                }
+            });
+        }
+        
+        // Portfolio hero text fade on scroll
+        if (portfolioHero && portfolioTitle) {
+            let ticking = false;
+            
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(function() {
+                        const scrolled = window.pageYOffset;
+                        const heroHeight = portfolioHero.offsetHeight;
+                        
+                        if (scrolled < heroHeight) {
+                            // Fade out title as user scrolls
+                            const opacity = 1 - (scrolled / heroHeight) * 1.5;
+                            const translateY = scrolled * 0.3;
+                            
+                            portfolioTitle.style.opacity = Math.max(0, opacity);
+                            portfolioTitle.style.transform = 'translate3d(0, ' + translateY + 'px, 0)';
                         }
                         
                         ticking = false;

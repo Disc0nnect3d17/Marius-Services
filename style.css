@@ -1561,6 +1561,8 @@ body::before {
     font-family: var(--heading-font);
     color: var(--white);
     text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: opacity 0.1s ease-out, transform 0.1s ease-out;
+    will-change: opacity, transform;
 }
 
 /* Fallback for old h1 selector */
