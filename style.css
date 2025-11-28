@@ -1532,7 +1532,10 @@ body::before {
     overflow: hidden;
     z-index: 0;            /* below text */
     will-change: transform;
-    transition: transform 0.1s ease-out;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
 }
 
 .hero-image-wrapper::before {
@@ -1544,6 +1547,8 @@ body::before {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 1;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .hero-image-wrapper img.hero-image {
@@ -1553,7 +1558,11 @@ body::before {
     object-position: center;
     max-width: none;
     display: block;
-    transform: translateZ(0); /* GPU acceleration */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
 .portfolio-hero-title {

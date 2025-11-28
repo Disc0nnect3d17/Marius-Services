@@ -297,26 +297,30 @@
         if (portfolioHero && portfolioTitle) {
             const portfolioImageWrapper = document.querySelector('.hero-image-wrapper');
             let ticking = false;
+            let lastScrollY = 0;
             
             window.addEventListener('scroll', function() {
+                lastScrollY = window.pageYOffset;
+                
                 if (!ticking) {
                     window.requestAnimationFrame(function() {
-                        const scrolled = window.pageYOffset;
+                        const scrolled = lastScrollY;
                         const heroHeight = portfolioHero.offsetHeight;
                         
                         if (scrolled < heroHeight) {
-                            // Parallax speed for different layers
-                            const imageSpeed = 0.5;
-                            const titleSpeed = 0.3;
+                            // Slower parallax speed for smoother movement
+                            const imageSpeed = 0.3;
+                            const titleSpeed = 0.2;
                             
                             // Move background image with parallax
                             if (portfolioImageWrapper) {
-                                portfolioImageWrapper.style.transform = 'translate3d(0, ' + (scrolled * imageSpeed) + 'px, 0)';
+                                const translateY = Math.round(scrolled * imageSpeed);
+                                portfolioImageWrapper.style.transform = 'translate3d(0, ' + translateY + 'px, 0)';
                             }
                             
                             // Fade out and move title as user scrolls
                             const opacity = 1 - (scrolled / heroHeight) * 1.5;
-                            const translateY = scrolled * titleSpeed;
+                            const translateY = Math.round(scrolled * titleSpeed);
                             
                             portfolioTitle.style.opacity = Math.max(0, opacity);
                             portfolioTitle.style.transform = 'translate3d(0, ' + translateY + 'px, 0)';
