@@ -8,7 +8,11 @@ get_header();
 ?>
 
 <!-- Portfolio Hero Section -->
-<section class="portfolio-hero rellax" data-rellax-speed="-2">
+<section class="portfolio-hero">
+    <div class="hero-image-wrapper rellax" data-rellax-speed="-2">
+        <img src="http://localhost/Marius/wp-content/uploads/2025/11/bg-portoflio.jpg" alt="Bathroom Portfolio Hero">
+    </div>
+
     <h1>Bathroom Portfolio</h1>
 </section>
 

@@ -60,11 +60,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         new Rellax('.rellax', {
-            speed: -2,
-            center: true,
-            round: true,
-            vertical: true,
-            horizontal: false
+            center: true
         });
     });
 </script>
