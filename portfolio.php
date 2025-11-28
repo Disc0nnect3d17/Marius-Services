@@ -8,8 +8,8 @@ get_header();
 ?>
 
 <!-- Portfolio Hero Section -->
-<section class="portfolio-hero">
-    <div class="hero-image-wrapper rellax" data-rellax-speed="-2">
+<section class="portfolio-hero" data-scroll-section>
+    <div class="hero-image-wrapper" data-scroll data-scroll-speed="-2">
         <?php
         // If page has featured image
         if (has_post_thumbnail()) {
@@ -28,7 +28,7 @@ get_header();
         <?php } ?>
     </div>
 
-    <h1 class="portfolio-hero-title"><?php the_title(); ?></h1>
+    <h1 class="portfolio-hero-title" data-scroll data-scroll-speed="1"><?php the_title(); ?></h1>
 </section>
 
 <!-- 2️⃣ Section Title & Description -->

@@ -57,14 +57,6 @@
     <i class="fas fa-arrow-up"></i>
 </a>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        new Rellax('.rellax', {
-            center: true
-        });
-    });
-</script>
-
 <?php wp_footer(); ?>
 </body>
 </html>

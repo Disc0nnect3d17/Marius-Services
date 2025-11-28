@@ -9,6 +9,12 @@
     // Wait for DOM to be fully loaded
     document.addEventListener('DOMContentLoaded', function() {
         
+        // Initialize Locomotive Scroll for smooth scrolling
+        initLocomotiveScroll();
+        
+        // Initialize Rellax for parallax effects
+        initRellaxParallax();
+        
         // Mobile Menu Toggle
         initMobileMenu();
         
@@ -39,6 +45,45 @@
         // Add smooth page load animation
         pageLoadAnimation();
     });
+
+    /**
+     * Initialize Locomotive Scroll for smooth scrolling
+     */
+    function initLocomotiveScroll() {
+        if (typeof LocomotiveScroll !== 'undefined') {
+            const scroll = new LocomotiveScroll({
+                el: document.querySelector('body'),
+                smooth: true,
+                multiplier: 1, // adjust scroll speed
+                smartphone: { smooth: true },
+                tablet: { smooth: true }
+            });
+            
+            // Update on window resize
+            window.addEventListener('resize', () => {
+                scroll.update();
+            });
+        }
+    }
+
+    /**
+     * Initialize Rellax for parallax effects
+     */
+    function initRellaxParallax() {
+        if (typeof Rellax !== 'undefined') {
+            const parallaxElements = document.querySelectorAll('[data-scroll-speed]');
+            if (parallaxElements.length > 0) {
+                const rellax = new Rellax('[data-scroll-speed]', {
+                    speed: -2,
+                    center: false,
+                    wrapper: null,
+                    round: true,
+                    vertical: true,
+                    horizontal: false
+                });
+            }
+        }
+    }
 
     /**
      * Mobile Menu Toggle
