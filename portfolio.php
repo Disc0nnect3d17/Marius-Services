@@ -8,27 +8,22 @@ get_header();
 ?>
 
 <!-- Portfolio Hero Section -->
-<section class="portfolio-hero" data-scroll-section>
-    <div class="hero-image-wrapper" data-scroll data-scroll-speed="-2">
+<section class="portfolio-hero">
+    <div class="hero-image-wrapper">
         <?php
-        // If page has featured image
         if (has_post_thumbnail()) {
             the_post_thumbnail('full', [
                 'class' => 'hero-image',
                 'alt' => get_the_title(),
-                'loading' => 'eager' // loads immediately since it's above-the-fold
+                'loading' => 'eager'
             ]);
-        } else {
-            // Fallback to WordPress uploads directory
-            ?>
-            <img src="http://localhost/Marius/wp-content/uploads/2025/11/bg-portoflio.jpg" 
-                 class="hero-image" 
-                 alt="Portfolio Hero" 
-                 loading="eager">
+        } else { ?>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-portoflio.jpg" 
+                 class="hero-image" alt="Portfolio Hero" loading="eager">
         <?php } ?>
     </div>
 
-    <h1 class="portfolio-hero-title" data-scroll data-scroll-speed="1"><?php the_title(); ?></h1>
+    <h1 class="portfolio-hero-title"><?php the_title(); ?></h1>
 </section>
 
 <!-- 2️⃣ Section Title & Description -->

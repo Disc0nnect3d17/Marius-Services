@@ -38,22 +38,16 @@ add_action('after_setup_theme', 'profitkitchenbath_setup');
 // Enqueue scripts and styles
 function profitkitchenbath_scripts() {
     // Main stylesheet
-    wp_enqueue_style('profitkitchenbath-style', get_stylesheet_uri(), array(), '1.7.5');
+    wp_enqueue_style('profitkitchenbath-style', get_stylesheet_uri(), array(), '1.7.6');
     
     // Font Awesome for icons
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css', array(), '6.4.0');
-    
-    // Locomotive Scroll CSS
-    wp_enqueue_style('locomotive-scroll-style', 'https://cdn.jsdelivr.net/npm/locomotive-scroll/dist/locomotive-scroll.min.css', array(), '4.1.4');
-    
-    // Locomotive Scroll
-    wp_enqueue_script('locomotive-scroll', 'https://cdn.jsdelivr.net/npm/locomotive-scroll/dist/locomotive-scroll.min.js', array(), '4.1.4', true);
     
     // Rellax for parallax
     wp_enqueue_script('rellax', 'https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js', array(), '1.12.1', true);
     
     // Custom JavaScript
-    wp_enqueue_script('profitkitchenbath-script', get_template_directory_uri() . '/js/main.js', array('locomotive-scroll', 'rellax'), '1.7.5', true);
+    wp_enqueue_script('profitkitchenbath-script', get_template_directory_uri() . '/js/main.js', array('rellax'), '1.7.6', true);
 }
 add_action('wp_enqueue_scripts', 'profitkitchenbath_scripts');
 
