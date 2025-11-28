@@ -4,7 +4,7 @@ Theme URI: https://github.com/Disc0nnect3d17/Marius-Services
 Author: Pro Fit Team
 Author URI: https://profitbathroomandkitchen.com
 Description: A modern, responsive WordPress theme for Pro Fit Bathroom and Kitchen - specialists in full bathroom and kitchen renovations including tiles, plumbing, electric, painting, carpentry, and plastering.
-Version: 1.7.3
+Version: 1.7.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: profitkitchenbath
@@ -1515,26 +1515,28 @@ body::before {
 /* Portfolio Hero Background */
 .portfolio-hero {
     position: relative;
-    height: 60vh;
-    overflow: hidden;
+    min-height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--white);
     text-align: center;
+    overflow: hidden;
 }
 
 .hero-image-wrapper {
     position: absolute;
     inset: 0;
-    z-index: 1;
     overflow: hidden;
+    z-index: 0;
 }
 
-.hero-image-wrapper img {
+.hero-image-wrapper img,
+.hero-image-wrapper .hero-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* keeps aspect ratio and fills container */
+    display: block;
     transform: translateZ(0); /* forces GPU compositing */
 }
 

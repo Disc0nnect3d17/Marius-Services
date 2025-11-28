@@ -10,7 +10,11 @@ get_header();
 <!-- Portfolio Hero Section -->
 <section class="portfolio-hero">
     <div class="hero-image-wrapper rellax" data-rellax-speed="-2">
-        <img src="http://localhost/Marius/wp-content/uploads/2025/11/bg-portoflio.jpg" alt="Bathroom Portfolio Hero">
+        <?php if (has_post_thumbnail()) : ?>
+            <?php the_post_thumbnail('full', ['class' => 'hero-image', 'alt' => 'Bathroom Portfolio Hero']); ?>
+        <?php else : ?>
+            <img src="http://localhost/Marius/wp-content/uploads/2025/11/bg-portoflio.jpg" class="hero-image" alt="Bathroom Portfolio Hero">
+        <?php endif; ?>
     </div>
 
     <h1>Bathroom Portfolio</h1>
