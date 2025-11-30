@@ -1,10 +1,11 @@
 <?php
 /**
- * Template for single portfolio project
+ * Template Name: Single Portfolio Page
+ * Description: Static template for The Sage & Walnut Shaker project
  */
-
 get_header(); 
 ?>
+
 
 <?php while (have_posts()) : the_post(); ?>
 
