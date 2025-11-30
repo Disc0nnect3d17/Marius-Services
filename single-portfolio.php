@@ -14,46 +14,50 @@ get_header();
     <div class="container" style="max-width: 1200px; margin: 0 auto;">
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
             
-            <!-- Left: Image Collage -->
+            <!-- Left: Dynamic Image Collage -->
             <div class="project-collage">
+                <?php 
+                $images = get_post_meta(get_the_ID(), 'portfolio_images', true); 
+                if ($images) :
+                    $images = array_map('trim', explode(',', $images)); // split URLs into array
+                ?>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; height: 600px;">
-                    <!-- First image spans 2 rows -->
-                    <div style="position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); grid-row: span 2;">
-                        <img src="http://localhost/Marius/wp-content/uploads/2025/11/IMG_4149.jpg" 
-                             alt="The Sage & Walnut Shaker" 
-                             style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
-                    </div>
-                    <!-- Second image -->
-                    <div style="position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-                        <img src="http://localhost/Marius/wp-content/uploads/2025/11/IMG_4147.jpg" 
-                             alt="The Sage & Walnut Shaker" 
-                             style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
-                    </div>
-                    <!-- Third image -->
-                    <div style="position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-                        <img src="http://localhost/Marius/wp-content/uploads/2025/11/IMG_4153.jpg" 
-                             alt="The Sage & Walnut Shaker" 
-                             style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
-                    </div>
+                    <?php foreach($images as $index => $img_url) : ?>
+                        <div style="position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); <?php echo $index === 0 ? 'grid-row: span 2;' : ''; ?>">
+                            <img src="<?php echo esc_url($img_url); ?>" 
+                                 alt="<?php the_title(); ?>" 
+                                 style="width:100%; height:100%; object-fit:cover; transition: transform 0.4s ease;">
+                        </div>
+                    <?php endforeach; ?>
                 </div>
+                <?php endif; ?>
             </div>
 
             <!-- Right: Project Info -->
             <div class="project-info">
                 <h1 style="font-family: var(--heading-font); font-size: clamp(2rem, 4vw, 3rem); color: var(--primary-blue); margin-bottom: 1.5rem; line-height: 1.2;">
-                    The Sage & Walnut Shaker
+                    <?php the_title(); ?>
                 </h1>
                 
                 <div style="width: 60px; height: 3px; background: var(--accent-color); margin-bottom: 2rem;"></div>
                 
-                <div style="font-size: 1.1rem; color: var(--dark-gray); line-height: 1.8; margin-bottom: 2rem;">
-                    <p>This stunning renovation seamlessly blends modern aesthetics with timeless craftsmanship. The sage green cabinetry paired with rich walnut accents creates a warm, inviting atmosphere while maintaining a contemporary edge. Every detail has been carefully considered, from the sleek hardware to the premium finishes, resulting in a space that's both functional and beautiful.</p>
-                </div>
+                <?php if (has_excerpt()) : ?>
+                    <div style="font-size: 1.1rem; color: var(--dark-gray); line-height: 1.8; margin-bottom: 2rem;">
+                        <?php the_excerpt(); ?>
+                    </div>
+                <?php endif; ?>
                 
+                <?php 
+                $categories = get_post_meta(get_the_ID(), 'portfolio_categories', true);
+                if ($categories) :
+                    $categories = array_map('trim', explode(',', $categories));
+                ?>
                 <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 2rem;">
-                    <span style="padding: 8px 16px; background: var(--light-gray); color: var(--primary-blue); border-radius: 6px; font-size: 0.9rem; font-weight: 500;">Bathroom</span>
-                    <span style="padding: 8px 16px; background: var(--light-gray); color: var(--primary-blue); border-radius: 6px; font-size: 0.9rem; font-weight: 500;">Modern</span>
+                    <?php foreach($categories as $cat) : ?>
+                        <span style="padding: 8px 16px; background: var(--light-gray); color: var(--primary-blue); border-radius: 6px; font-size: 0.9rem; font-weight: 500;"><?php echo esc_html($cat); ?></span>
+                    <?php endforeach; ?>
                 </div>
+                <?php endif; ?>
                 
                 <a href="/Marius/portfolio/" class="btn" style="display: inline-flex; align-items: center; gap: 10px;">
                     <i class="fas fa-arrow-left"></i> Back to Portfolio
