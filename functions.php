@@ -180,6 +180,49 @@ function profitkitchenbath_mime_types($mimes) {
 }
 add_filter('upload_mimes', 'profitkitchenbath_mime_types');
 
+// Register Portfolio Custom Post Type
+function profitkitchenbath_register_portfolio() {
+    $labels = array(
+        'name'               => 'Portfolio',
+        'singular_name'      => 'Portfolio Item',
+        'add_new'            => 'Add New Project',
+        'add_new_item'       => 'Add New Portfolio Project',
+        'edit_item'          => 'Edit Portfolio Project',
+        'new_item'           => 'New Portfolio Project',
+        'view_item'          => 'View Portfolio Project',
+        'search_items'       => 'Search Portfolio',
+        'not_found'          => 'No portfolio projects found',
+        'not_found_in_trash' => 'No portfolio projects found in trash'
+    );
+
+    $args = array(
+        'labels'              => $labels,
+        'public'              => true,
+        'has_archive'         => true,
+        'publicly_queryable'  => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'query_var'           => true,
+        'rewrite'             => array('slug' => 'project'),
+        'capability_type'     => 'post',
+        'has_archive'         => true,
+        'hierarchical'        => false,
+        'menu_position'       => 5,
+        'menu_icon'           => 'dashicons-portfolio',
+        'supports'            => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),
+    );
+
+    register_post_type('portfolio', $args);
+
+    // Register Portfolio Category Taxonomy
+    register_taxonomy('portfolio_category', 'portfolio', array(
+        'label'        => 'Portfolio Categories',
+        'rewrite'      => array('slug' => 'portfolio-category'),
+        'hierarchical' => true,
+    ));
+}
+add_action('init', 'profitkitchenbath_register_portfolio');
+
 // Customize the admin footer text
 function profitkitchenbath_admin_footer_text() {
     echo 'Pro Fit Bathroom and Kitchen Theme | Powered by <a href="https://wordpress.org">WordPress</a>';

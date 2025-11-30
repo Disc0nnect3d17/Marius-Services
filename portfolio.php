@@ -35,7 +35,7 @@ get_header();
 
 <!-- 3️⃣ Portfolio Grid with Hover Overlay -->
 <section class="portfolio-grid-section" style="max-width: 1200px; margin: 0 auto; padding: 60px 20px;">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+    <div class="portfolio-grid">
         <?php
         $portfolio_query = new WP_Query(array(
             'post_type' => 'portfolio',
@@ -43,23 +43,38 @@ get_header();
         ));
         if ($portfolio_query->have_posts()) :
             while ($portfolio_query->have_posts()) : $portfolio_query->the_post(); ?>
-                <div class="portfolio-item" style="position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <div class="portfolio-item">
                     <?php if (has_post_thumbnail()) : ?>
-                        <img src="<?php the_post_thumbnail_url('large'); ?>" alt="<?php the_title(); ?>" style="width: 100%; display: block; transition: transform 0.5s;">
+                        <div class="portfolio-image-wrapper">
+                            <?php the_post_thumbnail('large', array('class' => 'portfolio-thumbnail')); ?>
+                        </div>
+                    <?php else: ?>
+                        <div class="portfolio-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&h=400&fit=crop" 
+                                 alt="<?php the_title(); ?>" 
+                                 class="portfolio-thumbnail">
+                        </div>
                     <?php endif; ?>
-                    <div class="portfolio-overlay" style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.6); color: #fff; padding: 20px; opacity: 0; transition: opacity 0.3s;">
-                        <h3 style="font-family: var(--heading-font); font-size: 1.5rem; margin-bottom: 0.5rem;"><?php the_title(); ?></h3>
-                        <?php $terms = get_the_terms(get_the_ID(), 'portfolio_category');
-                        if($terms) {
-                            foreach($terms as $term) {
-                                echo '<span style="display: inline-block; padding: 5px 10px; background: var(--accent-color); border-radius: 5px; margin-right: 5px; font-size: 0.9rem;">' . $term->name . '</span>';
-                            }
-                        } ?>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-content">
+                            <h3><?php the_title(); ?></h3>
+                            <?php $terms = get_the_terms(get_the_ID(), 'portfolio_category');
+                            if($terms) {
+                                echo '<div class="portfolio-tags">';
+                                foreach($terms as $term) {
+                                    echo '<span class="portfolio-tag">' . $term->name . '</span>';
+                                }
+                                echo '</div>';
+                            } ?>
+                            <span class="view-project">View Project <i class="fas fa-arrow-right"></i></span>
+                        </div>
                     </div>
-                    <a href="<?php the_permalink(); ?>" style="position:absolute;top:0;left:0;right:0;bottom:0;"></a>
+                    <a href="<?php the_permalink(); ?>" class="portfolio-link"></a>
                 </div>
             <?php endwhile; wp_reset_postdata();
-        endif; ?>
+        else: ?>
+            <p style="text-align: center; color: var(--medium-gray); grid-column: 1/-1;">No portfolio projects found. Add some projects in WordPress admin!</p>
+        <?php endif; ?>
     </div>
 </section>
 
@@ -72,6 +87,157 @@ get_header();
         <a href="tel:+447454933651" class="btn" style="text-transform: uppercase; padding: 15px 30px; background: var(--primary-blue); color: #fff; border-radius: 8px; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Get in Touch</a>
     </div>
 </section>
+
+<style>
+/* Portfolio Grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    background: var(--white);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.portfolio-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.portfolio-item:hover::before {
+    opacity: 0.15;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(31, 122, 140, 0.25);
+}
+
+.portfolio-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+}
+
+.portfolio-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.portfolio-item:hover .portfolio-thumbnail {
+    transform: scale(1.1) rotate(1deg);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 25px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-content {
+    color: var(--white);
+    transform: translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.portfolio-item:hover .portfolio-content {
+    transform: translateY(0);
+}
+
+.portfolio-content h3 {
+    font-family: var(--heading-font);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--white);
+    font-weight: 600;
+}
+
+.portfolio-tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.portfolio-tag {
+    display: inline-block;
+    padding: 6px 12px;
+    background: var(--accent-color);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.view-project {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--white);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.4s ease;
+}
+
+.portfolio-item:hover .view-project {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.view-project i {
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .view-project i {
+    transform: translateX(5px);
+}
+
+.portfolio-link {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .portfolio-image-wrapper {
+        height: 240px;
+    }
+}
+</style>
 
 <style>
 .portfolio-item:hover img { transform: scale(1.1); }
