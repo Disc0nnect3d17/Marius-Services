@@ -523,20 +523,20 @@ main {
 }
 
 /* CTA Section */
-.cta-section {
-    padding: 6rem 0;
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
-    color: var(--white);
-    text-align: center;
+.hero-section {
     position: relative;
-}
+    background: url("/images/header/header-bg.JPG") center / cover no-repeat;
+    background-attachment: fixed;
 
-.cta-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    color: var(--white);
+    padding: 12rem 2rem;
+    min-height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
     bottom: 0;
     background: rgba(0, 0, 0, 0.3);
     z-index: 0;
