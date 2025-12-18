@@ -536,7 +536,8 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-}
+
+    /* These properties need to be inside the .hero-section class */
     bottom: 0;
     background: rgba(0, 0, 0, 0.3);
     z-index: 0;
