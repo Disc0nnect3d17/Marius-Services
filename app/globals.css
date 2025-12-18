@@ -253,7 +253,7 @@ main {
 
 .hero-section {
     position: relative;
-    background: url("/images/header/header-bg.jpg") center / cover no-repeat;
+    background: url("/images/header/header-bg.JPG") center / cover no-repeat;
     background-attachment: fixed;
 
     color: var(--white);
@@ -523,24 +523,12 @@ main {
 }
 
 /* CTA Section */
-.hero-section {
+.cta-section {
     position: relative;
-    background: url("/images/header/header-bg.JPG") center / cover no-repeat;
-    background-attachment: fixed;
-
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
     color: var(--white);
-    padding: 12rem 2rem;
-    min-height: 100vh;
+    padding: 6rem 2rem;
     text-align: center;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    /* These properties need to be inside the .hero-section class */
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 0;
 }
 
 .cta-section h2 {
