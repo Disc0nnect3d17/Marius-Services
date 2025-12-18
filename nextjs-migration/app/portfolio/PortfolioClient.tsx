@@ -37,16 +37,11 @@ export default function PortfolioClient() {
           borderRadius: '12px', 
           cursor: 'pointer' 
         }}>
-          <img 
-            src="http://localhost/Marius/wp-content/uploads/2025/11/IMG_4150.jpg" 
-            alt="The Sage & Walnut Shaker" 
-            style={{ 
-              width: '100%', 
-              height: '100%', 
-              objectFit: 'cover', 
-              transition: 'transform 0.3s ease' 
-            }} 
+          <img
+            src="/images/portfolio/sage-walnut/cover.JPG"
+            alt="The Sage & Walnut Shaker"
           />
+
           <div className="portfolio-overlay" style={{ 
             position: 'absolute', 
             inset: '0', 
@@ -62,18 +57,16 @@ export default function PortfolioClient() {
           }}>
             The Sage & Walnut Shaker
           </div>
-          <Link 
-            href="/the-sage-walnut-shaker" 
-            style={{ position: 'absolute', inset: '0' }}
+
+          <Link
+            href="/the-sage-walnut-shaker"
+            className="portfolio-link"
             aria-label="View The Sage & Walnut Shaker project"
-          ></Link>
+          />
         </div>
       </section>
 
       <style jsx>{`
-        .portfolio-item:hover img { 
-          transform: scale(1.05); 
-        }
         .portfolio-item:hover .portfolio-overlay { 
           opacity: 1; 
         }
