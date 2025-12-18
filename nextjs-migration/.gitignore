@@ -31,3 +31,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# md files
+DEPLOYMENT.md
+INDEX.md
+MIGRATION-CHECKLIST.md
+MIGRATION-SUMMARY.md
+ARCHITECTURE.md
+QUICKSTART.md
+START-HERE.md

@@ -1,8 +1,36 @@
-import Link from 'next/link'
+"use client";
+
+import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Header() {
+  const [hidden, setHidden] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        // scrolling down
+        setHidden(true);
+      } else {
+        // scrolling up
+        setHidden(false);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
   return (
-    <header className="site-header">
+    <header className={`site-header ${hidden ? "header-hidden" : ""}`}>
       <div className="top-bar">
         <div className="contact-info">
           <a href="tel:+447454933651">
@@ -18,10 +46,10 @@ export default function Header() {
 
       <div className="header-content">
         <div className="site-branding">
-          <img 
-            width="150" 
-            src="http://localhost/Marius/wp-content/uploads/2025/11/1_uhDNWOUENopISF28W7UeOw.gif" 
-            alt="Pro Fit Logo" 
+          <img
+            src="/images/logo.gif"
+            width={150}
+            alt="Pro Fit Logo"
           />
           <h1 className="site-title">
             <Link href="/" rel="home">
@@ -30,11 +58,7 @@ export default function Header() {
           </h1>
         </div>
 
-        <button className="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
-          <i className="fas fa-bars"></i> Menu
-        </button>
-
-        <nav className="main-navigation" id="main-navigation">
+        <nav className="main-navigation">
           <ul className="primary-menu">
             <li><Link href="/">Home</Link></li>
             <li><Link href="#services">Services</Link></li>
@@ -45,5 +69,5 @@ export default function Header() {
         </nav>
       </div>
     </header>
-  )
+  );
 }
