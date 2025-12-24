@@ -29,33 +29,16 @@ export default function PortfolioClient() {
         justifyContent: 'center', 
         padding: '60px 20px' 
       }}>
-        <div className="portfolio-item" style={{ 
-          position: 'relative', 
-          width: '400px', 
-          height: '300px', 
-          overflow: 'hidden', 
-          borderRadius: '12px', 
-          cursor: 'pointer' 
-        }}>
+        <div className="portfolio-item">
           <img
             src="/images/portfolio/sage-walnut/cover.JPG"
             alt="The Sage & Walnut Shaker"
           />
 
-          <div className="portfolio-overlay" style={{ 
-            position: 'absolute', 
-            inset: '0', 
-            background: 'rgba(0,0,0,0.6)', 
-            display: 'flex', 
-            alignItems: 'center', 
-            justifyContent: 'center', 
-            opacity: '0', 
-            color: '#fff', 
-            fontSize: '1.5rem', 
-            fontWeight: '600', 
-            transition: 'opacity 0.3s ease' 
-          }}>
-            The Sage & Walnut Shaker
+          <div className="portfolio-overlay">
+            <span className="portfolio-title">
+              The Sage & Walnut Shaker
+            </span>
           </div>
 
           <Link
@@ -65,12 +48,6 @@ export default function PortfolioClient() {
           />
         </div>
       </section>
-
-      <style jsx>{`
-        .portfolio-item:hover .portfolio-overlay { 
-          opacity: 1; 
-        }
-      `}</style>
     </main>
   );
 }

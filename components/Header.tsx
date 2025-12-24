@@ -46,11 +46,6 @@ export default function Header() {
 
       <div className="header-content">
         <div className="site-branding">
-          <img
-            src="/images/logo.gif"
-            width={150}
-            alt="Pro Fit Logo"
-          />
           <h1 className="site-title">
             <Link href="/" rel="home">
               Pro Fit Bathroom & Kitchen
