@@ -3,16 +3,15 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export default function SageWalnutPage() {
+export default function MarbleMidnightPage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState("");
 
   const images = [
     "cover.JPG",
-    "sage-walnut-1.JPG",
-    "sage-walnut-2.JPG",
-    "sage-walnut-3.JPG",
-    "sage-walnut-4.JPG"
+    "marble-midnight-1.JPG",
+    "marble-midnight-2.JPG",
+    "marble-midnight-3.JPG"
   ];
 
   const openLightbox = (img: string) => {
@@ -32,8 +31,8 @@ export default function SageWalnutPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox("cover.JPG")}>
             <Image
-              src="/images/portfolio/sage-walnut/cover.JPG"
-              alt="The Sage & Walnut Shaker kitchen"
+              src="/images/portfolio/Marble & Midnight Suite/cover.JPG"
+              alt="Marble & Midnight Suite bathroom"
               fill
               priority
             />
@@ -41,11 +40,11 @@ export default function SageWalnutPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["sage-walnut-1.JPG", "sage-walnut-2.JPG", "sage-walnut-3.JPG", "sage-walnut-4.JPG"].map(img => (
+            {["marble-midnight-1.JPG", "marble-midnight-2.JPG", "marble-midnight-3.JPG"].map(img => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(img)}>
                 <Image
-                  src={`/images/portfolio/sage-walnut/${img}`}
-                  alt="The Sage & Walnut Shaker detail"
+                  src={`/images/portfolio/Marble & Midnight Suite/${img}`}
+                  alt="Marble & Midnight Suite detail"
                   fill
                 />
               </div>
@@ -55,20 +54,20 @@ export default function SageWalnutPage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>The Sage & Walnut Shaker</h2>
+          <h2>Marble & Midnight Suite</h2>
           <p>
-            A complete turn-key renovation executed entirely by a single specialist. 
-            This project transformed a bare shell into a sophisticated kitchen by blending traditional farmhouse elements with modern contrasts.
-            From the initial electrical rough in and plastering to the precision joinery and flooring, every aspect of the build was handled in house to ensure a seamless, high-quality finish. 
-            The design features soft sage shaker cabinetry, solid walnut butcher block worktops, and a striking vertical-stack black backsplash..
+            A full bathroom renovation featuring a high contrast color palette. 
+            The room is paved with large format, marble effect porcelain floor tiles which set the stage for the dark vanity and WC cabinetry. 
+            The layout is configured to house both a curved bathtub and a separate glass quadrant shower enclosure within the existing footprint. 
+            The walls are finished with light grey gloss tiling to dado height, extending to full height in the shower area.
           </p>
 
           <ul>
-            <li>Full Multi Trade Execution: Electrical, plastering, plumbing, and painting.</li>
-            <li>Bespoke Joinery: Custom fit sage shaker units with soft-close hardware.</li>
-            <li>Solid Timber: Walnut butcher block worktops and breakfast bar, oiled and sealed.</li>
-            <li>Tiling & Flooring: Matte black "kit-kat" splashback and continuous engineered oak flooring.</li>
-            <li>Detailing: Double Belfast sink integration and custom appliance housing.</li>
+            <li>Full Multi Trade Execution: Complete management of plumbing, electrical, tiling, plastering, and joinery.</li>
+            <li>Technical Plumbing: Concealed in wall pipework for wall mounted chrome bath taps.</li>
+            <li>Layout Optimization: Integrated separate quadrant shower and curved bath within the existing footprint.</li>
+            <li>Tiling & Flooring: Large format marble effect porcelain flooring with precision leveling and layout.</li>
+            <li>Electrical Integration: Installation of recessed LED downlights, extraction fan, and illuminated vanity mirror.</li>
           </ul>
         </div>
       </div>
@@ -81,8 +80,8 @@ export default function SageWalnutPage() {
               &times;
             </button>
             <img
-              src={`/images/portfolio/sage-walnut/${currentImage}`}
-              alt="The Sage & Walnut Shaker"
+              src={`/images/portfolio/Marble & Midnight Suite/${currentImage}`}
+              alt="Marble & Midnight Suite"
               style={{ 
                 maxWidth: '90vw', 
                 maxHeight: '90vh', 

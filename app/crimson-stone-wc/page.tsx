@@ -3,16 +3,15 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export default function SageWalnutPage() {
+export default function CrimsonStoneWCPage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState("");
 
   const images = [
     "cover.JPG",
-    "sage-walnut-1.JPG",
-    "sage-walnut-2.JPG",
-    "sage-walnut-3.JPG",
-    "sage-walnut-4.JPG"
+    "crimson-stone-1.JPG",
+    "crimson-stone-2.JPG",
+    "crimson-stone-3.JPG"
   ];
 
   const openLightbox = (img: string) => {
@@ -32,8 +31,8 @@ export default function SageWalnutPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox("cover.JPG")}>
             <Image
-              src="/images/portfolio/sage-walnut/cover.JPG"
-              alt="The Sage & Walnut Shaker kitchen"
+              src="/images/portfolio/Crimson & Stone WC/cover.JPG"
+              alt="Crimson & Stone WC"
               fill
               priority
             />
@@ -41,11 +40,11 @@ export default function SageWalnutPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["sage-walnut-1.JPG", "sage-walnut-2.JPG", "sage-walnut-3.JPG", "sage-walnut-4.JPG"].map(img => (
+            {["crimson-stone-1.JPG", "crimson-stone-2.JPG", "crimson-stone-3.JPG"].map(img => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(img)}>
                 <Image
-                  src={`/images/portfolio/sage-walnut/${img}`}
-                  alt="The Sage & Walnut Shaker detail"
+                  src={`/images/portfolio/Crimson & Stone WC/${img}`}
+                  alt="Crimson & Stone WC detail"
                   fill
                 />
               </div>
@@ -55,20 +54,20 @@ export default function SageWalnutPage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>The Sage & Walnut Shaker</h2>
+          <h2>Crimson & Stone WC</h2>
           <p>
-            A complete turn-key renovation executed entirely by a single specialist. 
-            This project transformed a bare shell into a sophisticated kitchen by blending traditional farmhouse elements with modern contrasts.
-            From the initial electrical rough in and plastering to the precision joinery and flooring, every aspect of the build was handled in house to ensure a seamless, high-quality finish. 
-            The design features soft sage shaker cabinetry, solid walnut butcher block worktops, and a striking vertical-stack black backsplash..
+            A complete renovation of a compact downstairs WC, optimizing a narrow footprint for maximum utility. 
+            The design contrasts deep red textured walls with neutral stone-effect ceramic tiling that runs from the floor to dado height. 
+            The layout features a slimline vanity unit and a wall-mounted heated towel rail to maintain a feeling of space. 
+            As the sole contractor, I handled the entire refurbishment from the initial rip-out to the final decoration.
           </p>
 
           <ul>
-            <li>Full Multi Trade Execution: Electrical, plastering, plumbing, and painting.</li>
-            <li>Bespoke Joinery: Custom fit sage shaker units with soft-close hardware.</li>
-            <li>Solid Timber: Walnut butcher block worktops and breakfast bar, oiled and sealed.</li>
-            <li>Tiling & Flooring: Matte black "kit-kat" splashback and continuous engineered oak flooring.</li>
-            <li>Detailing: Double Belfast sink integration and custom appliance housing.</li>
+            <li>Full Multi Trade Execution: Complete management of plumbing, tiling, electrical, and painting works.</li>
+            <li>Tiling & Flooring: Matching stone-effect ceramic tiles installed on the floor and walls (half-height) with window reveal detailing.</li>
+            <li>Sanitaryware: Installation of a compact white gloss vanity unit with a surface-mounted square vessel basin.</li>
+            <li>Electrical Integration: Wiring and mounting of an illuminated LED mirror cabinet and high-level extraction fan.</li>
+            <li>Heating: Plumbing and mounting of a white heated towel rail connected to the central heating system.</li>
           </ul>
         </div>
       </div>
@@ -81,8 +80,8 @@ export default function SageWalnutPage() {
               &times;
             </button>
             <img
-              src={`/images/portfolio/sage-walnut/${currentImage}`}
-              alt="The Sage & Walnut Shaker"
+              src={`/images/portfolio/Crimson & Stone WC/${currentImage}`}
+              alt="Crimson & Stone WC"
               style={{ 
                 maxWidth: '90vw', 
                 maxHeight: '90vh', 

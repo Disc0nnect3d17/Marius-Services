@@ -56,6 +56,7 @@ export default function Header() {
         <nav className="main-navigation">
           <ul className="primary-menu">
             <li><Link href="/">Home</Link></li>
+            <li><Link href="/portfolio">Portfolio</Link></li>
             <li><Link href="#services">Services</Link></li>
             <li><Link href="#reviews">Reviews</Link></li>
             <li><Link href="#about">About</Link></li>
