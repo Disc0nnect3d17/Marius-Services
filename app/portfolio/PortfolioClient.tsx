@@ -296,6 +296,25 @@ export default function PortfolioClient() {
             aria-label="View Compact Bright Shower Room project"
           />
         </div>
+
+        <div className="portfolio-item">
+          <img
+            src="/images/portfolio/Grey Mosaic Wet Room/cover.JPG"
+            alt="Grey Mosaic Wet Room"
+          />
+
+          <div className="portfolio-overlay">
+            <span className="portfolio-title">
+              Grey Mosaic Wet Room
+            </span>
+          </div>
+
+          <Link
+            href="/grey-mosaic-wet-room"
+            className="portfolio-link"
+            aria-label="View Grey Mosaic Wet Room project"
+          />
+        </div>
       </section>
     </main>
   );
