@@ -315,6 +315,139 @@ export default function PortfolioClient() {
             aria-label="View Grey Mosaic Wet Room project"
           />
         </div>
+
+        <div className="portfolio-item">
+          <img
+            src="/images/portfolio/Stone & Graphite Suite/cover.JPG"
+            alt="Stone & Graphite Suite"
+          />
+
+          <div className="portfolio-overlay">
+            <span className="portfolio-title">
+              Stone & Graphite Suite
+            </span>
+          </div>
+
+          <Link
+            href="/stone-graphite-suite"
+            className="portfolio-link"
+            aria-label="View Stone & Graphite Suite project"
+          />
+        </div>
+
+        <div className="portfolio-item">
+          <img
+            src="/images/portfolio/Vibrant Metro WC/cover.JPG"
+            alt="Vibrant Metro WC"
+          />
+
+          <div className="portfolio-overlay">
+            <span className="portfolio-title">
+              Vibrant Metro WC
+            </span>
+          </div>
+
+          <Link
+            href="/vibrant-metro-wc"
+            className="portfolio-link"
+            aria-label="View Vibrant Metro WC project"
+          />
+        </div>
+
+        <div className="portfolio-item">
+          <img
+            src="/images/portfolio/Marble & Geometric Suite/cover.JPG"
+            alt="Marble & Geometric Suite"
+          />
+
+          <div className="portfolio-overlay">
+            <span className="portfolio-title">
+              Marble & Geometric Suite
+            </span>
+          </div>
+
+          <Link
+            href="/marble-geometric-suite"
+            className="portfolio-link"
+            aria-label="View Marble & Geometric Suite project"
+          />
+        </div>
+
+        <div className="portfolio-item">
+          <img
+            src="/images/portfolio/Linear Stone Wet Room/cover.JPG"
+            alt="Linear Stone Wet Room"
+          />
+
+          <div className="portfolio-overlay">
+            <span className="portfolio-title">
+              Linear Stone Wet Room
+            </span>
+          </div>
+
+          <Link
+            href="/linear-stone-wet-room"
+            className="portfolio-link"
+            aria-label="View Linear Stone Wet Room project"
+          />
+        </div>
+
+        <div className="portfolio-item">
+          <img
+            src="/images/portfolio/White Gloss & Graphite Kitchen/cover.JPG"
+            alt="White Gloss & Graphite Kitchen"
+          />
+
+          <div className="portfolio-overlay">
+            <span className="portfolio-title">
+              White Gloss & Graphite Kitchen
+            </span>
+          </div>
+
+          <Link
+            href="/white-gloss-graphite-kitchen"
+            className="portfolio-link"
+            aria-label="View White Gloss & Graphite Kitchen project"
+          />
+        </div>
+
+        <div className="portfolio-item">
+          <img
+            src="/images/portfolio/Warm Stone Walk-In Suite/cover.jpg"
+            alt="Warm Stone Walk-In Suite"
+          />
+
+          <div className="portfolio-overlay">
+            <span className="portfolio-title">
+              Warm Stone Walk-In Suite
+            </span>
+          </div>
+
+          <Link
+            href="/warm-stone-walk-in-suite"
+            className="portfolio-link"
+            aria-label="View Warm Stone Walk-In Suite project"
+          />
+        </div>
+
+        <div className="portfolio-item">
+          <img
+            src="/images/portfolio/Midnight Blue Onyx Suite/cover.jpg"
+            alt="Midnight Blue Onyx Suite"
+          />
+
+          <div className="portfolio-overlay">
+            <span className="portfolio-title">
+              Midnight Blue Onyx Suite
+            </span>
+          </div>
+
+          <Link
+            href="/midnight-blue-onyx-suite"
+            className="portfolio-link"
+            aria-label="View Midnight Blue Onyx Suite project"
+          />
+        </div>
       </section>
     </main>
   );
