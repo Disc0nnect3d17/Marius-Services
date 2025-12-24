@@ -220,6 +220,82 @@ export default function PortfolioClient() {
             aria-label="View Contemporary Stone Wet Room project"
           />
         </div>
+
+        <div className="portfolio-item">
+          <img
+            src="/images/portfolio/Marble & Chevron Kitchen/cover.JPG"
+            alt="Marble & Chevron Kitchen"
+          />
+
+          <div className="portfolio-overlay">
+            <span className="portfolio-title">
+              Marble & Chevron Kitchen
+            </span>
+          </div>
+
+          <Link
+            href="/marble-chevron-kitchen"
+            className="portfolio-link"
+            aria-label="View Marble & Chevron Kitchen project"
+          />
+        </div>
+
+        <div className="portfolio-item">
+          <img
+            src="/images/portfolio/Patterned Floor & Stone Suite/cover.JPG"
+            alt="Patterned Floor & Stone Suite"
+          />
+
+          <div className="portfolio-overlay">
+            <span className="portfolio-title">
+              Patterned Floor & Stone Suite
+            </span>
+          </div>
+
+          <Link
+            href="/patterned-floor-stone-suite"
+            className="portfolio-link"
+            aria-label="View Patterned Floor & Stone Suite project"
+          />
+        </div>
+
+        <div className="portfolio-item">
+          <img
+            src="/images/portfolio/Neutral Stone & Gloss Suite/cover.JPG"
+            alt="Neutral Stone & Gloss Suite"
+          />
+
+          <div className="portfolio-overlay">
+            <span className="portfolio-title">
+              Neutral Stone & Gloss Suite
+            </span>
+          </div>
+
+          <Link
+            href="/neutral-stone-gloss-suite"
+            className="portfolio-link"
+            aria-label="View Neutral Stone & Gloss Suite project"
+          />
+        </div>
+
+        <div className="portfolio-item">
+          <img
+            src="/images/portfolio/Compact Bright Shower Room/cover1.JPG"
+            alt="Compact Bright Shower Room"
+          />
+
+          <div className="portfolio-overlay">
+            <span className="portfolio-title">
+              Compact Bright Shower Room
+            </span>
+          </div>
+
+          <Link
+            href="/compact-bright-shower-room"
+            className="portfolio-link"
+            aria-label="View Compact Bright Shower Room project"
+          />
+        </div>
       </section>
     </main>
   );
