@@ -182,6 +182,44 @@ export default function PortfolioClient() {
             aria-label="View Herringbone & Mosaic Suite project"
           />
         </div>
+
+        <div className="portfolio-item">
+          <img
+            src="/images/portfolio/Classic White & Timber Suite/cover.JPG"
+            alt="Classic White & Timber Suite"
+          />
+
+          <div className="portfolio-overlay">
+            <span className="portfolio-title">
+              Classic White & Timber Suite
+            </span>
+          </div>
+
+          <Link
+            href="/classic-white-timber-suite"
+            className="portfolio-link"
+            aria-label="View Classic White & Timber Suite project"
+          />
+        </div>
+
+        <div className="portfolio-item">
+          <img
+            src="/images/portfolio/Contemporary Stone Wet Room/cover.JPG"
+            alt="Contemporary Stone Wet Room"
+          />
+
+          <div className="portfolio-overlay">
+            <span className="portfolio-title">
+              Contemporary Stone Wet Room
+            </span>
+          </div>
+
+          <Link
+            href="/contemporary-stone-wet-room"
+            className="portfolio-link"
+            aria-label="View Contemporary Stone Wet Room project"
+          />
+        </div>
       </section>
     </main>
   );
