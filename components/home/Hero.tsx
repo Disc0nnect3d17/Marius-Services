@@ -14,6 +14,9 @@ export default function Hero() {
           </div>
         </div>
       </div>
+      <a href="#services" className="scroll-indicator" aria-label="Scroll to services">
+        <i className="fas fa-chevron-down"></i>
+      </a>
     </section>
   )
 }

@@ -7,7 +7,7 @@ export default function Services() {
         <h2 className="section-title">My Services</h2>
         <div className="services-grid">
           {services.map((service, index) => (
-            <div className="service-card" data-aos="fade-up" key={index}>
+            <div className="service-card fade-in-up" data-aos="fade-up" key={index}>
               <div className="service-icon">
                 <i className={`fas ${service.icon}`}></i>
               </div>
