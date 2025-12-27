@@ -25,16 +25,13 @@ export default function PortfolioClient() {
     return () => clearTimeout(timer)
   }, [activeFilter])
 
-  // Get a featured project for hero background
-  const featuredProject = portfolioProjects.find(p => p.featured) || portfolioProjects[0]
-
   return (
     <main>
       {/* Enhanced Portfolio Hero */}
       <section className="portfolio-hero-enhanced">
         <div
           className="portfolio-hero-bg"
-          style={{ backgroundImage: `url(${featuredProject.coverImage})` }}
+          style={{ backgroundImage: 'url(/images/portfolio/Midnight Blue Onyx Suite/cover.JPG)' }}
         />
         <div className="portfolio-hero-overlay" />
 

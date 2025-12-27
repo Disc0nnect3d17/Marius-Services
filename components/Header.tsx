@@ -57,10 +57,10 @@ export default function Header() {
           <ul className="primary-menu">
             <li><Link href="/">Home</Link></li>
             <li><Link href="/portfolio">Portfolio</Link></li>
-            <li><Link href="#services">Services</Link></li>
-            <li><Link href="#reviews">Reviews</Link></li>
-            <li><Link href="#about">About</Link></li>
-            <li><Link href="#contact">Contact</Link></li>
+            <li><Link href="/#services">Services</Link></li>
+            <li><Link href="/#reviews">Reviews</Link></li>
+            <li><Link href="/#about">About</Link></li>
+            <li><Link href="/#contact">Contact</Link></li>
           </ul>
         </nav>
       </div>
