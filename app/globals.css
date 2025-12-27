@@ -769,6 +769,87 @@ main {
     text-align: center;
 }
 
+/* CTA Badges */
+.cta-badge-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.cta-social-proof,
+.cta-free-quote {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-social-proof {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cta-social-proof i {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+}
+
+.cta-free-quote {
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-gold));
+    border: none;
+    animation: pulse 2s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-free-quote::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+    transform: rotate(45deg);
+    animation: shine 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 4px 15px rgba(252, 163, 17, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 4px 25px rgba(252, 163, 17, 0.7);
+    }
+}
+
+@keyframes shine {
+    0% {
+        left: -50%;
+    }
+
+    100% {
+        left: 150%;
+    }
+}
+
+.cta-free-quote i {
+    font-size: 1.2rem;
+}
+
 .cta-section h2 {
     font-family: var(--heading-font);
     font-size: 2.8rem;
@@ -795,6 +876,105 @@ main {
     flex-wrap: wrap;
     position: relative;
     z-index: 1;
+}
+
+.cta-buttons .btn i {
+    margin-right: 0.5rem;
+}
+
+/* Floating Contact Widget */
+.floating-contact {
+    position: fixed;
+    bottom: 110px;
+    right: 40px;
+    z-index: 998;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.floating-contact.hidden {
+    transform: translateX(200px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.floating-contact-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-gold));
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 20px rgba(252, 163, 17, 0.4);
+    transition: all 0.3s ease;
+    animation: floatBounce 3s ease-in-out infinite;
+}
+
+.floating-contact-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(252, 163, 17, 0.6);
+}
+
+@keyframes floatBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.floating-contact-menu {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    padding: 0.5rem;
+    min-width: 200px;
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.floating-contact-menu.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.floating-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    color: var(--primary-blue);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.floating-contact-item:hover {
+    background: var(--light-blue);
+}
+
+.floating-contact-item i {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+}
+
+.floating-contact-item span {
+    font-weight: 500;
+    font-size: 0.95rem;
 }
 
 /* Footer Styling */
@@ -900,9 +1080,6 @@ main {
     align-items: center;
     justify-content: center;
     width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
     color: var(--white);
     font-size: 1.2rem;
     transition: all 0.4s cubic-bezier(.68, -0.55, .27, 1.55);
@@ -925,7 +1102,309 @@ main {
     z-index: 1;
 }
 
-/* Portfolio Hero */
+/* =========================
+   Enhanced Portfolio Styles
+========================= */
+
+/* Portfolio Hero Enhanced */
+.portfolio-hero-enhanced {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: var(--white);
+}
+
+.portfolio-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 0;
+}
+
+.portfolio-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+            rgba(20, 33, 61, 0.85),
+            rgba(31, 122, 140, 0.75),
+            rgba(20, 33, 61, 0.85));
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    z-index: 1;
+}
+
+.portfolio-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+}
+
+.portfolio-hero-title {
+    font-family: var(--heading-font);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.portfolio-hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+    opacity: 0.95;
+    font-weight: 300;
+}
+
+/* Portfolio Stats */
+.portfolio-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.portfolio-stat-item {
+    text-align: center;
+}
+
+.portfolio-stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    font-family: var(--heading-font);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-stat-label {
+    font-size: 1rem;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+/* Filter Section */
+.portfolio-filter-section {
+    padding: 3rem 0 2rem;
+    background: var(--off-white);
+    position: sticky;
+    top: 100px;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--white);
+    border: 2px solid var(--light-gray);
+    border-radius: 50px;
+    font-weight: 500;
+    color: var(--primary-blue);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.filter-btn:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(252, 163, 17, 0.2);
+}
+
+.filter-btn.active {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--white);
+    box-shadow: 0 4px 12px rgba(252, 163, 17, 0.3);
+}
+
+.filter-count {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.filter-btn.active .filter-count {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Portfolio Grid Section */
+.portfolio-grid-section {
+    padding: 4rem 0;
+    background: var(--off-white);
+}
+
+/* Masonry Grid */
+.portfolio-masonry {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-masonry.animating {
+    opacity: 0.5;
+}
+
+.portfolio-item-masonry {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.portfolio-item-masonry img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease, filter 0.4s ease;
+}
+
+.portfolio-item-masonry:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(31, 122, 140, 0.2);
+}
+
+.portfolio-item-masonry:hover img {
+    transform: scale(1.05);
+    filter: brightness(0.8);
+}
+
+.portfolio-item-masonry .portfolio-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(20, 33, 61, 0.95) 0%,
+            rgba(20, 33, 61, 0.7) 50%,
+            transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.portfolio-item-masonry:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-item-masonry .portfolio-title {
+    color: var(--white);
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-family: var(--heading-font);
+    margin-bottom: 0.5rem;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+.portfolio-item-masonry:hover .portfolio-title {
+    transform: translateY(0);
+}
+
+.portfolio-category-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: var(--accent-color);
+    color: var(--white);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transform: translateY(20px);
+    transition: transform 0.4s ease 0.1s;
+}
+
+.portfolio-item-masonry:hover .portfolio-category-badge {
+    transform: translateY(0);
+}
+
+.portfolio-item-masonry .portfolio-link {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+}
+
+/* No Projects Message */
+.no-projects {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--medium-gray);
+    font-size: 1.2rem;
+}
+
+/* Responsive Masonry */
+@media (max-width: 1024px) {
+    .portfolio-masonry {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+    }
+
+    .portfolio-stats {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-masonry {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-filter-section {
+        top: 80px;
+    }
+
+    .portfolio-filters {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 0 1rem;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .portfolio-filters::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter-btn {
+        flex-shrink: 0;
+    }
+
+    .portfolio-hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .portfolio-stat-number {
+        font-size: 2.5rem;
+    }
+}
+
+/* Old Portfolio Hero (keep for backwards compatibility) */
 .portfolio-hero {
     position: relative;
     width: 100%;
