@@ -37,6 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} ${poppins.variable}`}>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js" async></script>
       </head>
       <body>
