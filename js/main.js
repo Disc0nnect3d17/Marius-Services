@@ -73,13 +73,18 @@
         const mainNavigation = document.getElementById('main-navigation');
         
         if (menuToggle && mainNavigation) {
-            menuToggle.addEventListener('click', function() {
+            const primaryMenu = mainNavigation.querySelector('.primary-menu');
+            
+            // Toggle menu on button click
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const isActive = mainNavigation.classList.contains('active');
                 mainNavigation.classList.toggle('active');
                 
                 // Change icon
                 const icon = this.querySelector('i');
                 if (icon) {
-                    if (mainNavigation.classList.contains('active')) {
+                    if (!isActive) {
                         icon.classList.remove('fa-bars');
                         icon.classList.add('fa-times');
                     } else {
@@ -89,17 +94,50 @@
                 }
             });
             
-            // Close menu when clicking on a link
-            const navLinks = mainNavigation.querySelectorAll('a');
-            navLinks.forEach(function(link) {
-                link.addEventListener('click', function() {
+            // Close menu when clicking anywhere outside the menu
+            document.addEventListener('click', function(e) {
+                if (!mainNavigation.classList.contains('active')) return;
+                
+                // Check if click is inside menu content or on toggle button
+                const isInsideMenu = primaryMenu && primaryMenu.contains(e.target);
+                const isToggleButton = menuToggle.contains(e.target);
+                
+                // If click is outside menu and not the toggle button, close menu
+                if (!isInsideMenu && !isToggleButton) {
                     mainNavigation.classList.remove('active');
                     const icon = menuToggle.querySelector('i');
                     if (icon) {
                         icon.classList.remove('fa-times');
                         icon.classList.add('fa-bars');
                     }
+                }
+            });
+            
+            // Close menu when clicking on a link
+            if (primaryMenu) {
+                const navLinks = primaryMenu.querySelectorAll('a');
+                navLinks.forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        mainNavigation.classList.remove('active');
+                        const icon = menuToggle.querySelector('i');
+                        if (icon) {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    });
                 });
+            }
+            
+            // Close menu on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mainNavigation.classList.contains('active')) {
+                    mainNavigation.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
             });
         }
     }
