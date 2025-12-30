@@ -88,11 +88,28 @@ document.addEventListener('DOMContentLoaded', function () {
             // No need to restore scroll - it never changed!
         }
 
+        // Function to hide floating buttons
+        function hideFloatingButtons() {
+            const floatingContact = document.querySelector('.floating-contact');
+            const backToTop = document.getElementById('back-to-top');
+            if (floatingContact) floatingContact.style.display = 'none';
+            if (backToTop) backToTop.style.display = 'none';
+        }
+
+        // Function to show floating buttons
+        function showFloatingButtons() {
+            const floatingContact = document.querySelector('.floating-contact');
+            const backToTop = document.getElementById('back-to-top');
+            if (floatingContact) floatingContact.style.display = '';
+            if (backToTop) backToTop.style.display = '';
+        }
+
         // Function to close the menu
         function closeMenu() {
             mainNavigation.classList.remove('active');
             hideBackdrop();
             enableBodyScroll();
+            showFloatingButtons();
             const icon = menuToggle.querySelector('i');
             if (icon) {
                 icon.classList.remove('fa-times');
@@ -111,6 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 mainNavigation.classList.add('active');
                 showBackdrop();
                 disableBodyScroll();
+                hideFloatingButtons();
                 const icon = this.querySelector('i');
                 if (icon) {
                     icon.classList.remove('fa-bars');
