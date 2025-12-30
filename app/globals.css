@@ -886,7 +886,7 @@ main {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: rgba(20, 33, 61, 0.2);
+    background: transparent;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -904,27 +904,22 @@ main {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: currentColor;
+    background: rgba(20, 33, 61, 0.2);
     position: absolute;
+    transition: all 0.3s ease;
 }
 
 @media (hover: hover) {
-    .carousel-dot:hover {
-        background: rgba(20, 33, 61, 0.4);
-    }
-
     .carousel-dot:hover::after {
+        background: rgba(20, 33, 61, 0.4);
         transform: scale(1.2);
     }
-}
-
-.carousel-dot.active {
-    background: var(--accent-color);
 }
 
 .carousel-dot.active::after {
     width: 24px;
     border-radius: 6px;
+    background: var(--accent-color);
 }
 
 /* Review Content */
@@ -1231,7 +1226,7 @@ main {
 /* Floating Contact Widget */
 .floating-contact {
     position: fixed;
-    bottom: 110px;
+    bottom: 120px;
     right: 40px;
     z-index: 998;
     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -1244,8 +1239,8 @@ main {
 }
 
 .floating-contact-btn {
-    width: 60px;
-    height: 60px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--accent-color), var(--accent-gold));
     color: var(--white);
@@ -1254,7 +1249,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     box-shadow: 0 4px 20px rgba(252, 163, 17, 0.4);
     transition: all 0.3s ease;
     animation: floatBounce 3s ease-in-out infinite;
@@ -2262,12 +2257,12 @@ main {
 /* Back to Top Button */
 #back-to-top {
     position: fixed;
-    bottom: 40px;
+    bottom: 20px;
     right: 40px;
     background: var(--accent-color);
     color: var(--white);
-    width: 50px;
-    height: 50px;
+    width: 56px;
+    height: 56px;
     display: none;
     align-items: center;
     justify-content: center;
@@ -2277,7 +2272,7 @@ main {
     box-shadow: 0 4px 12px rgba(252, 163, 17, 0.4);
     transition: all 0.3s ease;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 #back-to-top:hover {
@@ -2367,11 +2362,11 @@ main {
     }
 
     #back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 45px;
-        height: 45px;
-        font-size: 1rem;
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.1rem;
     }
 }
 
@@ -3281,14 +3276,14 @@ main {
 
     /* Floating contact widget */
     .floating-contact {
-        bottom: 12px;
-        right: 12px;
+        bottom: 80px;
+        right: 15px;
     }
 
     .floating-contact-btn {
-        width: 54px;
-        height: 54px;
-        font-size: 1.3rem;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
     }
 }
 
