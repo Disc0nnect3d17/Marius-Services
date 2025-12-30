@@ -50,6 +50,7 @@ export default function About() {
             <img
               src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=600&h=400&fit=crop"
               alt="Pro Fit Renovation Team"
+              loading="lazy"
             />
           </div>
         </div>
