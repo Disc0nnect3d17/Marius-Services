@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (menuToggle && mainNavigation) {
         // Create backdrop element
         let backdrop = null;
+        let scrollPosition = 0;
 
         // Function to create and show backdrop
         function showBackdrop() {
@@ -29,6 +30,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Add click listener to backdrop
                 backdrop.addEventListener('click', closeMenu);
+
+                // Prevent touch scrolling on backdrop
+                backdrop.addEventListener('touchmove', function (e) {
+                    e.preventDefault();
+                }, { passive: false });
 
                 // Force reflow to enable transition
                 backdrop.offsetHeight;
@@ -49,10 +55,44 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
+        // Function to disable body scroll
+        function disableBodyScroll() {
+            // Save current scroll position
+            scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+            // Prevent scrolling with overflow hidden
+            document.body.style.overflow = 'hidden';
+            document.body.style.height = '100vh';
+
+            // Prevent touch-based scrolling
+            document.body.addEventListener('touchmove', preventScroll, { passive: false });
+            // Prevent wheel-based scrolling
+            document.body.addEventListener('wheel', preventScroll, { passive: false });
+        }
+
+        // Function to prevent scroll events
+        function preventScroll(e) {
+            e.preventDefault();
+        }
+
+        // Function to enable body scroll
+        function enableBodyScroll() {
+            // Remove scroll prevention
+            document.body.style.removeProperty('overflow');
+            document.body.style.removeProperty('height');
+
+            // Remove event listeners
+            document.body.removeEventListener('touchmove', preventScroll);
+            document.body.removeEventListener('wheel', preventScroll);
+
+            // No need to restore scroll - it never changed!
+        }
+
         // Function to close the menu
         function closeMenu() {
             mainNavigation.classList.remove('active');
             hideBackdrop();
+            enableBodyScroll();
             const icon = menuToggle.querySelector('i');
             if (icon) {
                 icon.classList.remove('fa-times');
@@ -70,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 mainNavigation.classList.add('active');
                 showBackdrop();
+                disableBodyScroll();
                 const icon = this.querySelector('i');
                 if (icon) {
                     icon.classList.remove('fa-bars');
