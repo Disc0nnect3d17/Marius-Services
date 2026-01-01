@@ -1,11 +1,13 @@
 "use client";
 
 import { reviews } from '@/data/reviews'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 export default function Reviews() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const touchStartX = useRef<number>(0)
+  const touchEndX = useRef<number>(0)
 
   // Auto-rotate carousel
   useEffect(() => {
@@ -37,6 +39,27 @@ export default function Reviews() {
     setTimeout(() => setIsAutoPlaying(true), 10000)
   }
 
+  // Touch handlers for swipe
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX
+  }
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current - touchEndX.current > 50) {
+      // Swiped left - next slide
+      nextSlide()
+    }
+
+    if (touchEndX.current - touchStartX.current > 50) {
+      // Swiped right - previous slide
+      prevSlide()
+    }
+  }
+
   return (
     <section className="reviews-section" id="reviews">
       <div className="container reviews-container">
@@ -51,7 +74,12 @@ export default function Reviews() {
             <i className="fas fa-chevron-left"></i>
           </button>
 
-          <div className="reviews-carousel">
+          <div 
+            className="reviews-carousel"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             {reviews.map((review, index) => (
               <div
                 key={index}

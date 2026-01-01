@@ -1,10 +1,28 @@
+'use client'
+
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
+import { portfolioProjects } from '@/data/portfolio'
 
 export default function About() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  
+  // Get featured portfolio projects for the carousel
+  const featuredProjects = portfolioProjects.filter(project => project.featured)
+  
+  // Auto-rotate carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % featuredProjects.length)
+    }, 4000) // Change every 4 seconds
+
+    return () => clearInterval(interval)
+  }, [featuredProjects.length])
+
   return (
     <section className="about-section" id="about">
       <div className="container">
-        <div className="about-content">
+        <div className="about-content-vertical">
           <div className="about-text" data-aos="slide-right">
             <h2>Why Choose Pro Fit?</h2>
 
@@ -46,12 +64,31 @@ export default function About() {
               View Our Portfolio
             </Link>
           </div>
-          <div className="about-image" data-aos="slide-left">
-            <img
-              src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=600&h=400&fit=crop"
-              alt="Pro Fit Renovation Team"
-              loading="lazy"
-            />
+          <div className="about-image-carousel" data-aos="fade-up">
+            <div className="about-carousel-wrapper">
+              {featuredProjects.map((project, index) => (
+                <div
+                  key={project.id}
+                  className={`about-carousel-image ${index === currentImageIndex ? 'active' : ''}`}
+                >
+                  <img
+                    src={project.coverImage}
+                    alt={project.title}
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="about-carousel-indicators">
+              {featuredProjects.map((_, index) => (
+                <button
+                  key={index}
+                  className={`about-carousel-dot ${index === currentImageIndex ? 'active' : ''}`}
+                  onClick={() => setCurrentImageIndex(index)}
+                  aria-label={`View project ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
