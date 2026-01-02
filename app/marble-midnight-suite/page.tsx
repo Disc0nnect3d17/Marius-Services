@@ -23,6 +23,18 @@ export default function MarbleMidnightPage() {
     setLightboxOpen(false);
   };
 
+  const goToPrevious = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
   return (
     <main className="project-page">
       <div className="project-layout">
