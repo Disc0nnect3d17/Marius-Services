@@ -96,7 +96,7 @@ export default function NeutralWalkInShowerRoomPage() {
               &times;
             </button>
             <img
-              src={`/images/portfolio/Neutral Walk-In Shower Room/${currentImage}`}
+              src={`/images/portfolio/Neutral Walk-In Shower Room/${images[currentImageIndex]}`}
               alt="Neutral Walk-In Shower Room"
               style={{ 
                 maxWidth: '90vw', 
