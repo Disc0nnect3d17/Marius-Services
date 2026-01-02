@@ -6,18 +6,33 @@ import { portfolioProjects } from '@/data/portfolio'
 
 export default function About() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   
   // Get featured portfolio projects for the carousel
   const featuredProjects = portfolioProjects.filter(project => project.featured)
   
   // Auto-rotate carousel
   useEffect(() => {
+    if (!isAutoPlaying) return
+
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % featuredProjects.length)
     }, 4000) // Change every 4 seconds
 
     return () => clearInterval(interval)
-  }, [featuredProjects.length])
+  }, [featuredProjects.length, isAutoPlaying])
+
+  const nextSlide = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % featuredProjects.length)
+    setIsAutoPlaying(false)
+    setTimeout(() => setIsAutoPlaying(true), 5000) // Resume after 5 seconds
+  }
+
+  const prevSlide = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + featuredProjects.length) % featuredProjects.length)
+    setIsAutoPlaying(false)
+    setTimeout(() => setIsAutoPlaying(true), 5000) // Resume after 5 seconds
+  }
 
   return (
     <section className="about-section" id="about">
@@ -25,6 +40,57 @@ export default function About() {
         <div className="about-content-vertical">
           <div className="about-text" data-aos="slide-right">
             <h2>Why Choose Pro Fit?</h2>
+
+            {/* Portfolio Carousel */}
+            <div className="about-image-carousel" data-aos="fade-up">
+              <button
+                className="carousel-arrow carousel-arrow-left"
+                onClick={prevSlide}
+                aria-label="Previous project"
+              >
+                <i className="fas fa-chevron-left"></i>
+              </button>
+
+              <div className="about-carousel-wrapper">
+                {featuredProjects.map((project, index) => (
+                  <div
+                    key={project.id}
+                    className={`about-carousel-image ${
+                      index === currentImageIndex ? 'active' : ''
+                    } ${
+                      index === (currentImageIndex - 1 + featuredProjects.length) % featuredProjects.length ? 'prev' : ''
+                    } ${
+                      index === (currentImageIndex + 1) % featuredProjects.length ? 'next' : ''
+                    }`}
+                  >
+                    <img
+                      src={project.coverImage}
+                      alt={project.title}
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+
+              <button
+                className="carousel-arrow carousel-arrow-right"
+                onClick={nextSlide}
+                aria-label="Next project"
+              >
+                <i className="fas fa-chevron-right"></i>
+              </button>
+
+              <div className="about-carousel-indicators">
+                {featuredProjects.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`about-carousel-dot ${index === currentImageIndex ? 'active' : ''}`}
+                    onClick={() => setCurrentImageIndex(index)}
+                    aria-label={`View project ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
 
             {/* Stats Section */}
             <div className="stats-container">
@@ -63,32 +129,6 @@ export default function About() {
             >
               View Our Portfolio
             </Link>
-          </div>
-          <div className="about-image-carousel" data-aos="fade-up">
-            <div className="about-carousel-wrapper">
-              {featuredProjects.map((project, index) => (
-                <div
-                  key={project.id}
-                  className={`about-carousel-image ${index === currentImageIndex ? 'active' : ''}`}
-                >
-                  <img
-                    src={project.coverImage}
-                    alt={project.title}
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
-            <div className="about-carousel-indicators">
-              {featuredProjects.map((_, index) => (
-                <button
-                  key={index}
-                  className={`about-carousel-dot ${index === currentImageIndex ? 'active' : ''}`}
-                  onClick={() => setCurrentImageIndex(index)}
-                  aria-label={`View project ${index + 1}`}
-                />
-              ))}
-            </div>
           </div>
         </div>
       </div>

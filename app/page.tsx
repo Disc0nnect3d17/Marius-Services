@@ -8,9 +8,9 @@ export default function HomePage() {
   return (
     <main>
       <Hero />
-      <Services />
-      <Reviews />
       <About />
+      <Reviews />
+      <Services />
       <CallToAction />
     </main>
   )
