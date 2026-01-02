@@ -79,7 +79,7 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Contemporary Stone Wet Room',
         slug: 'contemporary-stone-wet-room',
         category: 'wet-room',
-        coverImage: '/images/portfolio/contemporary-stone-wet-room/cover1.jpg'
+        coverImage: '/images/portfolio/contemporary-stone-wet-room/cover.jpg'
     },
     {
         id: '11',
