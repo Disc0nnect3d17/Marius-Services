@@ -92,6 +92,15 @@ export default function About() {
               </div>
             </div>
 
+            {/* View Portfolio Button */}
+            <Link
+              href="/portfolio"
+              className="btn"
+              style={{ marginTop: '1.5rem', display: 'inline-block' }}
+            >
+              View Portfolio
+            </Link>
+
             {/* Stats Section */}
             <div className="stats-container">
               <div className="stat-item">
@@ -122,13 +131,6 @@ export default function About() {
               Every project is done to your needs and vision. I work closely with you to ensure your ideas are
               brought to life and you have something to cherish for years to come.
             </p>
-            <Link
-              href="/portfolio"
-              className="btn"
-              style={{ marginTop: '1rem', transform: 'translateY(0px) scale(1)' }}
-            >
-              View Our Portfolio
-            </Link>
           </div>
         </div>
       </div>
