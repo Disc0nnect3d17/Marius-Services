@@ -40,7 +40,7 @@ export default function NeutralWalkInShowerRoomPage() {
         {/* Image gallery */}
         <div className="project-gallery">
           {/* Large feature image */}
-          <div className="gallery-main" onClick={() => openLightbox("cover.JPG")}>
+          <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
               src="/images/portfolio/Neutral Walk-In Shower Room/cover.JPG"
               alt="Neutral Walk-In Shower Room"
@@ -51,8 +51,8 @@ export default function NeutralWalkInShowerRoomPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["neutral-walk-in-shower-room-1.JPG", "neutral-walk-in-shower-room-2.JPG"].map(img => (
-              <div key={img} className="gallery-thumb" onClick={() => openLightbox(img)}>
+            {["neutral-walk-in-shower-room-1.JPG", "neutral-walk-in-shower-room-2.JPG"].map((img, idx) => (
+              <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
                   src={`/images/portfolio/Neutral Walk-In Shower Room/${img}`}
                   alt="Neutral Walk-In Shower Room detail"
