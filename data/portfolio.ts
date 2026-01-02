@@ -182,14 +182,110 @@ export const portfolioProjects: PortfolioProject[] = [
         category: 'bathroom',
         coverImage: '/images/portfolio/textured-grey-brass-suite/cover.jpg',
         featured: true
+    },
+    {
+        id: '25',
+        title: 'Geometric Sage Suite',
+        slug: 'geometric-sage-suite',
+        category: 'bathroom',
+        coverImage: '/images/portfolio/Geometric Sage Suite/cover.jpg',
+        featured: true
+    },
+    {
+        id: '26',
+        title: 'Monochrome Marble Ensuite',
+        slug: 'monochrome-marble-ensuite',
+        category: 'bathroom',
+        coverImage: '/images/portfolio/Monochrome Marble Ensuite/cover.jpg',
+        featured: true
+    },
+    {
+        id: '27',
+        title: 'High-Contrast Feature Ensuite',
+        slug: 'high-contrast-feature-ensuite',
+        category: 'bathroom',
+        coverImage: '/images/portfolio/High-Contrast Feature Ensuite/cover.jpg',
+        featured: true
+    },
+    {
+        id: '28',
+        title: 'Slate Blue & White Suite',
+        slug: 'slate-blue-white-suite',
+        category: 'shower-room',
+        coverImage: '/images/portfolio/Slate Blue & White Suite/cover.JPG',
+        featured: true
+    },
+    {
+        id: '29',
+        title: 'Vibrant Magenta Cloakroom',
+        slug: 'vibrant-magenta-cloakroom',
+        category: 'wc',
+        coverImage: '/images/portfolio/Vibrant Magenta Cloakroom/cover.JPG',
+        featured: true
+    },
+    {
+        id: '30',
+        title: 'Neutral Walk-In Shower Room',
+        slug: 'neutral-walk-in-shower-room',
+        category: 'shower-room',
+        coverImage: '/images/portfolio/Neutral Walk-In Shower Room/cover.JPG',
+        featured: true
+    },
+    {
+        id: '31',
+        title: 'Botanical Feature Bathroom',
+        slug: 'botanical-feature-bathroom',
+        category: 'bathroom',
+        coverImage: '/images/portfolio/Botanical Feature Bathroom/cover.JPG',
+        featured: true
+    },
+    {
+        id: '32',
+        title: 'Tropical Feature & Fitted Suite',
+        slug: 'tropical-feature-fitted-suite',
+        category: 'bathroom',
+        coverImage: '/images/portfolio/Tropical Feature & Fitted Suite/cover.JPG',
+        featured: true
+    },
+    {
+        id: '33',
+        title: 'Clean White Loft Shower Room',
+        slug: 'clean-white-loft-shower-room',
+        category: 'shower-room',
+        coverImage: '/images/portfolio/Clean White Loft Shower Room/cover.JPG',
+        featured: true
+    },
+    {
+        id: '34',
+        title: 'Compact Angular Cloakroom',
+        slug: 'compact-angular-cloakroom',
+        category: 'wc',
+        coverImage: '/images/portfolio/Compact Angular Cloakroom/cover.JPG',
+        featured: true
+    },
+    {
+        id: '35',
+        title: 'Warm Stone & Fitted Shower Room',
+        slug: 'warm-stone-fitted-shower-room',
+        category: 'shower-room',
+        coverImage: '/images/portfolio/Warm Stone & Fitted Shower Room/cover.JPG',
+        featured: true
+    },
+    {
+        id: '36',
+        title: 'Marble & Mosaic Shower Room',
+        slug: 'marble-mosaic-shower-room',
+        category: 'shower-room',
+        coverImage: '/images/portfolio/Marble & Mosaic Shower Room/cover.JPG',
+        featured: true
     }
 ]
 
 export const categories = [
-    { id: 'all', label: 'All Projects', count: 24 },
-    { id: 'bathroom', label: 'Bathrooms', count: 14 },
+    { id: 'all', label: 'All Projects', count: 36 },
+    { id: 'bathroom', label: 'Bathrooms', count: 19 },
     { id: 'wet-room', label: 'Wet Rooms', count: 3 },
-    { id: 'shower-room', label: 'Shower Rooms', count: 3 },
+    { id: 'shower-room', label: 'Shower Rooms', count: 8 },
     { id: 'kitchen', label: 'Kitchens', count: 3 },
-    { id: 'wc', label: 'WC/Cloakrooms', count: 2 }
+    { id: 'wc', label: 'WC/Cloakrooms', count: 4 }
 ]
