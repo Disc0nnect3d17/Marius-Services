@@ -4,7 +4,7 @@
  */
 
 
-/* created by Mauro ;) */
+/* created by Mauro ;) the best */
 
 
 (function() {
