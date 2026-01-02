@@ -164,7 +164,7 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Midnight Blue Onyx Suite',
         slug: 'midnight-blue-onyx-suite',
         category: 'bathroom',
-        coverImage: '/images/portfolio/Midnight Blue Onyx Suite/cover.JPG',
+        coverImage: '/images/portfolio/Midnight Blue Onyx Suite/cover.jpg',
         featured: true
     },
     {
