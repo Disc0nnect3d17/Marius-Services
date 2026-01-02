@@ -166,12 +166,28 @@ export const portfolioProjects: PortfolioProject[] = [
         category: 'bathroom',
         coverImage: '/images/portfolio/Midnight Blue Onyx Suite/cover.JPG',
         featured: true
+    },
+    {
+        id: '23',
+        title: 'Marble & Gold Suite',
+        slug: 'marble-gold-suite',
+        category: 'bathroom',
+        coverImage: '/images/portfolio/Marble & Gold Suite/cover.jpg',
+        featured: true
+    },
+    {
+        id: '24',
+        title: 'Textured Grey & Brass Suite',
+        slug: 'textured-grey-brass-suite',
+        category: 'bathroom',
+        coverImage: '/images/portfolio/textured-grey-brass-suite/cover.jpg',
+        featured: true
     }
 ]
 
 export const categories = [
-    { id: 'all', label: 'All Projects', count: 22 },
-    { id: 'bathroom', label: 'Bathrooms', count: 12 },
+    { id: 'all', label: 'All Projects', count: 24 },
+    { id: 'bathroom', label: 'Bathrooms', count: 14 },
     { id: 'wet-room', label: 'Wet Rooms', count: 3 },
     { id: 'shower-room', label: 'Shower Rooms', count: 3 },
     { id: 'kitchen', label: 'Kitchens', count: 3 },
