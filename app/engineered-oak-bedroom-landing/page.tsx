@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function EngineeredOakLandingBedroomStaircasePage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [currentImage, setCurrentImage] = useState("");
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
     "cover.JPG",
@@ -20,13 +20,25 @@ export default function EngineeredOakLandingBedroomStaircasePage() {
     "engineered-oak-landing-bedroom-staircase-10.JPG"
   ];
 
-  const openLightbox = (img: string) => {
-    setCurrentImage(img);
+  const openLightbox = (index: number) => {
+    setCurrentImageIndex(index);
     setLightboxOpen(true);
   };
 
   const closeLightbox = () => {
     setLightboxOpen(false);
+  };
+
+  const goToPrevious = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   return (
@@ -35,7 +47,7 @@ export default function EngineeredOakLandingBedroomStaircasePage() {
         {/* Image gallery */}
         <div className="project-gallery">
           {/* Large feature image */}
-          <div className="gallery-main" onClick={() => openLightbox("cover.JPG")}>
+          <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
               src="/images/portfolio/Engineered Oak Landing, Bedroom & Staircase/cover.JPG"
               alt="Engineered Oak Landing, Bedroom & Staircase"
@@ -46,8 +58,8 @@ export default function EngineeredOakLandingBedroomStaircasePage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["engineered-oak-landing-bedroom-staircase-2.JPG", "engineered-oak-landing-bedroom-staircase-3.JPG", "engineered-oak-landing-bedroom-staircase-4.JPG", "engineered-oak-landing-bedroom-staircase-5.JPG", "engineered-oak-landing-bedroom-staircase-6.JPG", "engineered-oak-landing-bedroom-staircase-7.JPG", "engineered-oak-landing-bedroom-staircase-8.JPG", "engineered-oak-landing-bedroom-staircase-9.JPG", "engineered-oak-landing-bedroom-staircase-10.JPG"].map(img => (
-              <div key={img} className="gallery-thumb" onClick={() => openLightbox(img)}>
+            {["engineered-oak-landing-bedroom-staircase-2.JPG", "engineered-oak-landing-bedroom-staircase-3.JPG", "engineered-oak-landing-bedroom-staircase-4.JPG", "engineered-oak-landing-bedroom-staircase-5.JPG", "engineered-oak-landing-bedroom-staircase-6.JPG", "engineered-oak-landing-bedroom-staircase-7.JPG", "engineered-oak-landing-bedroom-staircase-8.JPG", "engineered-oak-landing-bedroom-staircase-9.JPG", "engineered-oak-landing-bedroom-staircase-10.JPG"].map((img, idx) => (
+              <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
                   src={`/images/portfolio/Engineered Oak Landing, Bedroom & Staircase/${img}`}
                   alt="Engineered Oak Landing, Bedroom & Staircase detail"
@@ -89,8 +101,22 @@ export default function EngineeredOakLandingBedroomStaircasePage() {
             <button className="lightbox-close" onClick={closeLightbox}>
               &times;
             </button>
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goToPrevious();
+              }}
+              className="lightbox-nav-btn prev"
+              aria-label="Previous image"
+            >
+              <svg viewBox="0 0 24 24">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+
             <img
-              src={`/images/portfolio/Engineered Oak Landing, Bedroom & Staircase/${currentImage}`}
+              src={`/images/portfolio/Engineered Oak Landing, Bedroom & Staircase/${images[currentImageIndex]}`}
               alt="Engineered Oak Landing, Bedroom & Staircase"
               style={{ 
                 maxWidth: '90vw', 
@@ -99,7 +125,25 @@ export default function EngineeredOakLandingBedroomStaircasePage() {
                 height: 'auto',
                 objectFit: 'contain'
               }}
+              onClick={(e) => e.stopPropagation()}
             />
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goToNext();
+              }}
+              className="lightbox-nav-btn next"
+              aria-label="Next image"
+            >
+              <svg viewBox="0 0 24 24">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-lg">
+              {currentImageIndex + 1} / {images.length}
+            </div>
           </div>
         </div>
       )}

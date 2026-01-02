@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function LinearStoneWetRoomPage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [currentImage, setCurrentImage] = useState("");
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
     "cover.JPG",
@@ -14,13 +14,25 @@ export default function LinearStoneWetRoomPage() {
     "linear-stone-wet-room-3.JPG"
   ];
 
-  const openLightbox = (img: string) => {
-    setCurrentImage(img);
+  const openLightbox = (index: number) => {
+    setCurrentImageIndex(index);
     setLightboxOpen(true);
   };
 
   const closeLightbox = () => {
     setLightboxOpen(false);
+  };
+
+  const goToPrevious = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   return (
@@ -29,7 +41,7 @@ export default function LinearStoneWetRoomPage() {
         {/* Image gallery */}
         <div className="project-gallery">
           {/* Large feature image */}
-          <div className="gallery-main" onClick={() => openLightbox("cover.JPG")}>
+          <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
               src="/images/portfolio/Linear Stone Wet Room/cover.JPG"
               alt="Linear Stone Wet Room"
@@ -40,8 +52,8 @@ export default function LinearStoneWetRoomPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["linear-stone-wet-room-1.jpg", "linear-stone-wet-room-2.JPG", "linear-stone-wet-room-3.JPG"].map(img => (
-              <div key={img} className="gallery-thumb" onClick={() => openLightbox(img)}>
+            {["linear-stone-wet-room-1.jpg", "linear-stone-wet-room-2.JPG", "linear-stone-wet-room-3.JPG"].map((img, idx) => (
+              <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
                   src={`/images/portfolio/Linear Stone Wet Room/${img}`}
                   alt="Linear Stone Wet Room detail"
@@ -85,8 +97,22 @@ export default function LinearStoneWetRoomPage() {
             <button className="lightbox-close" onClick={closeLightbox}>
               &times;
             </button>
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goToPrevious();
+              }}
+              className="lightbox-nav-btn prev"
+              aria-label="Previous image"
+            >
+              <svg viewBox="0 0 24 24">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+
             <img
-              src={`/images/portfolio/Linear Stone Wet Room/${currentImage}`}
+              src={`/images/portfolio/Linear Stone Wet Room/${images[currentImageIndex]}`}
               alt="Linear Stone Wet Room"
               style={{ 
                 maxWidth: '90vw', 
@@ -95,7 +121,25 @@ export default function LinearStoneWetRoomPage() {
                 height: 'auto',
                 objectFit: 'contain'
               }}
+              onClick={(e) => e.stopPropagation()}
             />
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goToNext();
+              }}
+              className="lightbox-nav-btn next"
+              aria-label="Next image"
+            >
+              <svg viewBox="0 0 24 24">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-lg">
+              {currentImageIndex + 1} / {images.length}
+            </div>
           </div>
         </div>
       )}

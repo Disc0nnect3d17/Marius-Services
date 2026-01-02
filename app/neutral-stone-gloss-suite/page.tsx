@@ -5,23 +5,35 @@ import { useState } from "react";
 
 export default function NeutralStoneGlossPage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [currentImage, setCurrentImage] = useState("");
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "cover.JPG",
-    "neutral-stone-gloss-suite-1.JPG",
-    "neutral-stone-gloss-suite-2.JPG",
-    "neutral-stone-gloss-suite-3.JPG",
-    "neutral-stone-gloss-suite-4.JPG"
+    "/images/portfolio/Neutral Stone & Gloss Suite/cover.JPG",
+    "/images/portfolio/Neutral Stone & Gloss Suite/neutral-stone-gloss-suite-1.JPG",
+    "/images/portfolio/Neutral Stone & Gloss Suite/neutral-stone-gloss-suite-2.JPG",
+    "/images/portfolio/Neutral Stone & Gloss Suite/neutral-stone-gloss-suite-3.JPG",
+    "/images/portfolio/Neutral Stone & Gloss Suite/neutral-stone-gloss-suite-4.JPG"
   ];
 
-  const openLightbox = (img: string) => {
-    setCurrentImage(img);
+  const openLightbox = (index: number) => {
+    setCurrentImageIndex(index);
     setLightboxOpen(true);
   };
 
   const closeLightbox = () => {
     setLightboxOpen(false);
+  };
+
+  const goToPrevious = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   return (
@@ -30,7 +42,7 @@ export default function NeutralStoneGlossPage() {
         {/* Image gallery */}
         <div className="project-gallery">
           {/* Large feature image */}
-          <div className="gallery-main" onClick={() => openLightbox("cover.JPG")}>
+          <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
               src="/images/portfolio/Neutral Stone & Gloss Suite/cover.JPG"
               alt="Neutral Stone & Gloss Suite"
@@ -41,8 +53,8 @@ export default function NeutralStoneGlossPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["neutral-stone-gloss-suite-1.JPG", "neutral-stone-gloss-suite-2.JPG", "neutral-stone-gloss-suite-3.JPG", "neutral-stone-gloss-suite-4.JPG"].map(img => (
-              <div key={img} className="gallery-thumb" onClick={() => openLightbox(img)}>
+            {["neutral-stone-gloss-suite-1.JPG", "neutral-stone-gloss-suite-2.JPG", "neutral-stone-gloss-suite-3.JPG", "neutral-stone-gloss-suite-4.JPG"].map((img, index) => (
+              <div key={img} className="gallery-thumb" onClick={() => openLightbox(index + 1)}>
                 <Image
                   src={`/images/portfolio/Neutral Stone & Gloss Suite/${img}`}
                   alt="Neutral Stone & Gloss Suite detail"
@@ -82,22 +94,54 @@ export default function NeutralStoneGlossPage() {
 
       {/* Lightbox */}
       {lightboxOpen && (
-        <div className="lightbox" onClick={closeLightbox}>
-          <div className="lightbox-content">
-            <button className="lightbox-close" onClick={closeLightbox}>
-              &times;
-            </button>
-            <img
-              src={`/images/portfolio/Neutral Stone & Gloss Suite/${currentImage}`}
-              alt="Neutral Stone & Gloss Suite"
-              style={{ 
-                maxWidth: '90vw', 
-                maxHeight: '90vh', 
-                width: 'auto', 
-                height: 'auto',
-                objectFit: 'contain'
+        <div
+          className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center"
+          onClick={closeLightbox}
+        >
+          <button
+            onClick={closeLightbox}
+            className="absolute top-4 right-4 text-white text-4xl font-bold hover:text-gray-300 z-50"
+          >
+            &times;
+          </button>
+
+          <div className="relative flex items-center justify-center">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goToPrevious();
               }}
+              className="lightbox-nav-btn prev"
+              aria-label="Previous image"
+            >
+              <svg viewBox="0 0 24 24">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+
+            <img
+              src={images[currentImageIndex]}
+              alt={`Neutral Stone & Gloss Suite - Image ${currentImageIndex + 1}`}
+              className="max-w-[90vw] max-h-[90vh] object-contain"
+              onClick={(e) => e.stopPropagation()}
             />
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goToNext();
+              }}
+              className="lightbox-nav-btn next"
+              aria-label="Next image"
+            >
+              <svg viewBox="0 0 24 24">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-lg">
+            {currentImageIndex + 1} / {images.length}
           </div>
         </div>
       )}

@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function SlateChromePage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [currentImage, setCurrentImage] = useState("");
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
     "cover.JPG",
@@ -15,13 +15,25 @@ export default function SlateChromePage() {
     "slate-chrome-shower-4.JPG"
   ];
 
-  const openLightbox = (img: string) => {
-    setCurrentImage(img);
+  const openLightbox = (index: number) => {
+    setCurrentImageIndex(index);
     setLightboxOpen(true);
   };
 
   const closeLightbox = () => {
     setLightboxOpen(false);
+  };
+
+  const goToPrevious = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   return (
@@ -30,7 +42,7 @@ export default function SlateChromePage() {
         {/* Image gallery */}
         <div className="project-gallery">
           {/* Large feature image */}
-          <div className="gallery-main" onClick={() => openLightbox("cover.JPG")}>
+          <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
               src="/images/portfolio/Slate & Chrome Shower Room/cover.JPG"
               alt="Slate & Chrome Shower Room"
@@ -41,8 +53,8 @@ export default function SlateChromePage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["slate-chrome-shower-1.JPG", "slate-chrome-shower-2.JPG", "slate-chrome-shower-3.JPG", "slate-chrome-shower-4.JPG"].map(img => (
-              <div key={img} className="gallery-thumb" onClick={() => openLightbox(img)}>
+            {["slate-chrome-shower-1.JPG", "slate-chrome-shower-2.JPG", "slate-chrome-shower-3.JPG", "slate-chrome-shower-4.JPG"].map((img, idx) => (
+              <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
                   src={`/images/portfolio/Slate & Chrome Shower Room/${img}`}
                   alt="Slate & Chrome Shower Room detail"

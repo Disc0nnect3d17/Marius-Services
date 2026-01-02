@@ -1682,7 +1682,7 @@ main {
     padding: 8px 16px;
 }
 
-/* Apple-Style Button Design */
+/* Apple-Style Button Design - Optimized for Performance */
 .filter-btn {
     display: flex;
     align-items: center;
@@ -1696,33 +1696,33 @@ main {
     color: #111;
     border: none;
     cursor: pointer;
-    box-shadow:
-        0 2px 6px rgba(0, 0, 0, 0.06),
-        inset 0 1px 0 rgba(255, 255, 255, 0.7);
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    
+    /* GPU acceleration - forces layer promotion */
+    will-change: transform;
+    transform: translateZ(0);
+    
+    /* Only animate GPU-friendly properties */
+    transition: transform 0.18s ease, opacity 0.18s ease;
     -webkit-tap-highlight-color: transparent;
 }
 
-.filter-btn:hover {
-    transform: translateY(-1px);
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.08),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+/* Disable hover animations on touch devices */
+@media (hover: hover) {
+    .filter-btn:hover {
+        transform: translateY(-1px) translateZ(0);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
 }
 
 .filter-btn:active {
-    transform: scale(0.97);
+    transform: scale(0.96) translateZ(0);
 }
 
 .filter-btn.active {
     background: linear-gradient(180deg, #ffb347, #ff9500);
     color: white;
-    box-shadow:
-        0 6px 18px rgba(255, 149, 0, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    box-shadow: 0 6px 16px rgba(255, 149, 0, 0.3);
 }
 
 .filter-count {
@@ -1743,35 +1743,28 @@ main {
 /* Portfolio Grid Section */
 .portfolio-grid-section {
     padding: 4rem 0;
-    background: #fafafa; /* Pinterest-style light neutral background */
+    background: #fafafa;
 }
 
 /* ===============================================
-   PINTEREST-STYLE MASONRY LAYOUT
-   Using CSS Columns for true waterfall effect
+   CSS GRID MASONRY LAYOUT
+   Optimized for zero jitter
    =============================================== */
 
-.portfolio-masonry-pinterest {
-    column-count: 2; /* Mobile-first: 2 columns */
-    column-gap: 12px;
+.masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 8px;
+    gap: 12px;
     padding: 0 12px;
-    transition: opacity 0.3s ease;
 }
 
-.portfolio-masonry-pinterest.animating {
-    opacity: 0.6;
-}
-
-/* Pinterest Card Design */
-.portfolio-card-pinterest {
-    break-inside: avoid; /* Prevent column breaks */
-    margin-bottom: 12px;
-    opacity: 0;
-    animation: fadeInMasonry 0.6s ease forwards;
-}
-
-.portfolio-card-pinterest.loaded {
-    opacity: 1;
+.masonry-item {
+    border-radius: 16px;
+    overflow: hidden;
+    background: #f4f4f4;
+    will-change: transform;
+    animation: fadeInMasonry 0.4s ease forwards;
 }
 
 @keyframes fadeInMasonry {
@@ -1793,12 +1786,16 @@ main {
     border-radius: 16px;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    will-change: transform;
+    transform: translateZ(0);
+    transition: transform 0.18s ease;
 }
 
-.portfolio-card-link:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+@media (hover: hover) {
+    .portfolio-card-link:hover {
+        transform: translateY(-2px) translateZ(0);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
 }
 
 /* Image Wrapper */
@@ -1815,54 +1812,6 @@ main {
     width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.3s ease;
-}
-
-.portfolio-card-link:hover .portfolio-card-image {
-    transform: scale(1.02);
-}
-
-/* Progressive Loading: Blur Placeholder */
-.portfolio-card-blur {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    filter: blur(20px);
-    transform: scale(1.1);
-    transition: opacity 0.4s ease;
-    opacity: 1;
-    z-index: 1;
-}
-
-.portfolio-card-blur.hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-
-/* Skeleton Loader */
-.portfolio-card-skeleton {
-    width: 100%;
-    aspect-ratio: 3/4;
-    background: linear-gradient(
-        90deg,
-        #e1e4e8 25%,
-        #f1f3f5 50%,
-        #e1e4e8 75%
-    );
-    background-size: 200% 100%;
-    animation: shimmer 1.5s infinite;
-    border-radius: 16px;
-}
-
-@keyframes shimmer {
-    0% {
-        background-position: 200% 0;
-    }
-    100% {
-        background-position: -200% 0;
-    }
 }
 
 /* Project Number Badge for Individual Pages */
@@ -1937,14 +1886,10 @@ main {
 
 /* Tablet: 3 columns */
 @media (min-width: 768px) {
-    .portfolio-masonry-pinterest {
-        column-count: 3;
-        column-gap: 16px;
+    .masonry-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
         padding: 0 16px;
-    }
-
-    .portfolio-card-pinterest {
-        margin-bottom: 16px;
     }
 
     .portfolio-card-title {
@@ -1959,31 +1904,18 @@ main {
 
 /* Desktop: 4 columns */
 @media (min-width: 1024px) {
-    .portfolio-masonry-pinterest {
-        column-count: 4;
-        column-gap: 20px;
+    .masonry-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
         padding: 0;
-    }
-
-    .portfolio-card-pinterest {
-        margin-bottom: 20px;
-    }
-
-    .portfolio-card-link:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
     }
 }
 
 /* Large Desktop: 5 columns */
 @media (min-width: 1440px) {
-    .portfolio-masonry-pinterest {
-        column-count: 5;
-        column-gap: 24px;
-    }
-
-    .portfolio-card-pinterest {
-        margin-bottom: 24px;
+    .masonry-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 24px;
     }
 }
 
@@ -2373,41 +2305,168 @@ main {
     transform: scale(1.04);
 }
 
-/* Lightbox */
+/* Lightbox - Perfect Centering */
 .lightbox {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 2000;
+    padding: 16px;
     cursor: pointer;
 }
 
+/* Lightbox overlay container (used in project pages) */
+.fixed.inset-0 {
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    z-index: 9999 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 16px !important;
+}
+
+/* Lightbox content wrapper */
 .lightbox-content {
     position: relative;
-}
-
-.lightbox-close {
-    position: absolute;
-    top: -40px;
-    right: 0;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
+    max-width: 100%;
+    max-height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.2s ease;
 }
 
-.lightbox-close:hover {
-    transform: scale(1.2);
+/* Wrapper for image + arrows to position arrows relative to image */
+.relative.flex.items-center.justify-center {
+    overflow: visible !important;
+}
+
+/* Perfect image sizing - no distortion */
+.lightbox-content img,
+.fixed.inset-0 > img {
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Close button */
+.lightbox-close,
+.fixed.inset-0 > button:first-of-type {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    font-size: 22px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.lightbox-close:hover,
+.fixed.inset-0 > button:first-of-type:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+}
+
+/* Modern Lightbox Navigation Arrows - Positioned near image */
+.lightbox-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    width: 60px;
+    height: 60px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.2s ease;
+    outline: none;
+    padding: 0;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.lightbox-nav-btn:hover {
+    transform: translateY(-50%) scale(1.15);
+}
+
+.lightbox-nav-btn:active {
+    transform: translateY(-50%) scale(0.9);
+}
+
+.lightbox-nav-btn.prev {
+    left: 20px;
+}
+
+.lightbox-nav-btn.next {
+    right: 20px;
+}
+
+/* Arrow SVG styling - White chevrons with dark shadow */
+.lightbox-nav-btn svg {
+    width: 40px;
+    height: 40px;
+    stroke: #ffffff;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.8));
+    pointer-events: none;
+}
+
+.lightbox-nav-btn:hover svg {
+    stroke: #ffffff;
+    stroke-width: 3;
+    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.9));
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .lightbox-nav-btn {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .lightbox-nav-btn.prev {
+        left: -50px;
+    }
+    
+    .lightbox-nav-btn.next {
+        right: -50px;
+    }
+    
+    .lightbox-nav-btn svg {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* Fallback for very small screens - place arrows on image edges */
+@media (max-width: 600px) {
+    .lightbox-nav-btn.prev {
+        left: 8px;
+    }
+    
+    .lightbox-nav-btn.next {
+        right: 8px;
+    }
 }
 
 .project-description {

@@ -111,32 +111,40 @@ export default function PolishedStoneFamilyBathroomPage() {
             &times;
           </button>
 
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              goToPrevious();
-            }}
-            className="absolute left-4 text-white text-4xl font-bold hover:text-gray-300 z-50"
-          >
-            &#8249;
-          </button>
+          <div className="relative flex items-center justify-center">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goToPrevious();
+              }}
+              className="lightbox-nav-btn prev"
+              aria-label="Previous image"
+            >
+              <svg viewBox="0 0 24 24">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
 
-          <img
-            src={images[currentImageIndex]}
-            alt={`Polished Stone Family Bathroom - Image ${currentImageIndex + 1}`}
-            className="max-w-[90%] max-h-[90%] object-contain"
-            onClick={(e) => e.stopPropagation()}
-          />
+            <img
+              src={images[currentImageIndex]}
+              alt={`Polished Stone Family Bathroom - Image ${currentImageIndex + 1}`}
+              className="max-w-[90vw] max-h-[90vh] object-contain"
+              onClick={(e) => e.stopPropagation()}
+            />
 
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              goToNext();
-            }}
-            className="absolute right-4 text-white text-4xl font-bold hover:text-gray-300 z-50"
-          >
-            &#8250;
-          </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goToNext();
+              }}
+              className="lightbox-nav-btn next"
+              aria-label="Next image"
+            >
+              <svg viewBox="0 0 24 24">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
 
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-lg">
             {currentImageIndex + 1} / {images.length}

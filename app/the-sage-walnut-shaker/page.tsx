@@ -5,23 +5,35 @@ import { useState } from "react";
 
 export default function SageWalnutPage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [currentImage, setCurrentImage] = useState("");
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "cover.JPG",
-    "sage-walnut-1.JPG",
-    "sage-walnut-2.JPG",
-    "sage-walnut-3.JPG",
-    "sage-walnut-4.JPG"
+    "/images/portfolio/sage-walnut/cover.JPG",
+    "/images/portfolio/sage-walnut/sage-walnut-1.JPG",
+    "/images/portfolio/sage-walnut/sage-walnut-2.JPG",
+    "/images/portfolio/sage-walnut/sage-walnut-3.JPG",
+    "/images/portfolio/sage-walnut/sage-walnut-4.JPG"
   ];
 
-  const openLightbox = (img: string) => {
-    setCurrentImage(img);
+  const openLightbox = (index: number) => {
+    setCurrentImageIndex(index);
     setLightboxOpen(true);
   };
 
   const closeLightbox = () => {
     setLightboxOpen(false);
+  };
+
+  const goToPrevious = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   return (
@@ -30,7 +42,7 @@ export default function SageWalnutPage() {
         {/* Image gallery */}
         <div className="project-gallery">
           {/* Large feature image */}
-          <div className="gallery-main" onClick={() => openLightbox("cover.JPG")}>
+          <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
               src="/images/portfolio/sage-walnut/cover.JPG"
               alt="The Sage & Walnut Shaker kitchen"
@@ -41,8 +53,8 @@ export default function SageWalnutPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["sage-walnut-1.JPG", "sage-walnut-2.JPG", "sage-walnut-3.JPG", "sage-walnut-4.JPG"].map(img => (
-              <div key={img} className="gallery-thumb" onClick={() => openLightbox(img)}>
+            {["sage-walnut-1.JPG", "sage-walnut-2.JPG", "sage-walnut-3.JPG", "sage-walnut-4.JPG"].map((img, index) => (
+              <div key={img} className="gallery-thumb" onClick={() => openLightbox(index + 1)}>
                 <Image
                   src={`/images/portfolio/sage-walnut/${img}`}
                   alt="The Sage & Walnut Shaker detail"
@@ -80,22 +92,54 @@ export default function SageWalnutPage() {
 
       {/* Lightbox */}
       {lightboxOpen && (
-        <div className="lightbox" onClick={closeLightbox}>
-          <div className="lightbox-content">
-            <button className="lightbox-close" onClick={closeLightbox}>
-              &times;
-            </button>
-            <img
-              src={`/images/portfolio/sage-walnut/${currentImage}`}
-              alt="The Sage & Walnut Shaker"
-              style={{ 
-                maxWidth: '90vw', 
-                maxHeight: '90vh', 
-                width: 'auto', 
-                height: 'auto',
-                objectFit: 'contain'
+        <div
+          className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center"
+          onClick={closeLightbox}
+        >
+          <button
+            onClick={closeLightbox}
+            className="absolute top-4 right-4 text-white text-4xl font-bold hover:text-gray-300 z-50"
+          >
+            &times;
+          </button>
+
+          <div className="relative flex items-center justify-center">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goToPrevious();
               }}
+              className="lightbox-nav-btn prev"
+              aria-label="Previous image"
+            >
+              <svg viewBox="0 0 24 24">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+
+            <img
+              src={images[currentImageIndex]}
+              alt={`The Sage & Walnut Shaker - Image ${currentImageIndex + 1}`}
+              className="max-w-[90vw] max-h-[90vh] object-contain"
+              onClick={(e) => e.stopPropagation()}
             />
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goToNext();
+              }}
+              className="lightbox-nav-btn next"
+              aria-label="Next image"
+            >
+              <svg viewBox="0 0 24 24">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-lg">
+            {currentImageIndex + 1} / {images.length}
           </div>
         </div>
       )}

@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function OakWhiteStaircaseRenovationPage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [currentImage, setCurrentImage] = useState("");
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
     "cover.JPG",
@@ -16,13 +16,25 @@ export default function OakWhiteStaircaseRenovationPage() {
     "oak-white-staircase-renovation-5.jpg"
   ];
 
-  const openLightbox = (img: string) => {
-    setCurrentImage(img);
+  const openLightbox = (index: number) => {
+    setCurrentImageIndex(index);
     setLightboxOpen(true);
   };
 
   const closeLightbox = () => {
     setLightboxOpen(false);
+  };
+
+  const goToPrevious = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   return (
@@ -31,7 +43,7 @@ export default function OakWhiteStaircaseRenovationPage() {
         {/* Image gallery */}
         <div className="project-gallery">
           {/* Large feature image */}
-          <div className="gallery-main" onClick={() => openLightbox("cover.JPG")}>
+          <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
               src="/images/portfolio/Oak & White Staircase Renovation/cover.JPG"
               alt="Oak & White Staircase Renovation"
@@ -42,8 +54,8 @@ export default function OakWhiteStaircaseRenovationPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["oak-white-staircase-renovation-1.JPG", "oak-white-staircase-renovation-2.JPG", "oak-white-staircase-renovation-3.JPG", "oak-white-staircase-renovation-4.JPG", "oak-white-staircase-renovation-5.jpg"].map(img => (
-              <div key={img} className="gallery-thumb" onClick={() => openLightbox(img)}>
+            {["oak-white-staircase-renovation-1.JPG", "oak-white-staircase-renovation-2.JPG", "oak-white-staircase-renovation-3.JPG", "oak-white-staircase-renovation-4.JPG", "oak-white-staircase-renovation-5.jpg"].map((img, idx) => (
+              <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
                   src={`/images/portfolio/Oak & White Staircase Renovation/${img}`}
                   alt="Oak & White Staircase Renovation detail"
@@ -85,17 +97,51 @@ export default function OakWhiteStaircaseRenovationPage() {
             <button className="lightbox-close" onClick={closeLightbox}>
               &times;
             </button>
-            <img
-              src={`/images/portfolio/Oak & White Staircase Renovation/${currentImage}`}
-              alt="Oak & White Staircase Renovation"
-              style={{ 
-                maxWidth: '90vw', 
-                maxHeight: '90vh', 
-                width: 'auto', 
-                height: 'auto',
-                objectFit: 'contain'
-              }}
-            />
+
+            <div className="relative flex items-center justify-center">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goToPrevious();
+                }}
+                className="lightbox-nav-btn prev"
+                aria-label="Previous image"
+              >
+                <svg viewBox="0 0 24 24">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+
+              <img
+                src={`/images/portfolio/Oak & White Staircase Renovation/${images[currentImageIndex]}`}
+                alt="Oak & White Staircase Renovation"
+                style={{ 
+                  maxWidth: '90vw', 
+                  maxHeight: '90vh', 
+                  width: 'auto', 
+                  height: 'auto',
+                  objectFit: 'contain'
+                }}
+                onClick={(e) => e.stopPropagation()}
+              />
+
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goToNext();
+                }}
+                className="lightbox-nav-btn next"
+                aria-label="Next image"
+              >
+                <svg viewBox="0 0 24 24">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-lg">
+              {currentImageIndex + 1} / {images.length}
+            </div>
           </div>
         </div>
       )}

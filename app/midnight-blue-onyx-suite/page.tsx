@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function MidnightBlueOnyxSuitePage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [currentImage, setCurrentImage] = useState("");
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
     "cover.jpg",
@@ -14,13 +14,25 @@ export default function MidnightBlueOnyxSuitePage() {
     "midnight-blue-onyx-suite-3.jpg"
   ];
 
-  const openLightbox = (img: string) => {
-    setCurrentImage(img);
+  const openLightbox = (index: number) => {
+    setCurrentImageIndex(index);
     setLightboxOpen(true);
   };
 
   const closeLightbox = () => {
     setLightboxOpen(false);
+  };
+
+  const goToPrevious = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   return (
@@ -29,7 +41,7 @@ export default function MidnightBlueOnyxSuitePage() {
         {/* Image gallery */}
         <div className="project-gallery">
           {/* Large feature image */}
-          <div className="gallery-main" onClick={() => openLightbox("cover.jpg")}>
+          <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
               src="/images/portfolio/Midnight Blue Onyx Suite/cover.jpg"
               alt="Midnight Blue Onyx Suite"
@@ -40,8 +52,8 @@ export default function MidnightBlueOnyxSuitePage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["midnight-blue-onyx-suite-1.jpg", "midnight-blue-onyx-suite-2.jpg", "midnight-blue-onyx-suite-3.jpg"].map(img => (
-              <div key={img} className="gallery-thumb" onClick={() => openLightbox(img)}>
+            {["midnight-blue-onyx-suite-1.jpg", "midnight-blue-onyx-suite-2.jpg", "midnight-blue-onyx-suite-3.jpg"].map((img, idx) => (
+              <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
                   src={`/images/portfolio/Midnight Blue Onyx Suite/${img}`}
                   alt="Midnight Blue Onyx Suite detail"
@@ -86,8 +98,22 @@ export default function MidnightBlueOnyxSuitePage() {
             <button className="lightbox-close" onClick={closeLightbox}>
               &times;
             </button>
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goToPrevious();
+              }}
+              className="lightbox-nav-btn prev"
+              aria-label="Previous image"
+            >
+              <svg viewBox="0 0 24 24">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+
             <img
-              src={`/images/portfolio/Midnight Blue Onyx Suite/${currentImage}`}
+              src={`/images/portfolio/Midnight Blue Onyx Suite/${images[currentImageIndex]}`}
               alt="Midnight Blue Onyx Suite"
               style={{ 
                 maxWidth: '90vw', 
@@ -96,7 +122,25 @@ export default function MidnightBlueOnyxSuitePage() {
                 height: 'auto',
                 objectFit: 'contain'
               }}
+              onClick={(e) => e.stopPropagation()}
             />
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goToNext();
+              }}
+              className="lightbox-nav-btn next"
+              aria-label="Next image"
+            >
+              <svg viewBox="0 0 24 24">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-lg">
+              {currentImageIndex + 1} / {images.length}
+            </div>
           </div>
         </div>
       )}

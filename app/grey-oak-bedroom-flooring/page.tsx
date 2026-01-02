@@ -5,20 +5,32 @@ import { useState } from "react";
 
 export default function GreyOakBedroomFlooringPage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [currentImage, setCurrentImage] = useState("");
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
     "cover.JPG",
     "grey-oak-bedroom-flooring-1.JPG"
   ];
 
-  const openLightbox = (img: string) => {
-    setCurrentImage(img);
+  const openLightbox = (index: number) => {
+    setCurrentImageIndex(index);
     setLightboxOpen(true);
   };
 
   const closeLightbox = () => {
     setLightboxOpen(false);
+  };
+
+  const goToPrevious = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   return (
@@ -27,7 +39,7 @@ export default function GreyOakBedroomFlooringPage() {
         {/* Image gallery */}
         <div className="project-gallery">
           {/* Large feature image */}
-          <div className="gallery-main" onClick={() => openLightbox("cover.JPG")}>
+          <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
               src="/images/portfolio/Grey Oak Bedroom Flooring/cover.JPG"
               alt="Grey Oak Bedroom Flooring"
@@ -38,8 +50,8 @@ export default function GreyOakBedroomFlooringPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["grey-oak-bedroom-flooring-1.JPG"].map(img => (
-              <div key={img} className="gallery-thumb" onClick={() => openLightbox(img)}>
+            {["grey-oak-bedroom-flooring-1.JPG"].map((img, idx) => (
+              <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
                   src={`/images/portfolio/Grey Oak Bedroom Flooring/${img}`}
                   alt="Grey Oak Bedroom Flooring detail"
@@ -81,17 +93,51 @@ export default function GreyOakBedroomFlooringPage() {
             <button className="lightbox-close" onClick={closeLightbox}>
               &times;
             </button>
-            <img
-              src={`/images/portfolio/Grey Oak Bedroom Flooring/${currentImage}`}
-              alt="Grey Oak Bedroom Flooring"
-              style={{ 
-                maxWidth: '90vw', 
-                maxHeight: '90vh', 
-                width: 'auto', 
-                height: 'auto',
-                objectFit: 'contain'
-              }}
-            />
+
+            <div className="relative flex items-center justify-center">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goToPrevious();
+                }}
+                className="lightbox-nav-btn prev"
+                aria-label="Previous image"
+              >
+                <svg viewBox="0 0 24 24">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+
+              <img
+                src={`/images/portfolio/Grey Oak Bedroom Flooring/${images[currentImageIndex]}`}
+                alt="Grey Oak Bedroom Flooring"
+                style={{ 
+                  maxWidth: '90vw', 
+                  maxHeight: '90vh', 
+                  width: 'auto', 
+                  height: 'auto',
+                  objectFit: 'contain'
+                }}
+                onClick={(e) => e.stopPropagation()}
+              />
+
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goToNext();
+                }}
+                className="lightbox-nav-btn next"
+                aria-label="Next image"
+              >
+                <svg viewBox="0 0 24 24">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-lg">
+              {currentImageIndex + 1} / {images.length}
+            </div>
           </div>
         </div>
       )}
