@@ -54,7 +54,12 @@ export default function LinearStoneWetRoomPage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Linear Stone Wet Room</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Linear Stone Wet Room
+            </h1>
+            <span className="project-number-badge">#19</span>
+          </div>
           <p>
             A sleek wet room conversion defined by its monochromatic palette and linear stone textures. 
             The room is fully tiled in matching grey stone-effect porcelain on both walls and floors, creating a seamless and expansive feel. 

@@ -56,7 +56,12 @@ export default function AnthraciteMarblePage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>The Anthracite & Marble Suite</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              The Anthracite & Marble Suite
+            </h1>
+            <span className="project-number-badge">#6</span>
+          </div>
           <p>
             A sophisticated bathroom renovation centered around a luxury double vanity setup. 
             The design features large-format marble-effect floor tiles that coordinate with the dark anthracite cabinetry for a cohesive, modern look. 

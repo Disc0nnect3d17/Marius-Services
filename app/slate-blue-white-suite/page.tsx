@@ -52,7 +52,12 @@ export default function SlateBlueWhiteSuitePage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Slate Blue & White Suite</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Slate Blue & White Suite
+            </h1>
+            <span className="project-number-badge">#28</span>
+          </div>
           <p>
             A bright and functional shower room renovation defined by its striking colour contrast. The design features deep slate-blue ceramic wall tiles, laid to full height in the shower and half-height behind the sanitaryware, creating a bold backdrop against the crisp white painted walls. To maximize space and storage, I installed a fitted white furniture run that seamlessly combines the washbasin and a concealed cistern WC. The focal point is a spacious shower enclosure with a glass deflector panel, offering easy access and a modern feel. As the sole contractor, I managed the entire fit-out, ensuring a clean and precise finish.
           </p>

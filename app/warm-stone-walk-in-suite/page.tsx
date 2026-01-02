@@ -54,7 +54,12 @@ export default function WarmStoneWalkInSuitePage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Warm Stone Walk-In Suite</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Warm Stone Walk-In Suite
+            </h1>
+            <span className="project-number-badge">#21</span>
+          </div>
           <p>
             A modern shower room renovation situated within a space featuring sloping ceilings, likely a loft conversion. 
             The design is defined by high-gloss travertine-effect wall tiles that add a warm, natural stone look to the room. 

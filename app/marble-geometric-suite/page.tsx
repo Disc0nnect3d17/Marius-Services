@@ -54,7 +54,12 @@ export default function MarbleGeometricSuitePage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Marble & Geometric Suite</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Marble & Geometric Suite
+            </h1>
+            <span className="project-number-badge">#18</span>
+          </div>
           <p>
             A modern shower room renovation that balances luxury finishes with bold pattern. 
             The walls are clad from floor to ceiling in large-format white marble-effect tiles, creating a bright and expansive feel. 

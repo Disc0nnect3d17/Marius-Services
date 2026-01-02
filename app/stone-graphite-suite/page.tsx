@@ -55,7 +55,12 @@ export default function StoneGraphiteSuitePage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Stone & Graphite Suite</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Stone & Graphite Suite
+            </h1>
+            <span className="project-number-badge">#16</span>
+          </div>
           <p>
             A modern family bathroom renovation designed to maximize storage and clean lines. 
             The room is fully tiled in a light stone-effect ceramic to create a bright, watertight shell. 

@@ -55,7 +55,12 @@ export default function HighContrastFeatureEnsuitePage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>High-Contrast Feature Ensuite</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              High-Contrast Feature Ensuite
+            </h1>
+            <span className="project-number-badge">#27</span>
+          </div>
           <p>
             A compact ensuite renovation designed to create a visual impact within a small footprint. The design relies on a high-contrast theme, utilizing bright, polished white stone-effect tiles for the main walls to maximize light, paired with a dramatic black marble-effect feature wall inside the shower. To ensure the space remains practical and easy to navigate, I installed a bi-fold shower door and a compact vanity unit. As the sole contractor, I managed the entire fit-out, focusing on precise tiling to ensure the transition between the contrasting colours was sharp and seamless.
           </p>

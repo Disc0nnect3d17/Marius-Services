@@ -53,7 +53,12 @@ export default function NeutralWalkInShowerRoomPage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Neutral Walk-In Shower Room</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Neutral Walk-In Shower Room
+            </h1>
+            <span className="project-number-badge">#30</span>
+          </div>
           <p>
             A bright and modern renovation designed to create a calm, uncluttered space. The room is finished with light beige stone-effect wall tiles and light wood-effect flooring, maximizing the feeling of light and space. The centerpiece is a large walk-in shower area featuring a low-profile tray and a frameless glass screen. To add a touch of contrast and luxury, I installed a dark grey floor-standing vanity unit topped with a marble-effect surface and a modern vessel basin. As the sole contractor, I managed the entire fit-out, from the concealed plumbing work to the final fixture installation.
           </p>

@@ -1865,6 +1865,22 @@ main {
     }
 }
 
+/* Project Number Badge for Individual Pages */
+.project-number-badge {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 24px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
 /* Hover Overlay - Pinterest Style */
 .portfolio-card-overlay {
     position: absolute;

@@ -2,7 +2,7 @@ export interface PortfolioProject {
     id: string
     title: string
     slug: string
-    category: 'bathroom' | 'wet-room' | 'shower-room' | 'kitchen' | 'wc'
+    category: 'bathroom' | 'wet-room' | 'shower-room' | 'kitchen' | 'wc' | 'flooring' | 'carpentry'
     coverImage: string
     featured?: boolean
 }
@@ -278,14 +278,78 @@ export const portfolioProjects: PortfolioProject[] = [
         category: 'shower-room',
         coverImage: '/images/portfolio/Marble & Mosaic Shower Room/cover.JPG',
         featured: true
+    },
+    {
+        id: '37',
+        title: 'Retro Industrial Shower Room',
+        slug: 'retro-industrial-shower-room',
+        category: 'shower-room',
+        coverImage: '/images/portfolio/Retro Industrial Shower Room/cover.JPG',
+        featured: true
+    },
+    {
+        id: '38',
+        title: 'Grey Oak Laminate Installation',
+        slug: 'grey-oak-laminate-installation',
+        category: 'flooring',
+        coverImage: '/images/portfolio/Grey Oak Laminate Installation/cover.JPG',
+        featured: true
+    },
+    {
+        id: '39',
+        title: 'Grey Oak Bedroom Flooring',
+        slug: 'grey-oak-bedroom-flooring',
+        category: 'flooring',
+        coverImage: '/images/portfolio/Grey Oak Bedroom Flooring/cover.JPG',
+        featured: true
+    },
+    {
+        id: '40',
+        title: 'Oak & White Staircase Renovation',
+        slug: 'oak-white-staircase-renovation',
+        category: 'carpentry',
+        coverImage: '/images/portfolio/Oak & White Staircase Renovation/cover.JPG',
+        featured: true
+    },
+    {
+        id: '41',
+        title: 'Engineered Oak Landing, Bedroom & Staircase',
+        slug: 'engineered-oak-bedroom-landing',
+        category: 'flooring',
+        coverImage: '/images/portfolio/Engineered Oak Landing, Bedroom & Staircase/cover.JPG',
+        featured: true
+    },
+    {
+        id: '42',
+        title: 'Acoustic Slat Feature Wall',
+        slug: 'acoustic-slat-feature-wall',
+        category: 'carpentry',
+        coverImage: '/images/portfolio/Acoustic Slat Feature Wall/cover.JPG',
+        featured: true
+    },
+    {
+        id: '43',
+        title: 'Warm Oak Laminate Bedroom',
+        slug: 'warm-oak-laminate-bedroom',
+        category: 'flooring',
+        coverImage: '/images/portfolio/Warm Oak Laminate Bedroom/cover.JPG'
+    },
+    {
+        id: '44',
+        title: 'Polished Stone Family Bathroom',
+        slug: 'polished-stone-family-bathroom',
+        category: 'bathroom',
+        coverImage: '/images/portfolio/Polished Stone Family Bathroom/cover.JPG'
     }
 ]
 
 export const categories = [
-    { id: 'all', label: 'All Projects', count: 36 },
-    { id: 'bathroom', label: 'Bathrooms', count: 19 },
+    { id: 'all', label: 'All Projects', count: 44 },
+    { id: 'bathroom', label: 'Bathrooms', count: 20 },
     { id: 'wet-room', label: 'Wet Rooms', count: 3 },
-    { id: 'shower-room', label: 'Shower Rooms', count: 8 },
+    { id: 'shower-room', label: 'Shower Rooms', count: 9 },
     { id: 'kitchen', label: 'Kitchens', count: 3 },
-    { id: 'wc', label: 'WC/Cloakrooms', count: 4 }
+    { id: 'wc', label: 'WC/Cloakrooms', count: 4 },
+    { id: 'flooring', label: 'Flooring', count: 4 },
+    { id: 'carpentry', label: 'Carpentry', count: 2 }
 ]

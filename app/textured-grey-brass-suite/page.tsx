@@ -55,7 +55,12 @@ export default function TexturedGreyBrassPage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Textured Grey & Brass Suite</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Textured Grey & Brass Suite
+            </h1>
+            <span className="project-number-badge">#24</span>
+          </div>
           <p>
             A bathroom renovation that blends vintage charm with modern textures. The room is defined by floor-to-ceiling tiling using distinctive textured grey rectangular tiles laid in a brick bond pattern, adding significant depth and character to the walls. The centerpiece is a classic white freestanding bath with gold feet, paired with an elegant antique brass floor-mounted mixer tap. I installed matching gold brassware throughout, including the basin tap and a traditional-style towel radiator, to create a cohesive luxury feel. As the sole contractor, I managed the entire fit-out, from the tiling layout to the final plumbing connections.
           </p>

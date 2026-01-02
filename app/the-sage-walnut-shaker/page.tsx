@@ -55,7 +55,12 @@ export default function SageWalnutPage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>The Sage & Walnut Shaker</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              The Sage & Walnut Shaker
+            </h1>
+            <span className="project-number-badge">#1</span>
+          </div>
           <p>
             A complete turn-key renovation executed entirely by a single specialist. 
             This project transformed a bare shell into a sophisticated kitchen by blending traditional farmhouse elements with modern contrasts.

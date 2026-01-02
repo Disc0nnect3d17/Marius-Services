@@ -56,7 +56,12 @@ export default function ContemporaryStoneWetRoomPage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Contemporary Stone Wet Room</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Contemporary Stone Wet Room
+            </h1>
+            <span className="project-number-badge">#10</span>
+          </div>
           <p>
             A complete conversion of a standard bathroom into a spacious, modern wet room. 
             The design utilizes soft grey stone-effect tiling throughout to create a calm, neutral environment. 

@@ -56,7 +56,12 @@ export default function GreyMosaicWetRoomPage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Grey Mosaic Wet Room</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Grey Mosaic Wet Room
+            </h1>
+            <span className="project-number-badge">#15</span>
+          </div>
           <p>
             A seamless conversion of a bathroom into a modern, level-access wet room. 
             The design is built around a monochromatic grey palette, featuring large-format stone-effect tiles on the walls and floors to create a spacious feel. 

@@ -56,7 +56,12 @@ export default function PatternedFloorStonePage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Patterned Floor & Stone Suite</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Patterned Floor & Stone Suite
+            </h1>
+            <span className="project-number-badge">#12</span>
+          </div>
           <p>
             A bright, modern bathroom renovation featuring a striking contrast between the polished walls and the decorative flooring. 
             The walls are finished floor-to-ceiling in large-format, high-gloss stone-effect tiles, creating a light and airy feel. 

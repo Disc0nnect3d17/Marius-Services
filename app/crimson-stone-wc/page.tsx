@@ -54,7 +54,12 @@ export default function CrimsonStoneWCPage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Crimson & Stone WC</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Crimson & Stone WC
+            </h1>
+            <span className="project-number-badge">#3</span>
+          </div>
           <p>
             A complete renovation of a compact downstairs WC, optimizing a narrow footprint for maximum utility. 
             The design contrasts deep red textured walls with neutral stone-effect ceramic tiling that runs from the floor to dado height. 

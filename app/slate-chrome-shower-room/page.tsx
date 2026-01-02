@@ -55,7 +55,12 @@ export default function SlateChromePage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Slate & Chrome Shower Room</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Slate & Chrome Shower Room
+            </h1>
+            <span className="project-number-badge">#5</span>
+          </div>
           <p>
             A contemporary shower room renovation defined by clean lines and a monochromatic grey palette. 
             The space features floor-to-ceiling wall tiling in a soft stone effect, creating a seamless and low-maintenance finish. 

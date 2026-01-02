@@ -55,7 +55,12 @@ export default function GeometricSagePage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Geometric Sage Suite</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Geometric Sage Suite
+            </h1>
+            <span className="project-number-badge">#25</span>
+          </div>
           <p>
             A stylish bathroom renovation that balances bold pattern with calming tones. The design features a striking black and white geometric floor that acts as the room's centerpiece. This is softened by classic white subway tiles laid to half-height and walls painted in a soothing sage green. To provide versatility for family living, I installed a P-shaped shower bath, which offers a spacious showering area without compromising on bathing space. As the sole contractor, I managed the entire refurbishment, including the precise floor tiling and final decoration.
           </p>

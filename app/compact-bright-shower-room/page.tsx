@@ -53,7 +53,12 @@ export default function CompactBrightShowerRoomPage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Compact Bright Shower Room</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Compact Bright Shower Room
+            </h1>
+            <span className="project-number-badge">#14</span>
+          </div>
           <p>
             A renovation designed to maximize utility within a very tight footprint. 
             The room is fully tiled from floor to ceiling in large-format light ceramic tiles to reflect light and create a sense of space. 

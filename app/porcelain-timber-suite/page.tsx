@@ -55,7 +55,12 @@ export default function PorcelainTimberPage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Porcelain & Timber Suite</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Porcelain & Timber Suite
+            </h1>
+            <span className="project-number-badge">#7</span>
+          </div>
           <p>
             A contemporary bathroom renovation designed with a focus on minimalism and clean lines. 
             The room is fully enveloped in warm, neutral porcelain tiles from floor to ceiling, creating a seamless and calming aesthetic. 

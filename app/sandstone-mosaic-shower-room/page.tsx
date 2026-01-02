@@ -54,7 +54,12 @@ export default function SandstoneMosaicPage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Sandstone & Mosaic Shower Room</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Sandstone & Mosaic Shower Room
+            </h1>
+            <span className="project-number-badge">#4</span>
+          </div>
           <p>
             A full renovation of a bathroom into a fully tiled shower room. 
             The design features warm beige square ceramic tiles throughout, combining full-height tiling within the shower area with half-height tiling around the sanitaryware. 

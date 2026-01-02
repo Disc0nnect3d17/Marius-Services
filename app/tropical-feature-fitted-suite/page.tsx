@@ -53,7 +53,12 @@ export default function TropicalFeatureFittedSuitePage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Tropical Feature & Fitted Suite</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Tropical Feature & Fitted Suite
+            </h1>
+            <span className="project-number-badge">#32</span>
+          </div>
           <p>
             A bathroom renovation that injects personality into the space while maximizing utility. The focal point is a vibrant feature wall above the bath, tiled with a large-scale tropical leaf print, which contrasts sharply with the clean white horizontal tiling on the remaining walls. A key requirement for this project was storage; I installed a custom fitted run of dark blue cabinetry, including a floor-to-ceiling unit that conceals the WC cistern and provides extensive cupboard space. To ensure the bath area remained versatile, I fitted a multi-fold glass screen that retracts fully to open up the room. As the sole contractor, I managed the plumbing, tiling, and precise joinery work required for the fitted furniture.
           </p>

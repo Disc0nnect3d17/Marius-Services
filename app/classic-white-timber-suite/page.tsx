@@ -54,7 +54,12 @@ export default function ClassicWhiteTimberPage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Classic White & Timber Suite</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Classic White & Timber Suite
+            </h1>
+            <span className="project-number-badge">#9</span>
+          </div>
           <p>
             A family bathroom renovation that combines a clean, traditional aesthetic with practical modern features. 
             The design is defined by white gloss ceramic tiles laid in a classic brick-bond pattern, broken up by a contrasting horizontal border strip that runs the perimeter of the room. 

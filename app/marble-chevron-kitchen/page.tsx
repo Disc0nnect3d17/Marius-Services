@@ -56,7 +56,12 @@ export default function MarbleChevronKitchenPage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Marble & Chevron Kitchen</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Marble & Chevron Kitchen
+            </h1>
+            <span className="project-number-badge">#11</span>
+          </div>
           <p>
             A high-impact kitchen renovation defined by its bold use of pattern and modern finishes. 
             The design features floor-to-ceiling large-format wall tiles with a distinct gold-vein marble effect, creating a seamless, wipe-clean backdrop. 

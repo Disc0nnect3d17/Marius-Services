@@ -54,7 +54,12 @@ export default function CompactAngularCloakroomPage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Compact Angular Cloakroom</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Compact Angular Cloakroom
+            </h1>
+            <span className="project-number-badge">#34</span>
+          </div>
           <p>
             A smart renovation of a small, irregularly shaped downstairs toilet (likely an under-stairs conversion). The goal was to create a functional and clean space within a very tight footprint. I installed a compact white gloss vanity unit tucked neatly into the corner to maximize floor area, paired with a modern close-coupled WC. The walls were painted in a soft neutral grey to keep the room feeling open, while a wipe-clean splashback panel was fitted behind the basin for practicality. As the sole contractor, I handled the plumbing, flooring installation, and final decoration.
           </p>

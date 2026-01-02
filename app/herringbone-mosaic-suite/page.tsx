@@ -54,7 +54,12 @@ export default function HerringboneMosaicPage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Herringbone & Mosaic Suite</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Herringbone & Mosaic Suite
+            </h1>
+            <span className="project-number-badge">#8</span>
+          </div>
           <p>
             A complete renovation of a compact shower room, designed to maximize space within a room featuring sloping ceilings. 
             The aesthetic pairs neutral, warm beige wall tiling with a distinctive wood-effect floor laid in a herringbone pattern. 

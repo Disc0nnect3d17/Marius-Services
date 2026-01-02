@@ -54,7 +54,12 @@ export default function VibrantMetroWCPage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Vibrant Metro WC</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Vibrant Metro WC
+            </h1>
+            <span className="project-number-badge">#17</span>
+          </div>
           <p>
             A bold renovation of a downstairs WC that combines practical accessibility with striking design. 
             The walls feature a two-tone layout, using neutral stone-effect tiles on the lower half and a vibrant, multi-coloured metro tile mix above dado height. 

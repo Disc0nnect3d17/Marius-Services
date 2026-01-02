@@ -53,7 +53,12 @@ export default function MonochromeMarbleEnsuitePage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Monochrome Marble Ensuite</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Monochrome Marble Ensuite
+            </h1>
+            <span className="project-number-badge">#26</span>
+          </div>
           <p>
             A compact ensuite renovation designed to bring a touch of luxury to a narrow space. The room is enveloped in large-format white marble-effect tiles on both the walls and floor, which helps to reflect light and make the tight footprint feel larger. To create depth, I installed a dramatic black marble feature wall inside the shower area. Practicality was a priority for this layout, so I utilized a space-saving bi-fold shower door and compact sanitaryware to ensure easy movement within the room. As the sole contractor, I managed the entire fit-out from tiling to the final electrical connections.
           </p>

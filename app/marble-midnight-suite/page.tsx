@@ -54,7 +54,12 @@ export default function MarbleMidnightPage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Marble & Midnight Suite</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Marble & Midnight Suite
+            </h1>
+            <span className="project-number-badge">#2</span>
+          </div>
           <p>
             A full bathroom renovation featuring a high contrast color palette. 
             The room is paved with large format, marble effect porcelain floor tiles which set the stage for the dark vanity and WC cabinetry. 

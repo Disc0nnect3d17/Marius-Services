@@ -55,7 +55,12 @@ export default function WarmStoneFittedShowerRoomPage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Warm Stone & Fitted Shower Room</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Warm Stone & Fitted Shower Room
+            </h1>
+            <span className="project-number-badge">#35</span>
+          </div>
           <p>
             A contemporary shower room renovation designed for warmth and practicality. The walls are fully tiled in a soft taupe stone-effect ceramic, creating a cozy yet modern atmosphere that is easy to maintain. To maximize the floor plan and provide essential storage, I installed a run of fitted gloss cabinetry that seamlessly integrates the washbasin and a concealed cistern WC, hiding all unsightly pipework. The shower area is generous, featuring a low-level tray and a high-performance dual-outlet mixer. As the sole contractor, I managed the entire installation, ensuring a high-quality finish from the plumbing first-fix to the final tiling.
           </p>

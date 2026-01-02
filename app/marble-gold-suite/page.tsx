@@ -54,7 +54,12 @@ export default function MarbleGoldPage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Marble & Gold Suite</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Marble & Gold Suite
+            </h1>
+            <span className="project-number-badge">#23</span>
+          </div>
           <p>
             A luxury shower room renovation defined by its opulent finish and cohesive colour palette. The space is fully tiled in polished white marble-effect porcelain with gold veining, creating a bright and reflective backdrop. The standout feature is the use of brushed gold brassware throughout, including the shower profile, radiator, and taps, which complements the tile veining perfectly. I installed a spacious walk-in shower with a low-profile tray and a custom recessed storage niche. To add warmth, I fitted wood-effect cabinetry for the vanity and WC unit. As the sole contractor, I executed the entire high-end fit-out.
           </p>

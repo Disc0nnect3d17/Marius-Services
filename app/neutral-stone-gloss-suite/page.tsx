@@ -55,7 +55,12 @@ export default function NeutralStoneGlossPage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Neutral Stone & Gloss Suite</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Neutral Stone & Gloss Suite
+            </h1>
+            <span className="project-number-badge">#13</span>
+          </div>
           <p>
             A sleek, modern bathroom renovation utilizing a neutral color palette to create a spacious and calming atmosphere. 
             The walls are fully tiled in large-format stone-effect ceramic, paired with contrasting grey wood-effect flooring. 

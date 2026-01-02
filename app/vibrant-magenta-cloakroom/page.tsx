@@ -54,7 +54,12 @@ export default function VibrantMagentaCloakroomPage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Vibrant Magenta Cloakroom</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Vibrant Magenta Cloakroom
+            </h1>
+            <span className="project-number-badge">#29</span>
+          </div>
           <p>
             A compact downstairs WC renovation that proves small spaces can handle bold design. The room features a striking contrast between the neutral lower half and the vibrant upper walls. I installed beige stone-effect tiles to dado height to provide a durable, splash-proof surface, finished with a neat trim. The upper walls and ceiling were painted in a deep magenta to add character and warmth. To make the most of the narrow layout, I fitted a slimline white gloss vanity unit that provides storage without encroaching on the floor space. As the sole contractor, I managed the tiling, plumbing, flooring, and decoration.
           </p>

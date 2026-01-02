@@ -54,7 +54,12 @@ export default function MidnightBlueOnyxSuitePage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Midnight Blue Onyx Suite</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Midnight Blue Onyx Suite
+            </h1>
+            <span className="project-number-badge">#22</span>
+          </div>
           <p>
             A high-end bathroom renovation designed to make a dramatic statement. 
             The space is defined by large-format porcelain tiles featuring bold blue and grey veining, creating a luxurious "blue onyx" marble effect that wraps around the room. 

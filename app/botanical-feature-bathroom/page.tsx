@@ -54,7 +54,12 @@ export default function BotanicalFeatureBathroomPage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Botanical Feature Bathroom</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Botanical Feature Bathroom
+            </h1>
+            <span className="project-number-badge">#31</span>
+          </div>
           <p>
             A bathroom renovation that injects personality into the space through a bold choice of materials. The focal point of the design is a feature wall above the bath, tiled with a striking large-scale tropical leaf pattern in cool blue tones. This is balanced by clean white matte tiling on the remaining walls to keep the room feeling bright and open. To ensure the space is versatile for daily use, I installed a multi-fold glass shower screen that tucks away neatly when not in use. The look is anchored by a dark blue wall-hung vanity unit that complements the feature tiles perfectly. As the sole contractor, I managed the plumbing, tiling, and installation to transform the room.
           </p>

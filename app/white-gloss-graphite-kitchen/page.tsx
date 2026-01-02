@@ -55,7 +55,12 @@ export default function WhiteGlossGraphiteKitchenPage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>White Gloss & Graphite Kitchen</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              White Gloss & Graphite Kitchen
+            </h1>
+            <span className="project-number-badge">#20</span>
+          </div>
           <p>
             A sleek, ultra-modern kitchen renovation defined by its high-contrast monochrome palette. 
             The design features high-gloss white cabinetry paired with dark stone-effect worktops and matching grey splashback panels for a streamlined, low-maintenance finish. 

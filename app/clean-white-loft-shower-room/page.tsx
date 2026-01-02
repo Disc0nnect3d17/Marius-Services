@@ -54,7 +54,12 @@ export default function CleanWhiteLoftShowerRoomPage() {
 
         {/* Description */}
         <div className="project-description">
-          <h2>Clean White Loft Shower Room</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Clean White Loft Shower Room
+            </h1>
+            <span className="project-number-badge">#33</span>
+          </div>
           <p>
             A bright and highly functional shower room renovation, situated in a space with a sloping ceiling which suggests a loft or attic conversion. The design prioritizes light and a sense of spaciousness, achieved by using large-format white gloss wall tiles from floor to ceiling. This simple, reflective finish helps to visually expand the compact footprint. I installed a sleek corner shower enclosure with a dual-outlet mixing valve to offer a luxurious shower experience without dominating the room. To maintain clear floor space, I fitted a compact wall-hung vanity unit. As the sole contractor, I managed the entire fit-out, ensuring a crisp and watertight finish.
           </p>
