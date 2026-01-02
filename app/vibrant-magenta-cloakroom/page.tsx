@@ -8,10 +8,10 @@ export default function VibrantMagentaCloakroomPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "cover.JPG",
-    "vibrant-magenta-cloakroom-1.JPG",
-    "vibrant-magenta-cloakroom-2.JPG",
-    "vibrant-magenta-cloakroom-3.JPG"
+    "cover.jpg",
+    "vibrant-magenta-cloakroom-1.jpg",
+    "vibrant-magenta-cloakroom-2.jpg",
+    "vibrant-magenta-cloakroom-3.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -43,7 +43,7 @@ export default function VibrantMagentaCloakroomPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Vibrant Magenta Cloakroom/cover.JPG"
+              src="/images/portfolio/vibrant-magenta-cloakroom/cover.jpg"
               alt="Vibrant Magenta Cloakroom"
               fill
               priority
@@ -52,10 +52,10 @@ export default function VibrantMagentaCloakroomPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["vibrant-magenta-cloakroom-1.JPG", "vibrant-magenta-cloakroom-2.JPG", "vibrant-magenta-cloakroom-3.JPG"].map((img, idx) => (
+            {["vibrant-magenta-cloakroom-1.jpg", "vibrant-magenta-cloakroom-2.jpg", "vibrant-magenta-cloakroom-3.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Vibrant Magenta Cloakroom/${img}`}
+                  src={`/images/portfolio/vibrant-magenta-cloakroom/${img}`}
                   alt="Vibrant Magenta Cloakroom detail"
                   fill
                 />
@@ -112,7 +112,7 @@ export default function VibrantMagentaCloakroomPage() {
             </button>
 
             <img
-              src={`/images/portfolio/Vibrant Magenta Cloakroom/${images[currentImageIndex]}`}
+              src={`/images/portfolio/vibrant-magenta-cloakroom/${images[currentImageIndex]}`}
               alt="Vibrant Magenta Cloakroom"
               style={{ 
                 maxWidth: '90vw', 

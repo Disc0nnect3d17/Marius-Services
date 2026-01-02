@@ -43,7 +43,7 @@ export default function MidnightBlueOnyxSuitePage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Midnight Blue Onyx Suite/cover.jpg"
+              src="/images/portfolio/midnight-blue-onyx-suite/cover.jpg"
               alt="Midnight Blue Onyx Suite"
               fill
               priority
@@ -55,7 +55,7 @@ export default function MidnightBlueOnyxSuitePage() {
             {["midnight-blue-onyx-suite-1.jpg", "midnight-blue-onyx-suite-2.jpg", "midnight-blue-onyx-suite-3.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Midnight Blue Onyx Suite/${img}`}
+                  src={`/images/portfolio/midnight-blue-onyx-suite/${img}`}
                   alt="Midnight Blue Onyx Suite detail"
                   fill
                 />
@@ -113,7 +113,7 @@ export default function MidnightBlueOnyxSuitePage() {
             </button>
 
             <img
-              src={`/images/portfolio/Midnight Blue Onyx Suite/${images[currentImageIndex]}`}
+              src={`/images/portfolio/midnight-blue-onyx-suite/${images[currentImageIndex]}`}
               alt="Midnight Blue Onyx Suite"
               style={{ 
                 maxWidth: '90vw', 

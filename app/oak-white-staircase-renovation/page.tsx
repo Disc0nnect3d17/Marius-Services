@@ -8,11 +8,11 @@ export default function OakWhiteStaircaseRenovationPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "cover.JPG",
-    "oak-white-staircase-renovation-1.JPG",
-    "oak-white-staircase-renovation-2.JPG",
-    "oak-white-staircase-renovation-3.JPG",
-    "oak-white-staircase-renovation-4.JPG",
+    "cover.jpg",
+    "oak-white-staircase-renovation-1.jpg",
+    "oak-white-staircase-renovation-2.jpg",
+    "oak-white-staircase-renovation-3.jpg",
+    "oak-white-staircase-renovation-4.jpg",
     "oak-white-staircase-renovation-5.jpg"
   ];
 
@@ -45,7 +45,7 @@ export default function OakWhiteStaircaseRenovationPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Oak & White Staircase Renovation/cover.JPG"
+              src="/images/portfolio/oak-white-staircase-renovation/cover.jpg"
               alt="Oak & White Staircase Renovation"
               fill
               priority
@@ -54,10 +54,10 @@ export default function OakWhiteStaircaseRenovationPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["oak-white-staircase-renovation-1.JPG", "oak-white-staircase-renovation-2.JPG", "oak-white-staircase-renovation-3.JPG", "oak-white-staircase-renovation-4.JPG", "oak-white-staircase-renovation-5.jpg"].map((img, idx) => (
+            {["oak-white-staircase-renovation-1.jpg", "oak-white-staircase-renovation-2.jpg", "oak-white-staircase-renovation-3.jpg", "oak-white-staircase-renovation-4.jpg", "oak-white-staircase-renovation-5.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Oak & White Staircase Renovation/${img}`}
+                  src={`/images/portfolio/oak-white-staircase-renovation/${img}`}
                   alt="Oak & White Staircase Renovation detail"
                   fill
                 />
@@ -113,7 +113,7 @@ export default function OakWhiteStaircaseRenovationPage() {
               </button>
 
               <img
-                src={`/images/portfolio/Oak & White Staircase Renovation/${images[currentImageIndex]}`}
+                src={`/images/portfolio/oak-white-staircase-renovation/${images[currentImageIndex]}`}
                 alt="Oak & White Staircase Renovation"
                 style={{ 
                   maxWidth: '90vw', 

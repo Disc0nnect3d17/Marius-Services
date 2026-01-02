@@ -7,8 +7,8 @@ import FloatingContact from '@/components/FloatingContact';
 
 export default function WarmOakLaminateBedroomPage() {
   const images = [
-    '/images/portfolio/Warm Oak Laminate Bedroom/cover.JPG',
-    '/images/portfolio/Warm Oak Laminate Bedroom/warm-oak-laminate-bedroom-1.JPG',
+    '/images/portfolio/warm-oak-laminate-bedroom/cover.jpg',
+    '/images/portfolio/warm-oak-laminate-bedroom/warm-oak-laminate-bedroom-1.jpg',
   ];
 
   const [lightboxOpen, setLightboxOpen] = useState(false);

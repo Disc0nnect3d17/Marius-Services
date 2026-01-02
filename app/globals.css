@@ -1765,6 +1765,41 @@ main {
     background: #f4f4f4;
     will-change: transform;
     animation: fadeInMasonry 0.4s ease forwards;
+    min-height: 200px;
+    position: relative;
+}
+
+/* Loading skeleton effect */
+.masonry-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        #f0f0f0 0%,
+        #e0e0e0 50%,
+        #f0f0f0 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+    z-index: 0;
+}
+
+.masonry-item img {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
 }
 
 @keyframes fadeInMasonry {
@@ -1812,6 +1847,14 @@ main {
     width: 100%;
     height: auto;
     display: block;
+    min-height: 200px;
+    object-fit: cover;
+    background: #e1e4e8;
+}
+
+.portfolio-card-image[src=""],
+.portfolio-card-image:not([src]) {
+    min-height: 300px;
 }
 
 /* Project Number Badge for Individual Pages */

@@ -8,9 +8,9 @@ export default function GreyOakLaminateInstallationPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "cover.JPG",
-    "IMG_3377.JPG",
-    "IMG_3379.JPG"
+    "cover.jpg",
+    "IMG_3377.jpg",
+    "IMG_3379.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -42,7 +42,7 @@ export default function GreyOakLaminateInstallationPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Grey Oak Laminate Installation/cover.JPG"
+              src="/images/portfolio/grey-oak-laminate-installation/cover.jpg"
               alt="Grey Oak Laminate Installation"
               fill
               priority
@@ -51,10 +51,10 @@ export default function GreyOakLaminateInstallationPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["IMG_3377.JPG", "IMG_3379.JPG"].map((img, idx) => (
+            {["IMG_3377.jpg", "IMG_3379.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Grey Oak Laminate Installation/${img}`}
+                  src={`/images/portfolio/grey-oak-laminate-installation/${img}`}
                   alt="Grey Oak Laminate Installation detail"
                   fill
                 />
@@ -109,7 +109,7 @@ export default function GreyOakLaminateInstallationPage() {
               </button>
 
               <img
-                src={`/images/portfolio/Grey Oak Laminate Installation/${images[currentImageIndex]}`}
+                src={`/images/portfolio/grey-oak-laminate-installation/${images[currentImageIndex]}`}
                 alt="Grey Oak Laminate Installation"
                 style={{ 
                   maxWidth: '90vw', 

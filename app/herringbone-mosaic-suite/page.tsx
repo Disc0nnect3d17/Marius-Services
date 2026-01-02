@@ -8,10 +8,10 @@ export default function HerringboneMosaicPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "/images/portfolio/Herringbone & Mosaic Suite/cover.JPG",
-    "/images/portfolio/Herringbone & Mosaic Suite/herringbone-mosaic-suite-1.JPG",
-    "/images/portfolio/Herringbone & Mosaic Suite/herringbone-mosaic-suite-2.JPG",
-    "/images/portfolio/Herringbone & Mosaic Suite/herringbone-mosaic-suite-3.JPG"
+    "/images/portfolio/herringbone-mosaic-suite/cover.jpg",
+    "/images/portfolio/herringbone-mosaic-suite/herringbone-mosaic-suite-1.jpg",
+    "/images/portfolio/herringbone-mosaic-suite/herringbone-mosaic-suite-2.jpg",
+    "/images/portfolio/herringbone-mosaic-suite/herringbone-mosaic-suite-3.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -43,7 +43,7 @@ export default function HerringboneMosaicPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Herringbone & Mosaic Suite/cover.JPG"
+              src="/images/portfolio/herringbone-mosaic-suite/cover.jpg"
               alt="Herringbone & Mosaic Suite"
               fill
               priority
@@ -52,10 +52,10 @@ export default function HerringboneMosaicPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["herringbone-mosaic-suite-1.JPG", "herringbone-mosaic-suite-2.JPG", "herringbone-mosaic-suite-3.JPG"].map((img, index) => (
+            {["herringbone-mosaic-suite-1.jpg", "herringbone-mosaic-suite-2.jpg", "herringbone-mosaic-suite-3.jpg"].map((img, index) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(index + 1)}>
                 <Image
-                  src={`/images/portfolio/Herringbone & Mosaic Suite/${img}`}
+                  src={`/images/portfolio/herringbone-mosaic-suite/${img}`}
                   alt="Herringbone & Mosaic Suite detail"
                   fill
                 />

@@ -8,9 +8,9 @@ export default function NeutralWalkInShowerRoomPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "cover.JPG",
-    "neutral-walk-in-shower-room-1.JPG",
-    "neutral-walk-in-shower-room-2.JPG"
+    "cover.jpg",
+    "neutral-walk-in-shower-room-1.jpg",
+    "neutral-walk-in-shower-room-2.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -42,7 +42,7 @@ export default function NeutralWalkInShowerRoomPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Neutral Walk-In Shower Room/cover.JPG"
+              src="/images/portfolio/neutral-walk-in-shower-room/cover.jpg"
               alt="Neutral Walk-In Shower Room"
               fill
               priority
@@ -51,10 +51,10 @@ export default function NeutralWalkInShowerRoomPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["neutral-walk-in-shower-room-1.JPG", "neutral-walk-in-shower-room-2.JPG"].map((img, idx) => (
+            {["neutral-walk-in-shower-room-1.jpg", "neutral-walk-in-shower-room-2.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Neutral Walk-In Shower Room/${img}`}
+                  src={`/images/portfolio/neutral-walk-in-shower-room/${img}`}
                   alt="Neutral Walk-In Shower Room detail"
                   fill
                 />
@@ -96,7 +96,7 @@ export default function NeutralWalkInShowerRoomPage() {
               &times;
             </button>
             <img
-              src={`/images/portfolio/Neutral Walk-In Shower Room/${images[currentImageIndex]}`}
+              src={`/images/portfolio/neutral-walk-in-shower-room/${images[currentImageIndex]}`}
               alt="Neutral Walk-In Shower Room"
               style={{ 
                 maxWidth: '90vw', 

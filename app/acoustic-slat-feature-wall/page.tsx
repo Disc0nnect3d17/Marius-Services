@@ -8,8 +8,8 @@ export default function AcousticSlatFeatureWallPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "cover.JPG",
-    "acoustic-slat-feature-wall-1.JPG"
+    "cover.jpg",
+    "acoustic-slat-feature-wall-1.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -41,7 +41,7 @@ export default function AcousticSlatFeatureWallPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Acoustic Slat Feature Wall/cover.JPG"
+              src="/images/portfolio/acoustic-slat-feature-wall/cover.jpg"
               alt="Acoustic Slat Feature Wall"
               fill
               priority
@@ -50,10 +50,10 @@ export default function AcousticSlatFeatureWallPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["acoustic-slat-feature-wall-1.JPG"].map((img, idx) => (
+            {["acoustic-slat-feature-wall-1.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Acoustic Slat Feature Wall/${img}`}
+                  src={`/images/portfolio/acoustic-slat-feature-wall/${img}`}
                   alt="Acoustic Slat Feature Wall detail"
                   fill
                 />
@@ -107,7 +107,7 @@ export default function AcousticSlatFeatureWallPage() {
             </button>
 
             <img
-              src={`/images/portfolio/Acoustic Slat Feature Wall/${images[currentImageIndex]}`}
+              src={`/images/portfolio/acoustic-slat-feature-wall/${images[currentImageIndex]}`}
               alt="Acoustic Slat Feature Wall"
               style={{ 
                 maxWidth: '90vw', 

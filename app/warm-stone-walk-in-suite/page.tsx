@@ -43,7 +43,7 @@ export default function WarmStoneWalkInSuitePage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Warm Stone Walk-In Suite/cover.jpg"
+              src="/images/portfolio/warm-stone-walk-in-suite/cover.jpg"
               alt="Warm Stone Walk-In Suite"
               fill
               priority
@@ -55,7 +55,7 @@ export default function WarmStoneWalkInSuitePage() {
             {["warm-stone-walk-in-suite-1.jpg", "warm-stone-walk-in-suite-2.jpg", "warm-stone-walk-in-suite-3.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Warm Stone Walk-In Suite/${img}`}
+                  src={`/images/portfolio/warm-stone-walk-in-suite/${img}`}
                   alt="Warm Stone Walk-In Suite detail"
                   fill
                 />
@@ -114,7 +114,7 @@ export default function WarmStoneWalkInSuitePage() {
             </button>
 
             <img
-              src={`/images/portfolio/Warm Stone Walk-In Suite/${images[currentImageIndex]}`}
+              src={`/images/portfolio/warm-stone-walk-in-suite/${images[currentImageIndex]}`}
               alt="Warm Stone Walk-In Suite"
               style={{ 
                 maxWidth: '90vw', 

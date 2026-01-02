@@ -8,10 +8,10 @@ export default function CleanWhiteLoftShowerRoomPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "cover.JPG",
-    "clean-white-loft-shower-room-1.JPG",
-    "clean-white-loft-shower-room-2.JPG",
-    "clean-white-loft-shower-room-3.JPG"
+    "cover.jpg",
+    "clean-white-loft-shower-room-1.jpg",
+    "clean-white-loft-shower-room-2.jpg",
+    "clean-white-loft-shower-room-3.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -43,7 +43,7 @@ export default function CleanWhiteLoftShowerRoomPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Clean White Loft Shower Room/cover.JPG"
+              src="/images/portfolio/clean-white-loft-shower-room/cover.jpg"
               alt="Clean White Loft Shower Room"
               fill
               priority
@@ -52,10 +52,10 @@ export default function CleanWhiteLoftShowerRoomPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["clean-white-loft-shower-room-1.JPG", "clean-white-loft-shower-room-2.JPG", "clean-white-loft-shower-room-3.JPG"].map((img, idx) => (
+            {["clean-white-loft-shower-room-1.jpg", "clean-white-loft-shower-room-2.jpg", "clean-white-loft-shower-room-3.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Clean White Loft Shower Room/${img}`}
+                  src={`/images/portfolio/clean-white-loft-shower-room/${img}`}
                   alt="Clean White Loft Shower Room detail"
                   fill
                 />
@@ -112,7 +112,7 @@ export default function CleanWhiteLoftShowerRoomPage() {
               </button>
 
               <img
-                src={`/images/portfolio/Clean White Loft Shower Room/${images[currentImageIndex]}`}
+                src={`/images/portfolio/clean-white-loft-shower-room/${images[currentImageIndex]}`}
                 alt="Clean White Loft Shower Room"
                 style={{ 
                   maxWidth: '90vw', 

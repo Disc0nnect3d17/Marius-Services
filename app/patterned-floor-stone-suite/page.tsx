@@ -8,12 +8,12 @@ export default function PatternedFloorStonePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "/images/portfolio/Patterned Floor & Stone Suite/cover.JPG",
-    "/images/portfolio/Patterned Floor & Stone Suite/patterned-floor-stone-suite-1.JPG",
-    "/images/portfolio/Patterned Floor & Stone Suite/patterned-floor-stone-suite-2.JPG",
-    "/images/portfolio/Patterned Floor & Stone Suite/patterned-floor-stone-suite-3.JPG",
-    "/images/portfolio/Patterned Floor & Stone Suite/patterned-floor-stone-suite-4.JPG",
-    "/images/portfolio/Patterned Floor & Stone Suite/patterned-floor-stone-suite-5.JPG"
+    "/images/portfolio/patterned-floor-stone-suite/cover.jpg",
+    "/images/portfolio/patterned-floor-stone-suite/patterned-floor-stone-suite-1.jpg",
+    "/images/portfolio/patterned-floor-stone-suite/patterned-floor-stone-suite-2.jpg",
+    "/images/portfolio/patterned-floor-stone-suite/patterned-floor-stone-suite-3.jpg",
+    "/images/portfolio/patterned-floor-stone-suite/patterned-floor-stone-suite-4.jpg",
+    "/images/portfolio/patterned-floor-stone-suite/patterned-floor-stone-suite-5.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -45,7 +45,7 @@ export default function PatternedFloorStonePage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Patterned Floor & Stone Suite/cover.JPG"
+              src="/images/portfolio/patterned-floor-stone-suite/cover.jpg"
               alt="Patterned Floor & Stone Suite"
               fill
               priority
@@ -57,7 +57,7 @@ export default function PatternedFloorStonePage() {
             {["patterned-floor-stone-suite-1.JPG", "patterned-floor-stone-suite-2.JPG", "patterned-floor-stone-suite-3.JPG", "patterned-floor-stone-suite-4.JPG", "patterned-floor-stone-suite-5.JPG"].map((img, index) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(index + 1)}>
                 <Image
-                  src={`/images/portfolio/Patterned Floor & Stone Suite/${img}`}
+                  src={`/images/portfolio/patterned-floor-stone-suite/${img}`}
                   alt="Patterned Floor & Stone Suite detail"
                   fill
                 />

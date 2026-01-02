@@ -8,12 +8,12 @@ export default function AnthraciteMarblePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "/images/portfolio/The Anthracite & Marble Suite/cover.JPG",
-    "/images/portfolio/The Anthracite & Marble Suite/anthracite-marble-suite-1.JPG",
-    "/images/portfolio/The Anthracite & Marble Suite/anthracite-marble-suite-2.JPG",
-    "/images/portfolio/The Anthracite & Marble Suite/anthracite-marble-suite-3.JPG",
-    "/images/portfolio/The Anthracite & Marble Suite/anthracite-marble-suite-4.JPG",
-    "/images/portfolio/The Anthracite & Marble Suite/anthracite-marble-suite-5.JPG"
+    "/images/portfolio/the-anthracite-marble-suite/cover.jpg",
+    "/images/portfolio/the-anthracite-marble-suite/anthracite-marble-suite-1.jpg",
+    "/images/portfolio/the-anthracite-marble-suite/anthracite-marble-suite-2.jpg",
+    "/images/portfolio/the-anthracite-marble-suite/anthracite-marble-suite-3.jpg",
+    "/images/portfolio/the-anthracite-marble-suite/anthracite-marble-suite-4.jpg",
+    "/images/portfolio/the-anthracite-marble-suite/anthracite-marble-suite-5.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -45,7 +45,7 @@ export default function AnthraciteMarblePage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/The Anthracite & Marble Suite/cover.JPG"
+              src="/images/portfolio/the-anthracite-marble-suite/cover.jpg"
               alt="The Anthracite & Marble Suite"
               fill
               priority
@@ -54,10 +54,10 @@ export default function AnthraciteMarblePage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["anthracite-marble-suite-1.JPG", "anthracite-marble-suite-2.JPG", "anthracite-marble-suite-3.JPG", "anthracite-marble-suite-4.JPG", "anthracite-marble-suite-5.JPG"].map((img, index) => (
+            {["anthracite-marble-suite-1.jpg", "anthracite-marble-suite-2.jpg", "anthracite-marble-suite-3.jpg", "anthracite-marble-suite-4.jpg", "anthracite-marble-suite-5.jpg"].map((img, index) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(index + 1)}>
                 <Image
-                  src={`/images/portfolio/The Anthracite & Marble Suite/${img}`}
+                  src={`/images/portfolio/the-anthracite-marble-suite/${img}`}
                   alt="The Anthracite & Marble Suite detail"
                   fill
                 />

@@ -8,9 +8,9 @@ export default function CompactBrightShowerRoomPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "/images/portfolio/Compact Bright Shower Room/cover1.JPG",
-    "/images/portfolio/Compact Bright Shower Room/compact-bright-shower-room-1.JPG",
-    "/images/portfolio/Compact Bright Shower Room/compact-bright-shower-room-2.JPG"
+    "/images/portfolio/compact-bright-shower-room/cover1.jpg",
+    "/images/portfolio/compact-bright-shower-room/compact-bright-shower-room-1.jpg",
+    "/images/portfolio/compact-bright-shower-room/compact-bright-shower-room-2.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -42,7 +42,7 @@ export default function CompactBrightShowerRoomPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Compact Bright Shower Room/cover1.JPG"
+              src="/images/portfolio/compact-bright-shower-room/cover1.jpg"
               alt="Compact Bright Shower Room"
               fill
               priority
@@ -51,10 +51,10 @@ export default function CompactBrightShowerRoomPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["compact-bright-shower-room-1.JPG", "compact-bright-shower-room-2.JPG"].map((img, index) => (
+            {["compact-bright-shower-room-1.jpg", "compact-bright-shower-room-2.jpg"].map((img, index) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(index + 1)}>
                 <Image
-                  src={`/images/portfolio/Compact Bright Shower Room/${img}`}
+                  src={`/images/portfolio/compact-bright-shower-room/${img}`}
                   alt="Compact Bright Shower Room detail"
                   fill
                 />

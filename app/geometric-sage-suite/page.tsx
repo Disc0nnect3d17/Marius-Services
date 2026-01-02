@@ -44,7 +44,7 @@ export default function GeometricSagePage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Geometric Sage Suite/cover.jpg"
+              src="/images/portfolio/geometric-sage-suite/cover.jpg"
               alt="Geometric Sage Suite bathroom"
               fill
               priority
@@ -56,7 +56,7 @@ export default function GeometricSagePage() {
             {["geometric-sage-suite-1.jpg", "geometric-sage-suite-2.jpg", "geometric-sage-suite-3.jpg", "geometric-sage-suite-4.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Geometric Sage Suite/${img}`}
+                  src={`/images/portfolio/geometric-sage-suite/${img}`}
                   alt="Geometric Sage Suite detail"
                   fill
                 />
@@ -114,7 +114,7 @@ export default function GeometricSagePage() {
               </button>
 
               <img
-                src={`/images/portfolio/Geometric Sage Suite/${images[currentImageIndex]}`}
+                src={`/images/portfolio/geometric-sage-suite/${images[currentImageIndex]}`}
                 alt="Geometric Sage Suite"
                 style={{ 
                   maxWidth: '90vw', 

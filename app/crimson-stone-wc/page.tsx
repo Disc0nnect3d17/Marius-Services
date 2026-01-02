@@ -8,10 +8,10 @@ export default function CrimsonStoneWCPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "cover.JPG",
-    "crimson-stone-1.JPG",
-    "crimson-stone-2.JPG",
-    "crimson-stone-3.JPG"
+    "cover.jpg",
+    "crimson-stone-1.jpg",
+    "crimson-stone-2.jpg",
+    "crimson-stone-3.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -43,7 +43,7 @@ export default function CrimsonStoneWCPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Crimson & Stone WC/cover.JPG"
+              src="/images/portfolio/crimson-stone-wc/cover.jpg"
               alt="Crimson & Stone WC"
               fill
               priority
@@ -52,10 +52,10 @@ export default function CrimsonStoneWCPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["crimson-stone-1.JPG", "crimson-stone-2.JPG", "crimson-stone-3.JPG"].map((img, idx) => (
+            {["crimson-stone-1.jpg", "crimson-stone-2.jpg", "crimson-stone-3.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Crimson & Stone WC/${img}`}
+                  src={`/images/portfolio/crimson-stone-wc/${img}`}
                   alt="Crimson & Stone WC detail"
                   fill
                 />
@@ -111,7 +111,7 @@ export default function CrimsonStoneWCPage() {
             </button>
 
             <img
-              src={`/images/portfolio/Crimson & Stone WC/${images[currentImageIndex]}`}
+              src={`/images/portfolio/crimson-stone-wc/${images[currentImageIndex]}`}
               alt="Crimson & Stone WC"
               style={{ 
                 maxWidth: '90vw', 

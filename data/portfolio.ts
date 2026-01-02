@@ -13,7 +13,7 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'The Sage & Walnut Shaker',
         slug: 'the-sage-walnut-shaker',
         category: 'kitchen',
-        coverImage: '/images/portfolio/sage-walnut/cover.JPG',
+        coverImage: '/images/portfolio/sage-walnut/cover.jpg',
         featured: true
     },
     {
@@ -21,7 +21,7 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Marble & Midnight Suite',
         slug: 'marble-midnight-suite',
         category: 'bathroom',
-        coverImage: '/images/portfolio/Marble & Midnight Suite/cover.JPG',
+        coverImage: '/images/portfolio/marble-midnight-suite/cover.jpg',
         featured: true
     },
     {
@@ -29,28 +29,28 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Crimson & Stone WC',
         slug: 'crimson-stone-wc',
         category: 'wc',
-        coverImage: '/images/portfolio/Crimson & Stone WC/cover.JPG'
+        coverImage: '/images/portfolio/crimson-stone-wc/cover.jpg'
     },
     {
         id: '4',
         title: 'Sandstone & Mosaic Shower Room',
         slug: 'sandstone-mosaic-shower-room',
         category: 'shower-room',
-        coverImage: '/images/portfolio/Sandstone & Mosaic Shower Room/cover.JPG'
+        coverImage: '/images/portfolio/sandstone-mosaic-shower-room/cover.jpg'
     },
     {
         id: '5',
         title: 'Slate & Chrome Shower Room',
         slug: 'slate-chrome-shower-room',
         category: 'shower-room',
-        coverImage: '/images/portfolio/Slate & Chrome Shower Room/cover.JPG'
+        coverImage: '/images/portfolio/slate-chrome-shower-room/cover.jpg'
     },
     {
         id: '6',
         title: 'The Anthracite & Marble Suite',
         slug: 'the-anthracite-marble-suite',
         category: 'bathroom',
-        coverImage: '/images/portfolio/The Anthracite & Marble Suite/cover.JPG',
+        coverImage: '/images/portfolio/the-anthracite-marble-suite/cover.jpg',
         featured: true
     },
     {
@@ -58,77 +58,77 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Porcelain & Timber Suite',
         slug: 'porcelain-timber-suite',
         category: 'bathroom',
-        coverImage: '/images/portfolio/Porcelain & Timber Suite/cover.JPG'
+        coverImage: '/images/portfolio/porcelain-timber-suite/cover.jpg'
     },
     {
         id: '8',
         title: 'Herringbone & Mosaic Suite',
         slug: 'herringbone-mosaic-suite',
         category: 'bathroom',
-        coverImage: '/images/portfolio/Herringbone & Mosaic Suite/cover.JPG'
+        coverImage: '/images/portfolio/herringbone-mosaic-suite/cover.jpg'
     },
     {
         id: '9',
         title: 'Classic White & Timber Suite',
         slug: 'classic-white-timber-suite',
         category: 'bathroom',
-        coverImage: '/images/portfolio/Classic White & Timber Suite/cover.JPG'
+        coverImage: '/images/portfolio/classic-white-timber-suite/cover.jpg'
     },
     {
         id: '10',
         title: 'Contemporary Stone Wet Room',
         slug: 'contemporary-stone-wet-room',
         category: 'wet-room',
-        coverImage: '/images/portfolio/Contemporary Stone Wet Room/cover.JPG'
+        coverImage: '/images/portfolio/contemporary-stone-wet-room/cover1.jpg'
     },
     {
         id: '11',
         title: 'Marble & Chevron Kitchen',
         slug: 'marble-chevron-kitchen',
         category: 'kitchen',
-        coverImage: '/images/portfolio/Marble & Chevron Kitchen/cover.JPG'
+        coverImage: '/images/portfolio/marble-chevron-kitchen/cover.jpg'
     },
     {
         id: '12',
         title: 'Patterned Floor & Stone Suite',
         slug: 'patterned-floor-stone-suite',
         category: 'bathroom',
-        coverImage: '/images/portfolio/Patterned Floor & Stone Suite/cover.JPG'
+        coverImage: '/images/portfolio/patterned-floor-stone-suite/cover.jpg'
     },
     {
         id: '13',
         title: 'Neutral Stone & Gloss Suite',
         slug: 'neutral-stone-gloss-suite',
         category: 'bathroom',
-        coverImage: '/images/portfolio/Neutral Stone & Gloss Suite/cover.JPG'
+        coverImage: '/images/portfolio/neutral-stone-gloss-suite/cover.jpg'
     },
     {
         id: '14',
         title: 'Compact Bright Shower Room',
         slug: 'compact-bright-shower-room',
         category: 'shower-room',
-        coverImage: '/images/portfolio/Compact Bright Shower Room/cover1.JPG'
+        coverImage: '/images/portfolio/compact-bright-shower-room/cover1.jpg'
     },
     {
         id: '15',
         title: 'Grey Mosaic Wet Room',
         slug: 'grey-mosaic-wet-room',
         category: 'wet-room',
-        coverImage: '/images/portfolio/Grey Mosaic Wet Room/cover.JPG'
+        coverImage: '/images/portfolio/grey-mosaic-wet-room/cover.jpg'
     },
     {
         id: '16',
         title: 'Stone & Graphite Suite',
         slug: 'stone-graphite-suite',
         category: 'bathroom',
-        coverImage: '/images/portfolio/Stone & Graphite Suite/cover.JPG'
+        coverImage: '/images/portfolio/stone-graphite-suite/cover.jpg'
     },
     {
         id: '17',
         title: 'Vibrant Metro WC',
         slug: 'vibrant-metro-wc',
         category: 'wc',
-        coverImage: '/images/portfolio/Vibrant Metro WC/cover.JPG',
+        coverImage: '/images/portfolio/vibrant-metro-wc/cover.jpg',
         featured: true
     },
     {
@@ -136,35 +136,35 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Marble & Geometric Suite',
         slug: 'marble-geometric-suite',
         category: 'bathroom',
-        coverImage: '/images/portfolio/Marble & Geometric Suite/cover.JPG'
+        coverImage: '/images/portfolio/marble-geometric-suite/cover.jpg'
     },
     {
         id: '19',
         title: 'Linear Stone Wet Room',
         slug: 'linear-stone-wet-room',
         category: 'wet-room',
-        coverImage: '/images/portfolio/Linear Stone Wet Room/cover.JPG'
+        coverImage: '/images/portfolio/linear-stone-wet-room/cover.jpg'
     },
     {
         id: '20',
         title: 'White Gloss & Graphite Kitchen',
         slug: 'white-gloss-graphite-kitchen',
         category: 'kitchen',
-        coverImage: '/images/portfolio/White Gloss & Graphite Kitchen/cover.JPG'
+        coverImage: '/images/portfolio/white-gloss-graphite-kitchen/cover.jpg'
     },
     {
         id: '21',
         title: 'Warm Stone Walk-In Suite',
         slug: 'warm-stone-walk-in-suite',
         category: 'bathroom',
-        coverImage: '/images/portfolio/Warm Stone Walk-In Suite/cover.jpg'
+        coverImage: '/images/portfolio/warm-stone-walk-in-suite/cover.jpg'
     },
     {
         id: '22',
         title: 'Midnight Blue Onyx Suite',
         slug: 'midnight-blue-onyx-suite',
         category: 'bathroom',
-        coverImage: '/images/portfolio/Midnight Blue Onyx Suite/cover.jpg',
+        coverImage: '/images/portfolio/midnight-blue-onyx-suite/cover.jpg',
         featured: true
     },
     {
@@ -172,7 +172,7 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Marble & Gold Suite',
         slug: 'marble-gold-suite',
         category: 'bathroom',
-        coverImage: '/images/portfolio/Marble & Gold Suite/cover.jpg',
+        coverImage: '/images/portfolio/marble-gold-suite/cover.jpg',
         featured: true
     },
     {
@@ -188,7 +188,7 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Geometric Sage Suite',
         slug: 'geometric-sage-suite',
         category: 'bathroom',
-        coverImage: '/images/portfolio/Geometric Sage Suite/cover.jpg',
+        coverImage: '/images/portfolio/geometric-sage-suite/cover.jpg',
         featured: true
     },
     {
@@ -196,7 +196,7 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Monochrome Marble Ensuite',
         slug: 'monochrome-marble-ensuite',
         category: 'bathroom',
-        coverImage: '/images/portfolio/Monochrome Marble Ensuite/cover.jpg',
+        coverImage: '/images/portfolio/monochrome-marble-ensuite/cover.jpg',
         featured: true
     },
     {
@@ -204,7 +204,7 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'High-Contrast Feature Ensuite',
         slug: 'high-contrast-feature-ensuite',
         category: 'bathroom',
-        coverImage: '/images/portfolio/High-Contrast Feature Ensuite/cover.jpg',
+        coverImage: '/images/portfolio/high-contrast-feature-ensuite/cover.jpg',
         featured: true
     },
     {
@@ -212,7 +212,7 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Slate Blue & White Suite',
         slug: 'slate-blue-white-suite',
         category: 'shower-room',
-        coverImage: '/images/portfolio/Slate Blue & White Suite/cover.JPG',
+        coverImage: '/images/portfolio/slate-blue-white-suite/cover.jpg',
         featured: true
     },
     {
@@ -220,7 +220,7 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Vibrant Magenta Cloakroom',
         slug: 'vibrant-magenta-cloakroom',
         category: 'wc',
-        coverImage: '/images/portfolio/Vibrant Magenta Cloakroom/cover.JPG',
+        coverImage: '/images/portfolio/vibrant-magenta-cloakroom/cover.jpg',
         featured: true
     },
     {
@@ -228,7 +228,7 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Neutral Walk-In Shower Room',
         slug: 'neutral-walk-in-shower-room',
         category: 'shower-room',
-        coverImage: '/images/portfolio/Neutral Walk-In Shower Room/cover.JPG',
+        coverImage: '/images/portfolio/neutral-walk-in-shower-room/cover.jpg',
         featured: true
     },
     {
@@ -236,7 +236,7 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Botanical Feature Bathroom',
         slug: 'botanical-feature-bathroom',
         category: 'bathroom',
-        coverImage: '/images/portfolio/Botanical Feature Bathroom/cover.JPG',
+        coverImage: '/images/portfolio/botanical-feature-bathroom/cover.jpg',
         featured: true
     },
     {
@@ -244,7 +244,7 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Tropical Feature & Fitted Suite',
         slug: 'tropical-feature-fitted-suite',
         category: 'bathroom',
-        coverImage: '/images/portfolio/Tropical Feature & Fitted Suite/cover.JPG',
+        coverImage: '/images/portfolio/tropical-feature-fitted-suite/cover.jpg',
         featured: true
     },
     {
@@ -252,7 +252,7 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Clean White Loft Shower Room',
         slug: 'clean-white-loft-shower-room',
         category: 'shower-room',
-        coverImage: '/images/portfolio/Clean White Loft Shower Room/cover.JPG',
+        coverImage: '/images/portfolio/clean-white-loft-shower-room/cover.jpg',
         featured: true
     },
     {
@@ -260,7 +260,7 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Compact Angular Cloakroom',
         slug: 'compact-angular-cloakroom',
         category: 'wc',
-        coverImage: '/images/portfolio/Compact Angular Cloakroom/cover.JPG',
+        coverImage: '/images/portfolio/compact-angular-cloakroom/cover.jpg',
         featured: true
     },
     {
@@ -268,7 +268,7 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Warm Stone & Fitted Shower Room',
         slug: 'warm-stone-fitted-shower-room',
         category: 'shower-room',
-        coverImage: '/images/portfolio/Warm Stone & Fitted Shower Room/cover.JPG',
+        coverImage: '/images/portfolio/warm-stone-fitted-shower-room/cover.jpg',
         featured: true
     },
     {
@@ -276,7 +276,7 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Marble & Mosaic Shower Room',
         slug: 'marble-mosaic-shower-room',
         category: 'shower-room',
-        coverImage: '/images/portfolio/Marble & Mosaic Shower Room/cover.JPG',
+        coverImage: '/images/portfolio/marble-mosaic-shower-room/cover.jpg',
         featured: true
     },
     {
@@ -284,7 +284,7 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Retro Industrial Shower Room',
         slug: 'retro-industrial-shower-room',
         category: 'shower-room',
-        coverImage: '/images/portfolio/Retro Industrial Shower Room/cover.JPG',
+        coverImage: '/images/portfolio/retro-industrial-shower-room/cover.jpg',
         featured: true
     },
     {
@@ -292,7 +292,7 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Grey Oak Laminate Installation',
         slug: 'grey-oak-laminate-installation',
         category: 'flooring',
-        coverImage: '/images/portfolio/Grey Oak Laminate Installation/cover.JPG',
+        coverImage: '/images/portfolio/grey-oak-laminate-installation/cover.jpg',
         featured: true
     },
     {
@@ -300,7 +300,7 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Grey Oak Bedroom Flooring',
         slug: 'grey-oak-bedroom-flooring',
         category: 'flooring',
-        coverImage: '/images/portfolio/Grey Oak Bedroom Flooring/cover.JPG',
+        coverImage: '/images/portfolio/grey-oak-bedroom-flooring/cover.jpg',
         featured: true
     },
     {
@@ -308,7 +308,7 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Oak & White Staircase Renovation',
         slug: 'oak-white-staircase-renovation',
         category: 'carpentry',
-        coverImage: '/images/portfolio/Oak & White Staircase Renovation/cover.JPG',
+        coverImage: '/images/portfolio/oak-white-staircase-renovation/cover.jpg',
         featured: true
     },
     {
@@ -316,7 +316,7 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Engineered Oak Landing, Bedroom & Staircase',
         slug: 'engineered-oak-bedroom-landing',
         category: 'flooring',
-        coverImage: '/images/portfolio/Engineered Oak Landing, Bedroom & Staircase/cover.JPG',
+        coverImage: '/images/portfolio/engineered-oak-bedroom-landing/cover.jpg',
         featured: true
     },
     {
@@ -324,7 +324,7 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Acoustic Slat Feature Wall',
         slug: 'acoustic-slat-feature-wall',
         category: 'carpentry',
-        coverImage: '/images/portfolio/Acoustic Slat Feature Wall/cover.JPG',
+        coverImage: '/images/portfolio/acoustic-slat-feature-wall/cover.jpg',
         featured: true
     },
     {
@@ -332,14 +332,14 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Warm Oak Laminate Bedroom',
         slug: 'warm-oak-laminate-bedroom',
         category: 'flooring',
-        coverImage: '/images/portfolio/Warm Oak Laminate Bedroom/cover.JPG'
+        coverImage: '/images/portfolio/warm-oak-laminate-bedroom/cover.jpg'
     },
     {
         id: '44',
         title: 'Polished Stone Family Bathroom',
         slug: 'polished-stone-family-bathroom',
         category: 'bathroom',
-        coverImage: '/images/portfolio/Polished Stone Family Bathroom/cover.JPG'
+        coverImage: '/images/portfolio/polished-stone-family-bathroom/cover.jpg'
     }
 ]
 

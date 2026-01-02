@@ -8,11 +8,11 @@ export default function WhiteGlossGraphiteKitchenPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "cover.JPG",
-    "white-gloss-graphite-kitchen-1.JPG",
-    "white-gloss-graphite-kitchen-2.JPG",
-    "white-gloss-graphite-kitchen-3.JPG",
-    "white-gloss-graphite-kitchen-4.JPG"
+    "cover.jpg",
+    "white-gloss-graphite-kitchen-1.jpg",
+    "white-gloss-graphite-kitchen-2.jpg",
+    "white-gloss-graphite-kitchen-3.jpg",
+    "white-gloss-graphite-kitchen-4.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -44,7 +44,7 @@ export default function WhiteGlossGraphiteKitchenPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/White Gloss & Graphite Kitchen/cover.JPG"
+              src="/images/portfolio/white-gloss-graphite-kitchen/cover.jpg"
               alt="White Gloss & Graphite Kitchen"
               fill
               priority
@@ -53,10 +53,10 @@ export default function WhiteGlossGraphiteKitchenPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["white-gloss-graphite-kitchen-1.JPG", "white-gloss-graphite-kitchen-2.JPG", "white-gloss-graphite-kitchen-3.JPG", "white-gloss-graphite-kitchen-4.JPG"].map((img, idx) => (
+            {["white-gloss-graphite-kitchen-1.jpg", "white-gloss-graphite-kitchen-2.jpg", "white-gloss-graphite-kitchen-3.jpg", "white-gloss-graphite-kitchen-4.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/White Gloss & Graphite Kitchen/${img}`}
+                  src={`/images/portfolio/white-gloss-graphite-kitchen/${img}`}
                   alt="White Gloss & Graphite Kitchen detail"
                   fill
                 />
@@ -113,7 +113,7 @@ export default function WhiteGlossGraphiteKitchenPage() {
             </button>
 
             <img
-              src={`/images/portfolio/White Gloss & Graphite Kitchen/${images[currentImageIndex]}`}
+              src={`/images/portfolio/white-gloss-graphite-kitchen/${images[currentImageIndex]}`}
               alt="White Gloss & Graphite Kitchen"
               style={{ 
                 maxWidth: '90vw', 

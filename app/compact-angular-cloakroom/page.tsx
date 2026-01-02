@@ -8,10 +8,10 @@ export default function CompactAngularCloakroomPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "cover.JPG",
-    "compact-angular-cloakroom-1.JPG",
-    "compact-angular-cloakroom-2.JPG",
-    "compact-angular-cloakroom-3.JPG"
+    "cover.jpg",
+    "compact-angular-cloakroom-1.jpg",
+    "compact-angular-cloakroom-2.jpg",
+    "compact-angular-cloakroom-3.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -43,7 +43,7 @@ export default function CompactAngularCloakroomPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Compact Angular Cloakroom/cover.JPG"
+              src="/images/portfolio/compact-angular-cloakroom/cover.jpg"
               alt="Compact Angular Cloakroom"
               fill
               priority
@@ -52,10 +52,10 @@ export default function CompactAngularCloakroomPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["compact-angular-cloakroom-1.JPG", "compact-angular-cloakroom-2.JPG", "compact-angular-cloakroom-3.JPG"].map((img, idx) => (
+            {["compact-angular-cloakroom-1.jpg", "compact-angular-cloakroom-2.jpg", "compact-angular-cloakroom-3.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Compact Angular Cloakroom/${img}`}
+                  src={`/images/portfolio/compact-angular-cloakroom/${img}`}
                   alt="Compact Angular Cloakroom detail"
                   fill
                 />
@@ -112,7 +112,7 @@ export default function CompactAngularCloakroomPage() {
               </button>
 
               <img
-                src={`/images/portfolio/Compact Angular Cloakroom/${images[currentImageIndex]}`}
+                src={`/images/portfolio/compact-angular-cloakroom/${images[currentImageIndex]}`}
                 alt="Compact Angular Cloakroom"
                 style={{ 
                   maxWidth: '90vw', 

@@ -8,10 +8,10 @@ export default function LinearStoneWetRoomPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "cover.JPG",
+    "cover.jpg",
     "linear-stone-wet-room-1.jpg",
-    "linear-stone-wet-room-2.JPG",
-    "linear-stone-wet-room-3.JPG"
+    "linear-stone-wet-room-2.jpg",
+    "linear-stone-wet-room-3.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -43,7 +43,7 @@ export default function LinearStoneWetRoomPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Linear Stone Wet Room/cover.JPG"
+              src="/images/portfolio/linear-stone-wet-room/cover.jpg"
               alt="Linear Stone Wet Room"
               fill
               priority
@@ -52,10 +52,10 @@ export default function LinearStoneWetRoomPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["linear-stone-wet-room-1.jpg", "linear-stone-wet-room-2.JPG", "linear-stone-wet-room-3.JPG"].map((img, idx) => (
+            {["linear-stone-wet-room-1.jpg", "linear-stone-wet-room-2.jpg", "linear-stone-wet-room-3.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Linear Stone Wet Room/${img}`}
+                  src={`/images/portfolio/linear-stone-wet-room/${img}`}
                   alt="Linear Stone Wet Room detail"
                   fill
                 />
@@ -112,7 +112,7 @@ export default function LinearStoneWetRoomPage() {
             </button>
 
             <img
-              src={`/images/portfolio/Linear Stone Wet Room/${images[currentImageIndex]}`}
+              src={`/images/portfolio/linear-stone-wet-room/${images[currentImageIndex]}`}
               alt="Linear Stone Wet Room"
               style={{ 
                 maxWidth: '90vw', 

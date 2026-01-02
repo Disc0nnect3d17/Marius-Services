@@ -43,7 +43,7 @@ export default function MarbleGoldPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Marble & Gold Suite/cover.jpg"
+              src="/images/portfolio/marble-gold-suite/cover.jpg"
               alt="Marble & Gold Suite bathroom"
               fill
               priority
@@ -55,7 +55,7 @@ export default function MarbleGoldPage() {
             {["marble-gold-suite-1.jpg", "marble-gold-suite-2.jpg", "marble-gold-suite-3.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Marble & Gold Suite/${img}`}
+                  src={`/images/portfolio/marble-gold-suite/${img}`}
                   alt="Marble & Gold Suite detail"
                   fill
                 />
@@ -113,7 +113,7 @@ export default function MarbleGoldPage() {
               </button>
 
               <img
-                src={`/images/portfolio/Marble & Gold Suite/${images[currentImageIndex]}`}
+                src={`/images/portfolio/marble-gold-suite/${images[currentImageIndex]}`}
                 alt="Marble & Gold Suite"
                 style={{ 
                   maxWidth: '90vw', 

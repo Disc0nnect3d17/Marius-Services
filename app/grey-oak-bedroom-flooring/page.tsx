@@ -8,8 +8,8 @@ export default function GreyOakBedroomFlooringPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "cover.JPG",
-    "grey-oak-bedroom-flooring-1.JPG"
+    "cover.jpg",
+    "grey-oak-bedroom-flooring-1.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -41,7 +41,7 @@ export default function GreyOakBedroomFlooringPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Grey Oak Bedroom Flooring/cover.JPG"
+              src="/images/portfolio/grey-oak-bedroom-flooring/cover.jpg"
               alt="Grey Oak Bedroom Flooring"
               fill
               priority
@@ -50,10 +50,10 @@ export default function GreyOakBedroomFlooringPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["grey-oak-bedroom-flooring-1.JPG"].map((img, idx) => (
+            {["grey-oak-bedroom-flooring-1.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Grey Oak Bedroom Flooring/${img}`}
+                  src={`/images/portfolio/grey-oak-bedroom-flooring/${img}`}
                   alt="Grey Oak Bedroom Flooring detail"
                   fill
                 />
@@ -109,7 +109,7 @@ export default function GreyOakBedroomFlooringPage() {
               </button>
 
               <img
-                src={`/images/portfolio/Grey Oak Bedroom Flooring/${images[currentImageIndex]}`}
+                src={`/images/portfolio/grey-oak-bedroom-flooring/${images[currentImageIndex]}`}
                 alt="Grey Oak Bedroom Flooring"
                 style={{ 
                   maxWidth: '90vw', 

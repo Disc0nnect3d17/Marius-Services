@@ -8,9 +8,9 @@ export default function TropicalFeatureFittedSuitePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "cover.JPG",
-    "tropical-feature-fitted-suite-1.JPG",
-    "tropical-feature-fitted-suite-2.JPG"
+    "cover.jpg",
+    "tropical-feature-fitted-suite-1.jpg",
+    "tropical-feature-fitted-suite-2.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -42,7 +42,7 @@ export default function TropicalFeatureFittedSuitePage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Tropical Feature & Fitted Suite/cover.JPG"
+              src="/images/portfolio/tropical-feature-fitted-suite/cover.jpg"
               alt="Tropical Feature & Fitted Suite bathroom"
               fill
               priority
@@ -51,10 +51,10 @@ export default function TropicalFeatureFittedSuitePage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["tropical-feature-fitted-suite-1.JPG", "tropical-feature-fitted-suite-2.JPG"].map((img, idx) => (
+            {["tropical-feature-fitted-suite-1.jpg", "tropical-feature-fitted-suite-2.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Tropical Feature & Fitted Suite/${img}`}
+                  src={`/images/portfolio/tropical-feature-fitted-suite/${img}`}
                   alt="Tropical Feature & Fitted Suite detail"
                   fill
                 />
@@ -111,7 +111,7 @@ export default function TropicalFeatureFittedSuitePage() {
               </button>
 
               <img
-                src={`/images/portfolio/Tropical Feature & Fitted Suite/${images[currentImageIndex]}`}
+                src={`/images/portfolio/tropical-feature-fitted-suite/${images[currentImageIndex]}`}
                 alt="Tropical Feature & Fitted Suite"
                 style={{ 
                   maxWidth: '90vw', 

@@ -8,9 +8,9 @@ export default function PolishedStoneFamilyBathroomPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    '/images/portfolio/Polished Stone Family Bathroom/cover.JPG',
-    '/images/portfolio/Polished Stone Family Bathroom/polished-stone-family-bathroom-1.JPG',
-    '/images/portfolio/Polished Stone Family Bathroom/polished-stone-family-bathroom-2.JPG',
+    '/images/portfolio/polished-stone-family-bathroom/cover.jpg',
+    '/images/portfolio/polished-stone-family-bathroom/polished-stone-family-bathroom-1.jpg',
+    '/images/portfolio/polished-stone-family-bathroom/polished-stone-family-bathroom-2.jpg',
   ];
 
   const openLightbox = (index: number) => {
@@ -42,7 +42,7 @@ export default function PolishedStoneFamilyBathroomPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Polished Stone Family Bathroom/cover.JPG"
+              src="/images/portfolio/polished-stone-family-bathroom/cover.jpg"
               alt="Polished Stone Family Bathroom"
               fill
               priority

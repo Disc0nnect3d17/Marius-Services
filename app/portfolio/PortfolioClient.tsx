@@ -34,7 +34,7 @@ export default function PortfolioClient() {
       <section className="portfolio-hero-enhanced">
         <div
           className="portfolio-hero-bg"
-          style={{ backgroundImage: 'url(/images/portfolio/Midnight Blue Onyx Suite/cover.JPG)' }}
+          style={{ backgroundImage: 'url(/images/portfolio/midnight-blue-onyx-suite/cover.jpg)' }}
         />
         <div className="portfolio-hero-overlay" />
 
@@ -97,6 +97,11 @@ export default function PortfolioClient() {
                       alt={project.title}
                       loading="lazy"
                       className="portfolio-card-image"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'block';
+                        console.error(`Failed to load image: ${project.coverImage}`);
+                      }}
                     />
                     
                     {/* Hover Overlay */}

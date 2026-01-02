@@ -8,11 +8,11 @@ export default function SageWalnutPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "/images/portfolio/sage-walnut/cover.JPG",
-    "/images/portfolio/sage-walnut/sage-walnut-1.JPG",
-    "/images/portfolio/sage-walnut/sage-walnut-2.JPG",
-    "/images/portfolio/sage-walnut/sage-walnut-3.JPG",
-    "/images/portfolio/sage-walnut/sage-walnut-4.JPG"
+    "/images/portfolio/sage-walnut/cover.jpg",
+    "/images/portfolio/sage-walnut/sage-walnut-1.jpg",
+    "/images/portfolio/sage-walnut/sage-walnut-2.jpg",
+    "/images/portfolio/sage-walnut/sage-walnut-3.jpg",
+    "/images/portfolio/sage-walnut/sage-walnut-4.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -44,7 +44,7 @@ export default function SageWalnutPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/sage-walnut/cover.JPG"
+              src="/images/portfolio/sage-walnut/cover.jpg"
               alt="The Sage & Walnut Shaker kitchen"
               fill
               priority
@@ -53,7 +53,7 @@ export default function SageWalnutPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["sage-walnut-1.JPG", "sage-walnut-2.JPG", "sage-walnut-3.JPG", "sage-walnut-4.JPG"].map((img, index) => (
+            {["sage-walnut-1.jpg", "sage-walnut-2.jpg", "sage-walnut-3.jpg", "sage-walnut-4.jpg"].map((img, index) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(index + 1)}>
                 <Image
                   src={`/images/portfolio/sage-walnut/${img}`}

@@ -8,10 +8,10 @@ export default function ClassicWhiteTimberPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "/images/portfolio/Classic White & Timber Suite/cover.JPG",
-    "/images/portfolio/Classic White & Timber Suite/classic-white-timber-suite-1.JPG",
-    "/images/portfolio/Classic White & Timber Suite/classic-white-timber-suite-2.JPG",
-    "/images/portfolio/Classic White & Timber Suite/classic-white-timber-suite-3.JPG"
+    "/images/portfolio/classic-white-timber-suite/cover.jpg",
+    "/images/portfolio/classic-white-timber-suite/classic-white-timber-suite-1.jpg",
+    "/images/portfolio/classic-white-timber-suite/classic-white-timber-suite-2.jpg",
+    "/images/portfolio/classic-white-timber-suite/classic-white-timber-suite-3.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -43,7 +43,7 @@ export default function ClassicWhiteTimberPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Classic White & Timber Suite/cover.JPG"
+              src="/images/portfolio/classic-white-timber-suite/cover.jpg"
               alt="Classic White & Timber Suite"
               fill
               priority
@@ -52,10 +52,10 @@ export default function ClassicWhiteTimberPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["classic-white-timber-suite-1.JPG", "classic-white-timber-suite-2.JPG", "classic-white-timber-suite-3.JPG"].map((img, index) => (
+            {["classic-white-timber-suite-1.jpg", "classic-white-timber-suite-2.jpg", "classic-white-timber-suite-3.jpg"].map((img, index) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(index + 1)}>
                 <Image
-                  src={`/images/portfolio/Classic White & Timber Suite/${img}`}
+                  src={`/images/portfolio/classic-white-timber-suite/${img}`}
                   alt="Classic White & Timber Suite detail"
                   fill
                 />

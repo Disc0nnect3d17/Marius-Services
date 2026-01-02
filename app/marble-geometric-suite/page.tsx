@@ -8,10 +8,10 @@ export default function MarbleGeometricSuitePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "cover.JPG",
-    "marble-geometric-suite-1.JPG",
-    "marble-geometric-suite-2.JPG",
-    "marble-geometric-suite-3.JPG"
+    "cover.jpg",
+    "marble-geometric-suite-1.jpg",
+    "marble-geometric-suite-2.jpg",
+    "marble-geometric-suite-3.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -43,7 +43,7 @@ export default function MarbleGeometricSuitePage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Marble & Geometric Suite/cover.JPG"
+              src="/images/portfolio/marble-geometric-suite/cover.jpg"
               alt="Marble & Geometric Suite"
               fill
               priority
@@ -52,10 +52,10 @@ export default function MarbleGeometricSuitePage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["marble-geometric-suite-1.JPG", "marble-geometric-suite-2.JPG", "marble-geometric-suite-3.JPG"].map((img, idx) => (
+            {["marble-geometric-suite-1.jpg", "marble-geometric-suite-2.jpg", "marble-geometric-suite-3.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Marble & Geometric Suite/${img}`}
+                  src={`/images/portfolio/marble-geometric-suite/${img}`}
                   alt="Marble & Geometric Suite detail"
                   fill
                 />
@@ -114,7 +114,7 @@ export default function MarbleGeometricSuitePage() {
             </button>
 
             <img
-              src={`/images/portfolio/Marble & Geometric Suite/${images[currentImageIndex]}`}
+              src={`/images/portfolio/marble-geometric-suite/${images[currentImageIndex]}`}
               alt="Marble & Geometric Suite"
               style={{ 
                 maxWidth: '90vw', 

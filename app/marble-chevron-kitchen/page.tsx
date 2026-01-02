@@ -8,12 +8,12 @@ export default function MarbleChevronKitchenPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "/images/portfolio/Marble & Chevron Kitchen/cover.JPG",
-    "/images/portfolio/Marble & Chevron Kitchen/marble-chevron-kitchen-1.JPG",
-    "/images/portfolio/Marble & Chevron Kitchen/marble-chevron-kitchen-2.JPG",
-    "/images/portfolio/Marble & Chevron Kitchen/marble-chevron-kitchen-3.JPG",
-    "/images/portfolio/Marble & Chevron Kitchen/marble-chevron-kitchen-4.JPG",
-    "/images/portfolio/Marble & Chevron Kitchen/marble-chevron-kitchen-5.JPG"
+    "/images/portfolio/marble-chevron-kitchen/cover.jpg",
+    "/images/portfolio/marble-chevron-kitchen/marble-chevron-kitchen-1.jpg",
+    "/images/portfolio/marble-chevron-kitchen/marble-chevron-kitchen-2.jpg",
+    "/images/portfolio/marble-chevron-kitchen/marble-chevron-kitchen-3.jpg",
+    "/images/portfolio/marble-chevron-kitchen/marble-chevron-kitchen-4.jpg",
+    "/images/portfolio/marble-chevron-kitchen/marble-chevron-kitchen-5.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -45,7 +45,7 @@ export default function MarbleChevronKitchenPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Marble & Chevron Kitchen/cover.JPG"
+              src="/images/portfolio/marble-chevron-kitchen/cover.jpg"
               alt="Marble & Chevron Kitchen"
               fill
               priority
@@ -54,10 +54,10 @@ export default function MarbleChevronKitchenPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["marble-chevron-kitchen-1.JPG", "marble-chevron-kitchen-2.JPG", "marble-chevron-kitchen-3.JPG", "marble-chevron-kitchen-4.JPG", "marble-chevron-kitchen-5.JPG"].map((img, index) => (
+            {["marble-chevron-kitchen-1.jpg", "marble-chevron-kitchen-2.jpg", "marble-chevron-kitchen-3.jpg", "marble-chevron-kitchen-4.jpg", "marble-chevron-kitchen-5.jpg"].map((img, index) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(index + 1)}>
                 <Image
-                  src={`/images/portfolio/Marble & Chevron Kitchen/${img}`}
+                  src={`/images/portfolio/marble-chevron-kitchen/${img}`}
                   alt="Marble & Chevron Kitchen detail"
                   fill
                 />

@@ -8,10 +8,10 @@ export default function VibrantMetroWCPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "cover.JPG",
-    "vibrant-metro-WC-1.JPG",
-    "vibrant-metro-WC-2.JPG",
-    "vibrant-metro-WC-3.JPG"
+    "cover.jpg",
+    "vibrant-metro-WC-1.jpg",
+    "vibrant-metro-WC-2.jpg",
+    "vibrant-metro-WC-3.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -43,7 +43,7 @@ export default function VibrantMetroWCPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Vibrant Metro WC/cover.JPG"
+              src="/images/portfolio/vibrant-metro-wc/cover.jpg"
               alt="Vibrant Metro WC"
               fill
               priority
@@ -52,10 +52,10 @@ export default function VibrantMetroWCPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["vibrant-metro-WC-1.JPG", "vibrant-metro-WC-2.JPG", "vibrant-metro-WC-3.JPG"].map((img, idx) => (
+            {["vibrant-metro-WC-1.jpg", "vibrant-metro-WC-2.jpg", "vibrant-metro-WC-3.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Vibrant Metro WC/${img}`}
+                  src={`/images/portfolio/vibrant-metro-wc/${img}`}
                   alt="Vibrant Metro WC detail"
                   fill
                 />
@@ -113,7 +113,7 @@ export default function VibrantMetroWCPage() {
             </button>
 
             <img
-              src={`/images/portfolio/Vibrant Metro WC/${images[currentImageIndex]}`}
+              src={`/images/portfolio/vibrant-metro-wc/${images[currentImageIndex]}`}
               alt="Vibrant Metro WC"
               style={{ 
                 maxWidth: '90vw', 

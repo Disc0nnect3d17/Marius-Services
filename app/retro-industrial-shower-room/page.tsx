@@ -8,12 +8,12 @@ export default function RetroIndustrialShowerRoomPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "cover.JPG",
-    "retro-industrial-shower-room-1.JPG",
-    "retro-industrial-shower-room-2.JPG",
-    "retro-industrial-shower-room-3.JPG",
-    "retro-industrial-shower-room-4.JPG",
-    "retro-industrial-shower-room-5.JPG"
+    "cover.jpg",
+    "retro-industrial-shower-room-1.jpg",
+    "retro-industrial-shower-room-2.jpg",
+    "retro-industrial-shower-room-3.jpg",
+    "retro-industrial-shower-room-4.jpg",
+    "retro-industrial-shower-room-5.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -45,7 +45,7 @@ export default function RetroIndustrialShowerRoomPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Retro Industrial Shower Room/cover.JPG"
+              src="/images/portfolio/retro-industrial-shower-room/cover.jpg"
               alt="Retro Industrial Shower Room"
               fill
               priority
@@ -54,10 +54,10 @@ export default function RetroIndustrialShowerRoomPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["retro-industrial-shower-room-1.JPG", "retro-industrial-shower-room-2.JPG", "retro-industrial-shower-room-3.JPG", "retro-industrial-shower-room-4.JPG", "retro-industrial-shower-room-5.JPG"].map((img, idx) => (
+            {["retro-industrial-shower-room-1.jpg", "retro-industrial-shower-room-2.jpg", "retro-industrial-shower-room-3.jpg", "retro-industrial-shower-room-4.jpg", "retro-industrial-shower-room-5.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Retro Industrial Shower Room/${img}`}
+                  src={`/images/portfolio/retro-industrial-shower-room/${img}`}
                   alt="Retro Industrial Shower Room detail"
                   fill
                 />
@@ -114,7 +114,7 @@ export default function RetroIndustrialShowerRoomPage() {
               </button>
 
               <img
-                src={`/images/portfolio/Retro Industrial Shower Room/${images[currentImageIndex]}`}
+                src={`/images/portfolio/retro-industrial-shower-room/${images[currentImageIndex]}`}
                 alt="Retro Industrial Shower Room"
                 style={{ 
                   maxWidth: '90vw', 

@@ -8,16 +8,16 @@ export default function EngineeredOakLandingBedroomStaircasePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "cover.JPG",
-    "engineered-oak-landing-bedroom-staircase-2.JPG",
-    "engineered-oak-landing-bedroom-staircase-3.JPG",
-    "engineered-oak-landing-bedroom-staircase-4.JPG",
-    "engineered-oak-landing-bedroom-staircase-5.JPG",
-    "engineered-oak-landing-bedroom-staircase-6.JPG",
-    "engineered-oak-landing-bedroom-staircase-7.JPG",
-    "engineered-oak-landing-bedroom-staircase-8.JPG",
-    "engineered-oak-landing-bedroom-staircase-9.JPG",
-    "engineered-oak-landing-bedroom-staircase-10.JPG"
+    "cover.jpg",
+    "engineered-oak-landing-bedroom-staircase-2.jpg",
+    "engineered-oak-landing-bedroom-staircase-3.jpg",
+    "engineered-oak-landing-bedroom-staircase-4.jpg",
+    "engineered-oak-landing-bedroom-staircase-5.jpg",
+    "engineered-oak-landing-bedroom-staircase-6.jpg",
+    "engineered-oak-landing-bedroom-staircase-7.jpg",
+    "engineered-oak-landing-bedroom-staircase-8.jpg",
+    "engineered-oak-landing-bedroom-staircase-9.jpg",
+    "engineered-oak-landing-bedroom-staircase-10.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -49,7 +49,7 @@ export default function EngineeredOakLandingBedroomStaircasePage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Engineered Oak Landing, Bedroom & Staircase/cover.JPG"
+              src="/images/portfolio/engineered-oak-bedroom-landing/cover.jpg"
               alt="Engineered Oak Landing, Bedroom & Staircase"
               fill
               priority
@@ -58,10 +58,10 @@ export default function EngineeredOakLandingBedroomStaircasePage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["engineered-oak-landing-bedroom-staircase-2.JPG", "engineered-oak-landing-bedroom-staircase-3.JPG", "engineered-oak-landing-bedroom-staircase-4.JPG", "engineered-oak-landing-bedroom-staircase-5.JPG", "engineered-oak-landing-bedroom-staircase-6.JPG", "engineered-oak-landing-bedroom-staircase-7.JPG", "engineered-oak-landing-bedroom-staircase-8.JPG", "engineered-oak-landing-bedroom-staircase-9.JPG", "engineered-oak-landing-bedroom-staircase-10.JPG"].map((img, idx) => (
+            {["engineered-oak-landing-bedroom-staircase-2.jpg", "engineered-oak-landing-bedroom-staircase-3.jpg", "engineered-oak-landing-bedroom-staircase-4.jpg", "engineered-oak-landing-bedroom-staircase-5.jpg", "engineered-oak-landing-bedroom-staircase-6.jpg", "engineered-oak-landing-bedroom-staircase-7.jpg", "engineered-oak-landing-bedroom-staircase-8.jpg", "engineered-oak-landing-bedroom-staircase-9.jpg", "engineered-oak-landing-bedroom-staircase-10.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Engineered Oak Landing, Bedroom & Staircase/${img}`}
+                  src={`/images/portfolio/engineered-oak-bedroom-landing/${img}`}
                   alt="Engineered Oak Landing, Bedroom & Staircase detail"
                   fill
                 />
@@ -116,7 +116,7 @@ export default function EngineeredOakLandingBedroomStaircasePage() {
             </button>
 
             <img
-              src={`/images/portfolio/Engineered Oak Landing, Bedroom & Staircase/${images[currentImageIndex]}`}
+              src={`/images/portfolio/engineered-oak-bedroom-landing/${images[currentImageIndex]}`}
               alt="Engineered Oak Landing, Bedroom & Staircase"
               style={{ 
                 maxWidth: '90vw', 

@@ -8,12 +8,12 @@ export default function ContemporaryStoneWetRoomPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "/images/portfolio/Contemporary Stone Wet Room/cover.JPG",
-    "/images/portfolio/Contemporary Stone Wet Room/contemporary-stone-wet-room-1.JPG",
-    "/images/portfolio/Contemporary Stone Wet Room/contemporary-stone-wet-room-2.JPG",
-    "/images/portfolio/Contemporary Stone Wet Room/contemporary-stone-wet-room-3.JPG",
-    "/images/portfolio/Contemporary Stone Wet Room/contemporary-stone-wet-room-4.JPG",
-    "/images/portfolio/Contemporary Stone Wet Room/contemporary-stone-wet-room-5.JPG"
+    "/images/portfolio/contemporary-stone-wet-room/cover.jpg",
+    "/images/portfolio/contemporary-stone-wet-room/contemporary-stone-wet-room-1.jpg",
+    "/images/portfolio/contemporary-stone-wet-room/contemporary-stone-wet-room-2.jpg",
+    "/images/portfolio/contemporary-stone-wet-room/contemporary-stone-wet-room-3.jpg",
+    "/images/portfolio/contemporary-stone-wet-room/contemporary-stone-wet-room-4.jpg",
+    "/images/portfolio/contemporary-stone-wet-room/contemporary-stone-wet-room-5.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -45,7 +45,7 @@ export default function ContemporaryStoneWetRoomPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Contemporary Stone Wet Room/cover.JPG"
+              src="/images/portfolio/contemporary-stone-wet-room/cover.jpg"
               alt="Contemporary Stone Wet Room"
               fill
               priority
@@ -54,10 +54,10 @@ export default function ContemporaryStoneWetRoomPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["contemporary-stone-wet-room-1.JPG", "contemporary-stone-wet-room-2.JPG", "contemporary-stone-wet-room-3.JPG", "contemporary-stone-wet-room-4.JPG", "contemporary-stone-wet-room-5.JPG"].map((img, index) => (
+            {["contemporary-stone-wet-room-1.jpg", "contemporary-stone-wet-room-2.jpg", "contemporary-stone-wet-room-3.jpg", "contemporary-stone-wet-room-4.jpg", "contemporary-stone-wet-room-5.jpg"].map((img, index) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(index + 1)}>
                 <Image
-                  src={`/images/portfolio/Contemporary Stone Wet Room/${img}`}
+                  src={`/images/portfolio/contemporary-stone-wet-room/${img}`}
                   alt="Contemporary Stone Wet Room detail"
                   fill
                 />

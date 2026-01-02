@@ -8,10 +8,10 @@ export default function SandstoneMosaicPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "cover.JPG",
-    "sandstone-sosaic-shower-1.JPG",
-    "sandstone-sosaic-shower-2.JPG",
-    "sandstone-sosaic-shower-3.JPG"
+    "cover.jpg",
+    "sandstone-sosaic-shower-1.jpg",
+    "sandstone-sosaic-shower-2.jpg",
+    "sandstone-sosaic-shower-3.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -43,7 +43,7 @@ export default function SandstoneMosaicPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Sandstone & Mosaic Shower Room/cover.JPG"
+              src="/images/portfolio/sandstone-mosaic-shower-room/cover.jpg"
               alt="Sandstone & Mosaic Shower Room"
               fill
               priority
@@ -52,10 +52,10 @@ export default function SandstoneMosaicPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["sandstone-sosaic-shower-1.JPG", "sandstone-sosaic-shower-2.JPG", "sandstone-sosaic-shower-3.JPG"].map((img, idx) => (
+            {["sandstone-sosaic-shower-1.jpg", "sandstone-sosaic-shower-2.jpg", "sandstone-sosaic-shower-3.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Sandstone & Mosaic Shower Room/${img}`}
+                  src={`/images/portfolio/sandstone-mosaic-shower-room/${img}`}
                   alt="Sandstone & Mosaic Shower Room detail"
                   fill
                 />
@@ -112,7 +112,7 @@ export default function SandstoneMosaicPage() {
             </button>
 
             <img
-              src={`/images/portfolio/Sandstone & Mosaic Shower Room/${images[currentImageIndex]}`}
+              src={`/images/portfolio/sandstone-mosaic-shower-room/${images[currentImageIndex]}`}
               alt="Sandstone & Mosaic Shower Room"
               style={{ 
                 maxWidth: '90vw', 

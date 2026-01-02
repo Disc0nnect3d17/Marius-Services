@@ -8,11 +8,11 @@ export default function WarmStoneFittedShowerRoomPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "cover.JPG",
-    "warm-stone-fitted-shower-room-1.JPG",
-    "warm-stone-fitted-shower-room-2.JPG",
-    "warm-stone-fitted-shower-room-3.JPG",
-    "warm-stone-fitted-shower-room-4.JPG"
+    "cover.jpg",
+    "warm-stone-fitted-shower-room-1.jpg",
+    "warm-stone-fitted-shower-room-2.jpg",
+    "warm-stone-fitted-shower-room-3.jpg",
+    "warm-stone-fitted-shower-room-4.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -44,7 +44,7 @@ export default function WarmStoneFittedShowerRoomPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Warm Stone & Fitted Shower Room/cover.JPG"
+              src="/images/portfolio/warm-stone-fitted-shower-room/cover.jpg"
               alt="Warm Stone & Fitted Shower Room"
               fill
               priority
@@ -53,10 +53,10 @@ export default function WarmStoneFittedShowerRoomPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["warm-stone-fitted-shower-room-1.JPG", "warm-stone-fitted-shower-room-2.JPG", "warm-stone-fitted-shower-room-3.JPG", "warm-stone-fitted-shower-room-4.JPG"].map((img, idx) => (
+            {["warm-stone-fitted-shower-room-1.jpg", "warm-stone-fitted-shower-room-2.jpg", "warm-stone-fitted-shower-room-3.jpg", "warm-stone-fitted-shower-room-4.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Warm Stone & Fitted Shower Room/${img}`}
+                  src={`/images/portfolio/warm-stone-fitted-shower-room/${img}`}
                   alt="Warm Stone & Fitted Shower Room detail"
                   fill
                 />
@@ -113,7 +113,7 @@ export default function WarmStoneFittedShowerRoomPage() {
               </button>
 
               <img
-                src={`/images/portfolio/Warm Stone & Fitted Shower Room/${images[currentImageIndex]}`}
+                src={`/images/portfolio/warm-stone-fitted-shower-room/${images[currentImageIndex]}`}
                 alt="Warm Stone & Fitted Shower Room"
                 style={{ 
                   maxWidth: '90vw', 

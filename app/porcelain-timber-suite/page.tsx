@@ -8,11 +8,11 @@ export default function PorcelainTimberPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "/images/portfolio/Porcelain & Timber Suite/cover.JPG",
-    "/images/portfolio/Porcelain & Timber Suite/porcelain-timber-suite-1.JPG",
-    "/images/portfolio/Porcelain & Timber Suite/porcelain-timber-suite-2.JPG",
-    "/images/portfolio/Porcelain & Timber Suite/porcelain-timber-suite-3.JPG",
-    "/images/portfolio/Porcelain & Timber Suite/porcelain-timber-suite-4.JPG"
+    "/images/portfolio/porcelain-timber-suite/cover.jpg",
+    "/images/portfolio/porcelain-timber-suite/porcelain-timber-suite-1.jpg",
+    "/images/portfolio/porcelain-timber-suite/porcelain-timber-suite-2.jpg",
+    "/images/portfolio/porcelain-timber-suite/porcelain-timber-suite-3.jpg",
+    "/images/portfolio/porcelain-timber-suite/porcelain-timber-suite-4.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -44,7 +44,7 @@ export default function PorcelainTimberPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Porcelain & Timber Suite/cover.JPG"
+              src="/images/portfolio/porcelain-timber-suite/cover.jpg"
               alt="Porcelain & Timber Suite"
               fill
               priority
@@ -53,10 +53,10 @@ export default function PorcelainTimberPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["porcelain-timber-suite-1.JPG", "porcelain-timber-suite-2.JPG", "porcelain-timber-suite-3.JPG", "porcelain-timber-suite-4.JPG"].map((img, index) => (
+            {["porcelain-timber-suite-1.jpg", "porcelain-timber-suite-2.jpg", "porcelain-timber-suite-3.jpg", "porcelain-timber-suite-4.jpg"].map((img, index) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(index + 1)}>
                 <Image
-                  src={`/images/portfolio/Porcelain & Timber Suite/${img}`}
+                  src={`/images/portfolio/porcelain-timber-suite/${img}`}
                   alt="Porcelain & Timber Suite detail"
                   fill
                 />

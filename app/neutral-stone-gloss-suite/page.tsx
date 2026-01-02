@@ -8,11 +8,11 @@ export default function NeutralStoneGlossPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "/images/portfolio/Neutral Stone & Gloss Suite/cover.JPG",
-    "/images/portfolio/Neutral Stone & Gloss Suite/neutral-stone-gloss-suite-1.JPG",
-    "/images/portfolio/Neutral Stone & Gloss Suite/neutral-stone-gloss-suite-2.JPG",
-    "/images/portfolio/Neutral Stone & Gloss Suite/neutral-stone-gloss-suite-3.JPG",
-    "/images/portfolio/Neutral Stone & Gloss Suite/neutral-stone-gloss-suite-4.JPG"
+    "/images/portfolio/neutral-stone-gloss-suite/cover.jpg",
+    "/images/portfolio/neutral-stone-gloss-suite/neutral-stone-gloss-suite-1.jpg",
+    "/images/portfolio/neutral-stone-gloss-suite/neutral-stone-gloss-suite-2.jpg",
+    "/images/portfolio/neutral-stone-gloss-suite/neutral-stone-gloss-suite-3.jpg",
+    "/images/portfolio/neutral-stone-gloss-suite/neutral-stone-gloss-suite-4.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -44,7 +44,7 @@ export default function NeutralStoneGlossPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Neutral Stone & Gloss Suite/cover.JPG"
+              src="/images/portfolio/neutral-stone-gloss-suite/cover.jpg"
               alt="Neutral Stone & Gloss Suite"
               fill
               priority
@@ -56,7 +56,7 @@ export default function NeutralStoneGlossPage() {
             {["neutral-stone-gloss-suite-1.JPG", "neutral-stone-gloss-suite-2.JPG", "neutral-stone-gloss-suite-3.JPG", "neutral-stone-gloss-suite-4.JPG"].map((img, index) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(index + 1)}>
                 <Image
-                  src={`/images/portfolio/Neutral Stone & Gloss Suite/${img}`}
+                  src={`/images/portfolio/neutral-stone-gloss-suite/${img}`}
                   alt="Neutral Stone & Gloss Suite detail"
                   fill
                 />

@@ -8,10 +8,10 @@ export default function BotanicalFeatureBathroomPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "cover.JPG",
-    "botanical-feature-bathroom-1.JPG",
-    "botanical-feature-bathroom-2.JPG",
-    "botanical-feature-bathroom-3.JPG"
+    "cover.jpg",
+    "botanical-feature-bathroom-1.jpg",
+    "botanical-feature-bathroom-2.jpg",
+    "botanical-feature-bathroom-3.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -43,7 +43,7 @@ export default function BotanicalFeatureBathroomPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Botanical Feature Bathroom/cover.JPG"
+              src="/images/portfolio/botanical-feature-bathroom/cover.jpg"
               alt="Botanical Feature Bathroom"
               fill
               priority
@@ -52,10 +52,10 @@ export default function BotanicalFeatureBathroomPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["botanical-feature-bathroom-1.JPG", "botanical-feature-bathroom-2.JPG", "botanical-feature-bathroom-3.JPG"].map((img, idx) => (
+            {["botanical-feature-bathroom-1.jpg", "botanical-feature-bathroom-2.jpg", "botanical-feature-bathroom-3.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Botanical Feature Bathroom/${img}`}
+                  src={`/images/portfolio/botanical-feature-bathroom/${img}`}
                   alt="Botanical Feature Bathroom detail"
                   fill
                 />
@@ -112,7 +112,7 @@ export default function BotanicalFeatureBathroomPage() {
               </button>
 
               <img
-                src={`/images/portfolio/Botanical Feature Bathroom/${images[currentImageIndex]}`}
+                src={`/images/portfolio/botanical-feature-bathroom/${images[currentImageIndex]}`}
                 alt="Botanical Feature Bathroom"
                 style={{ 
                   maxWidth: '90vw', 

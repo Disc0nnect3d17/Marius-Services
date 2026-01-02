@@ -42,7 +42,7 @@ export default function MonochromeMarbleEnsuitePage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Monochrome Marble Ensuite/cover.jpg"
+              src="/images/portfolio/monochrome-marble-ensuite/cover.jpg"
               alt="Monochrome Marble Ensuite bathroom"
               fill
               priority
@@ -54,7 +54,7 @@ export default function MonochromeMarbleEnsuitePage() {
             {["monochrome-marble-ensuite-1.jpg", "monochrome-marble-ensuite-2.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Monochrome Marble Ensuite/${img}`}
+                  src={`/images/portfolio/monochrome-marble-ensuite/${img}`}
                   alt="Monochrome Marble Ensuite detail"
                   fill
                 />
@@ -111,7 +111,7 @@ export default function MonochromeMarbleEnsuitePage() {
               </button>
 
               <img
-                src={`/images/portfolio/Monochrome Marble Ensuite/${images[currentImageIndex]}`}
+                src={`/images/portfolio/monochrome-marble-ensuite/${images[currentImageIndex]}`}
                 alt="Monochrome Marble Ensuite"
                 style={{ 
                   maxWidth: '90vw', 

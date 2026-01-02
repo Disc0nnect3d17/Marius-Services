@@ -8,10 +8,10 @@ export default function MarbleMidnightPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "cover.JPG",
-    "marble-midnight-1.JPG",
-    "marble-midnight-2.JPG",
-    "marble-midnight-3.JPG"
+    "cover.jpg",
+    "marble-midnight-1.jpg",
+    "marble-midnight-2.jpg",
+    "marble-midnight-3.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -43,7 +43,7 @@ export default function MarbleMidnightPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Marble & Midnight Suite/cover.JPG"
+              src="/images/portfolio/marble-midnight-suite/cover.jpg"
               alt="Marble & Midnight Suite bathroom"
               fill
               priority
@@ -52,10 +52,10 @@ export default function MarbleMidnightPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["marble-midnight-1.JPG", "marble-midnight-2.JPG", "marble-midnight-3.JPG"].map((img, idx) => (
+            {["marble-midnight-1.jpg", "marble-midnight-2.jpg", "marble-midnight-3.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Marble & Midnight Suite/${img}`}
+                  src={`/images/portfolio/marble-midnight-suite/${img}`}
                   alt="Marble & Midnight Suite detail"
                   fill
                 />
@@ -111,7 +111,7 @@ export default function MarbleMidnightPage() {
             </button>
 
             <img
-              src={`/images/portfolio/Marble & Midnight Suite/${images[currentImageIndex]}`}
+              src={`/images/portfolio/marble-midnight-suite/${images[currentImageIndex]}`}
               alt="Marble & Midnight Suite"
               style={{ 
                 maxWidth: '90vw', 

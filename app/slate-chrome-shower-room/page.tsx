@@ -8,11 +8,11 @@ export default function SlateChromePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "cover.JPG",
-    "slate-chrome-shower-1.JPG",
-    "slate-chrome-shower-2.JPG",
-    "slate-chrome-shower-3.JPG",
-    "slate-chrome-shower-4.JPG"
+    "cover.jpg",
+    "slate-chrome-shower-1.jpg",
+    "slate-chrome-shower-2.jpg",
+    "slate-chrome-shower-3.jpg",
+    "slate-chrome-shower-4.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -44,7 +44,7 @@ export default function SlateChromePage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Slate & Chrome Shower Room/cover.JPG"
+              src="/images/portfolio/slate-chrome-shower-room/cover.jpg"
               alt="Slate & Chrome Shower Room"
               fill
               priority
@@ -53,10 +53,10 @@ export default function SlateChromePage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["slate-chrome-shower-1.JPG", "slate-chrome-shower-2.JPG", "slate-chrome-shower-3.JPG", "slate-chrome-shower-4.JPG"].map((img, idx) => (
+            {["slate-chrome-shower-1.jpg", "slate-chrome-shower-2.jpg", "slate-chrome-shower-3.jpg", "slate-chrome-shower-4.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Slate & Chrome Shower Room/${img}`}
+                  src={`/images/portfolio/slate-chrome-shower-room/${img}`}
                   alt="Slate & Chrome Shower Room detail"
                   fill
                 />
@@ -113,7 +113,7 @@ export default function SlateChromePage() {
             </button>
 
             <img
-              src={`/images/portfolio/Slate & Chrome Shower Room/${images[currentImageIndex]}`}
+              src={`/images/portfolio/slate-chrome-shower-room/${images[currentImageIndex]}`}
               alt="Slate & Chrome Shower Room"
               style={{ 
                 maxWidth: '90vw', 

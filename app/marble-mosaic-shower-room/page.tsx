@@ -8,9 +8,9 @@ export default function MarbleMosaicShowerRoomPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "cover.JPG",
-    "marble-mosaic-shower-room-1.JPG",
-    "marble-mosaic-shower-room-2.JPG"
+    "cover.jpg",
+    "marble-mosaic-shower-room-1.jpg",
+    "marble-mosaic-shower-room-2.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -42,7 +42,7 @@ export default function MarbleMosaicShowerRoomPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Marble & Mosaic Shower Room/cover.JPG"
+              src="/images/portfolio/marble-mosaic-shower-room/cover.jpg"
               alt="Marble & Mosaic Shower Room"
               fill
               priority
@@ -51,10 +51,10 @@ export default function MarbleMosaicShowerRoomPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["marble-mosaic-shower-room-1.JPG", "marble-mosaic-shower-room-2.JPG"].map((img, idx) => (
+            {["marble-mosaic-shower-room-1.jpg", "marble-mosaic-shower-room-2.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Marble & Mosaic Shower Room/${img}`}
+                  src={`/images/portfolio/marble-mosaic-shower-room/${img}`}
                   alt="Marble & Mosaic Shower Room detail"
                   fill
                 />
@@ -111,7 +111,7 @@ export default function MarbleMosaicShowerRoomPage() {
               </button>
 
               <img
-                src={`/images/portfolio/Marble & Mosaic Shower Room/${images[currentImageIndex]}`}
+                src={`/images/portfolio/marble-mosaic-shower-room/${images[currentImageIndex]}`}
                 alt="Marble & Mosaic Shower Room"
                 style={{ 
                   maxWidth: '90vw', 

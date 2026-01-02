@@ -44,7 +44,7 @@ export default function HighContrastFeatureEnsuitePage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/High-Contrast Feature Ensuite/cover.jpg"
+              src="/images/portfolio/high-contrast-feature-ensuite/cover.jpg"
               alt="High-Contrast Feature Ensuite bathroom"
               fill
               priority
@@ -56,7 +56,7 @@ export default function HighContrastFeatureEnsuitePage() {
             {["high-contrast-feature-ensuite-1.jpg", "high-contrast-feature-ensuite-2.jpg", "high-contrast-feature-ensuite-3.jpg", "high-contrast-feature-ensuite-4.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/High-Contrast Feature Ensuite/${img}`}
+                  src={`/images/portfolio/high-contrast-feature-ensuite/${img}`}
                   alt="High-Contrast Feature Ensuite detail"
                   fill
                 />
@@ -113,7 +113,7 @@ export default function HighContrastFeatureEnsuitePage() {
               </button>
 
               <img
-                src={`/images/portfolio/High Contrast Feature Ensuite/${images[currentImageIndex]}`}
+                src={`/images/portfolio/high-contrast-feature-ensuite/${images[currentImageIndex]}`}
                 alt="High Contrast Feature Ensuite"
                 style={{ 
                   maxWidth: '90vw', 

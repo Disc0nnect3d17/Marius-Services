@@ -8,11 +8,11 @@ export default function StoneGraphiteSuitePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "/images/portfolio/Stone & Graphite Suite/cover.JPG",
-    "/images/portfolio/Stone & Graphite Suite/stone-graphite-suite-1.JPG",
-    "/images/portfolio/Stone & Graphite Suite/stone-graphite-suite-2.JPG",
-    "/images/portfolio/Stone & Graphite Suite/stone-graphite-suite-3.JPG",
-    "/images/portfolio/Stone & Graphite Suite/stone-graphite-suite-4.JPG"
+    "/images/portfolio/stone-graphite-suite/cover.jpg",
+    "/images/portfolio/stone-graphite-suite/stone-graphite-suite-1.jpg",
+    "/images/portfolio/stone-graphite-suite/stone-graphite-suite-2.jpg",
+    "/images/portfolio/stone-graphite-suite/stone-graphite-suite-3.jpg",
+    "/images/portfolio/stone-graphite-suite/stone-graphite-suite-4.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -44,7 +44,7 @@ export default function StoneGraphiteSuitePage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Stone & Graphite Suite/cover.JPG"
+              src="/images/portfolio/stone-graphite-suite/cover.jpg"
               alt="Stone & Graphite Suite"
               fill
               priority
@@ -53,10 +53,10 @@ export default function StoneGraphiteSuitePage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["stone-graphite-suite-1.JPG", "stone-graphite-suite-2.JPG", "stone-graphite-suite-3.JPG", "stone-graphite-suite-4.JPG"].map((img, index) => (
+            {["stone-graphite-suite-1.jpg", "stone-graphite-suite-2.jpg", "stone-graphite-suite-3.jpg", "stone-graphite-suite-4.jpg"].map((img, index) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(index + 1)}>
                 <Image
-                  src={`/images/portfolio/Stone & Graphite Suite/${img}`}
+                  src={`/images/portfolio/stone-graphite-suite/${img}`}
                   alt="Stone & Graphite Suite detail"
                   fill
                 />

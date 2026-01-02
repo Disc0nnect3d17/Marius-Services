@@ -8,12 +8,12 @@ export default function GreyMosaicWetRoomPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "/images/portfolio/Grey Mosaic Wet Room/cover.JPG",
-    "/images/portfolio/Grey Mosaic Wet Room/grey-mosaic-wet-room-1.JPG",
-    "/images/portfolio/Grey Mosaic Wet Room/grey-mosaic-wet-room-2.JPG",
-    "/images/portfolio/Grey Mosaic Wet Room/grey-mosaic-wet-room-3.JPG",
-    "/images/portfolio/Grey Mosaic Wet Room/grey-mosaic-wet-room-4.JPG",
-    "/images/portfolio/Grey Mosaic Wet Room/grey-mosaic-wet-room-5.JPG"
+    "/images/portfolio/grey-mosaic-wet-room/cover.jpg",
+    "/images/portfolio/grey-mosaic-wet-room/grey-mosaic-wet-room-1.jpg",
+    "/images/portfolio/grey-mosaic-wet-room/grey-mosaic-wet-room-2.jpg",
+    "/images/portfolio/grey-mosaic-wet-room/grey-mosaic-wet-room-3.jpg",
+    "/images/portfolio/grey-mosaic-wet-room/grey-mosaic-wet-room-4.jpg",
+    "/images/portfolio/grey-mosaic-wet-room/grey-mosaic-wet-room-5.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -45,7 +45,7 @@ export default function GreyMosaicWetRoomPage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Grey Mosaic Wet Room/cover.JPG"
+              src="/images/portfolio/grey-mosaic-wet-room/cover.jpg"
               alt="Grey Mosaic Wet Room"
               fill
               priority
@@ -54,10 +54,10 @@ export default function GreyMosaicWetRoomPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["grey-mosaic-wet-room-1.JPG", "grey-mosaic-wet-room-2.JPG", "grey-mosaic-wet-room-3.JPG", "grey-mosaic-wet-room-4.JPG", "grey-mosaic-wet-room-5.JPG"].map((img, index) => (
+            {["grey-mosaic-wet-room-1.jpg", "grey-mosaic-wet-room-2.jpg", "grey-mosaic-wet-room-3.jpg", "grey-mosaic-wet-room-4.jpg", "grey-mosaic-wet-room-5.jpg"].map((img, index) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(index + 1)}>
                 <Image
-                  src={`/images/portfolio/Grey Mosaic Wet Room/${img}`}
+                  src={`/images/portfolio/grey-mosaic-wet-room/${img}`}
                   alt="Grey Mosaic Wet Room detail"
                   fill
                 />

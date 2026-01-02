@@ -8,8 +8,8 @@ export default function SlateBlueWhiteSuitePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "cover.JPG",
-    "slate-blue-white-suite-1.JPG"
+    "cover.jpg",
+    "slate-blue-white-suite-1.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -41,7 +41,7 @@ export default function SlateBlueWhiteSuitePage() {
           {/* Large feature image */}
           <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
-              src="/images/portfolio/Slate Blue & White Suite/cover.JPG"
+              src="/images/portfolio/slate-blue-white-suite/cover.jpg"
               alt="Slate Blue & White Suite bathroom"
               fill
               priority
@@ -50,10 +50,10 @@ export default function SlateBlueWhiteSuitePage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["slate-blue-white-suite-1.JPG"].map((img, idx) => (
+            {["slate-blue-white-suite-1.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
-                  src={`/images/portfolio/Slate Blue & White Suite/${img}`}
+                  src={`/images/portfolio/slate-blue-white-suite/${img}`}
                   alt="Slate Blue & White Suite detail"
                   fill
                 />
@@ -109,7 +109,7 @@ export default function SlateBlueWhiteSuitePage() {
             </button>
 
             <img
-              src={`/images/portfolio/Slate Blue & White Suite/${images[currentImageIndex]}`}
+              src={`/images/portfolio/slate-blue-white-suite/${images[currentImageIndex]}`}
               alt="Slate Blue & White Suite"
               style={{ 
                 maxWidth: '90vw', 
