@@ -41,7 +41,7 @@ export default function VibrantMagentaCloakroomPage() {
         {/* Image gallery */}
         <div className="project-gallery">
           {/* Large feature image */}
-          <div className="gallery-main" onClick={() => openLightbox("cover.JPG")}>
+          <div className="gallery-main" onClick={() => openLightbox(0)}>
             <Image
               src="/images/portfolio/Vibrant Magenta Cloakroom/cover.JPG"
               alt="Vibrant Magenta Cloakroom"
@@ -52,8 +52,8 @@ export default function VibrantMagentaCloakroomPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["vibrant-magenta-cloakroom-1.JPG", "vibrant-magenta-cloakroom-2.JPG", "vibrant-magenta-cloakroom-3.JPG"].map(img => (
-              <div key={img} className="gallery-thumb" onClick={() => openLightbox(img)}>
+            {["vibrant-magenta-cloakroom-1.JPG", "vibrant-magenta-cloakroom-2.JPG", "vibrant-magenta-cloakroom-3.JPG"].map((img, idx) => (
+              <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
                   src={`/images/portfolio/Vibrant Magenta Cloakroom/${img}`}
                   alt="Vibrant Magenta Cloakroom detail"
@@ -97,8 +97,22 @@ export default function VibrantMagentaCloakroomPage() {
             <button className="lightbox-close" onClick={closeLightbox}>
               &times;
             </button>
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goToPrevious();
+              }}
+              className="lightbox-nav-btn prev"
+              aria-label="Previous image"
+            >
+              <svg viewBox="0 0 24 24">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+
             <img
-              src={`/images/portfolio/Vibrant Magenta Cloakroom/${currentImage}`}
+              src={`/images/portfolio/Vibrant Magenta Cloakroom/${images[currentImageIndex]}`}
               alt="Vibrant Magenta Cloakroom"
               style={{ 
                 maxWidth: '90vw', 
@@ -107,7 +121,25 @@ export default function VibrantMagentaCloakroomPage() {
                 height: 'auto',
                 objectFit: 'contain'
               }}
+              onClick={(e) => e.stopPropagation()}
             />
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goToNext();
+              }}
+              className="lightbox-nav-btn next"
+              aria-label="Next image"
+            >
+              <svg viewBox="0 0 24 24">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-lg">
+              {currentImageIndex + 1} / {images.length}
+            </div>
           </div>
         </div>
       )}

@@ -98,8 +98,22 @@ export default function SlateChromePage() {
             <button className="lightbox-close" onClick={closeLightbox}>
               &times;
             </button>
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goToPrevious();
+              }}
+              className="lightbox-nav-btn prev"
+              aria-label="Previous image"
+            >
+              <svg viewBox="0 0 24 24">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+
             <img
-              src={`/images/portfolio/Slate & Chrome Shower Room/${currentImage}`}
+              src={`/images/portfolio/Slate & Chrome Shower Room/${images[currentImageIndex]}`}
               alt="Slate & Chrome Shower Room"
               style={{ 
                 maxWidth: '90vw', 
@@ -108,7 +122,25 @@ export default function SlateChromePage() {
                 height: 'auto',
                 objectFit: 'contain'
               }}
+              onClick={(e) => e.stopPropagation()}
             />
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goToNext();
+              }}
+              className="lightbox-nav-btn next"
+              aria-label="Next image"
+            >
+              <svg viewBox="0 0 24 24">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-lg">
+              {currentImageIndex + 1} / {images.length}
+            </div>
           </div>
         </div>
       )}
