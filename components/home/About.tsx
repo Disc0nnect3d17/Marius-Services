@@ -79,17 +79,17 @@ export default function About() {
               >
                 <i className="fas fa-chevron-right"></i>
               </button>
+            </div>
 
-              <div className="about-carousel-indicators">
-                {featuredProjects.map((_, index) => (
-                  <button
-                    key={index}
-                    className={`about-carousel-dot ${index === currentImageIndex ? 'active' : ''}`}
-                    onClick={() => setCurrentImageIndex(index)}
-                    aria-label={`View project ${index + 1}`}
-                  />
-                ))}
-              </div>
+            <div className="about-carousel-indicators">
+              {featuredProjects.map((_, index) => (
+                <button
+                  key={index}
+                  className={`about-carousel-dot ${index === currentImageIndex ? 'active' : ''}`}
+                  onClick={() => setCurrentImageIndex(index)}
+                  aria-label={`View project ${index + 1}`}
+                />
+              ))}
             </div>
 
             {/* View Portfolio Button */}
