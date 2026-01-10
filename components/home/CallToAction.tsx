@@ -21,7 +21,7 @@ export default function CallToAction() {
           <a href="tel:+447454933651" className="btn">
             <i className="fas fa-phone"></i> Call Us Now
           </a>
-          <a href="mailto:info@hotmail.com" className="btn btn-secondary">
+          <a href="mailto:profitbathroom@gmail.com" className="btn btn-secondary">
             <i className="fas fa-envelope"></i> Email Us
           </a>
         </div>

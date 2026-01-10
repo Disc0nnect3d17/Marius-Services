@@ -37,9 +37,9 @@ export default function Header() {
             <i className="fas fa-phone"></i>
             <span>+44 7454 933651</span>
           </a>
-          <a href="mailto:info@hotmail.com">
+          <a href="mailto:profitbathroom@gmail.com">
             <i className="fas fa-envelope"></i>
-            <span>info@hotmail.com</span>
+            <span>profitbathroom@gmail.com</span>
           </a>
         </div>
       </div>

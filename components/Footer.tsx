@@ -31,15 +31,15 @@ export default function Footer() {
             <div className="footer-section">
               <h3>Contact Us</h3>
               <p>
-                <i className="fas fa-phone"></i> 
+                <i className="fas fa-phone" style={{ marginRight: '0.5rem' }}></i> 
                 <a href="tel:+447454933651">+44 7454 933651</a>
               </p>
               <p>
-                <i className="fas fa-envelope"></i> 
-                <a href="mailto:info@hotmail.com">info@hotmail.com</a>
+                <i className="fas fa-envelope" style={{ marginRight: '0.5rem' }}></i> 
+                <a href="mailto:profitbathroom@gmail.com">profitbathroom@gmail.com</a>
               </p>
               <p>
-                <i className="fas fa-clock"></i> 
+                <i className="fas fa-clock" style={{ marginRight: '0.5rem' }}></i> 
                 Mon - Sat: 8:00 AM - 6:00 PM
               </p>
               <div className="social-links" style={{ marginTop: '1rem' }}>

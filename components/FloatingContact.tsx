@@ -46,7 +46,7 @@ export default function FloatingContact() {
                     <i className="fas fa-phone"></i>
                     <span>Call Now</span>
                 </a>
-                <a href="mailto:info@hotmail.com" className="floating-contact-item">
+                <a href="mailto:profitbathroom@gmail.com" className="floating-contact-item">
                     <i className="fas fa-envelope"></i>
                     <span>Email Us</span>
                 </a>
