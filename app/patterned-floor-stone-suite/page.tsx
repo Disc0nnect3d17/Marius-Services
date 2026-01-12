@@ -54,7 +54,7 @@ export default function PatternedFloorStonePage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["patterned-floor-stone-suite-1.JPG", "patterned-floor-stone-suite-2.JPG", "patterned-floor-stone-suite-3.JPG", "patterned-floor-stone-suite-4.JPG", "patterned-floor-stone-suite-5.JPG"].map((img, index) => (
+            {["patterned-floor-stone-suite-1.jpg", "patterned-floor-stone-suite-2.jpg", "patterned-floor-stone-suite-3.jpg", "patterned-floor-stone-suite-4.jpg", "patterned-floor-stone-suite-5.jpg"].map((img, index) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(index + 1)}>
                 <Image
                   src={`/images/portfolio/patterned-floor-stone-suite/${img}`}

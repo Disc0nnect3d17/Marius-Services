@@ -53,7 +53,7 @@ export default function NeutralStoneGlossPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["neutral-stone-gloss-suite-1.JPG", "neutral-stone-gloss-suite-2.JPG", "neutral-stone-gloss-suite-3.JPG", "neutral-stone-gloss-suite-4.JPG"].map((img, index) => (
+            {["neutral-stone-gloss-suite-1.jpg", "neutral-stone-gloss-suite-2.jpg", "neutral-stone-gloss-suite-3.jpg", "neutral-stone-gloss-suite-4.jpg"].map((img, index) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(index + 1)}>
                 <Image
                   src={`/images/portfolio/neutral-stone-gloss-suite/${img}`}
