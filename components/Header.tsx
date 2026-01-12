@@ -1,36 +1,30 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
-  const [hidden, setHidden] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
-      if (currentScrollY > lastScrollY && currentScrollY > 80) {
-        // scrolling down
-        setHidden(true);
-      } else {
-        // scrolling up
-        setHidden(false);
-      }
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
 
-      setLastScrollY(currentScrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrollY]);
+  const isActive = (path: string) => {
+    if (path === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(path);
+  };
 
   return (
-    <header className={`site-header ${hidden ? "header-hidden" : ""}`}>
+    <header className="site-header">
       <div className="top-bar">
         <div className="contact-info">
           <a href="tel:+447454933651">
@@ -53,14 +47,27 @@ export default function Header() {
           </h1>
         </div>
 
-        <nav className="main-navigation" id="main-navigation">
+        <button
+          className={`menu-toggle ${menuOpen ? "menu-open" : ""}`}
+          onClick={toggleMenu}
+          aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
+        >
+          {menuOpen ? (
+            <i key="close" className="fas fa-times"></i>
+          ) : (
+            <i key="menu" className="fas fa-bars"></i>
+          )}
+        </button>
+
+        <nav className={`main-navigation ${menuOpen ? "active" : ""}`} id="main-navigation">
           <ul className="primary-menu">
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/portfolio">Portfolio</Link></li>
-            <li><Link href="/#services">Services</Link></li>
-            <li><Link href="/#reviews">Reviews</Link></li>
-            <li><Link href="/#about">About</Link></li>
-            <li><Link href="/#contact">Contact</Link></li>
+            <li><Link href="/" onClick={closeMenu} className={isActive("/") ? "active" : ""}>Home</Link></li>
+            <li><Link href="/portfolio" onClick={closeMenu} className={isActive("/portfolio") ? "active" : ""}>Portfolio</Link></li>
+            <li><Link href="/#services" onClick={closeMenu}>Services</Link></li>
+            <li><Link href="/#reviews" onClick={closeMenu}>Reviews</Link></li>
+            <li><Link href="/#about" onClick={closeMenu}>About</Link></li>
+            <li><Link href="/#contact" onClick={closeMenu}>Contact</Link></li>
           </ul>
         </nav>
       </div>
