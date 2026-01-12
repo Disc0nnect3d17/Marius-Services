@@ -9,8 +9,8 @@ export default function GreyOakLaminateInstallationPage() {
 
   const images = [
     "cover.jpg",
-    "IMG_3377.jpg",
-    "IMG_3379.jpg"
+    "img_3377.jpg",
+    "img_3379.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -51,7 +51,7 @@ export default function GreyOakLaminateInstallationPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["IMG_3377.jpg", "IMG_3379.jpg"].map((img, idx) => (
+            {["img_3377.jpg", "img_3379.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
                   src={`/images/portfolio/grey-oak-laminate-installation/${img}`}
