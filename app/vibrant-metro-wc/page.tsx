@@ -9,9 +9,9 @@ export default function VibrantMetroWCPage() {
 
   const images = [
     "cover.jpg",
-    "vibrant-metro-WC-1.jpg",
-    "vibrant-metro-WC-2.jpg",
-    "vibrant-metro-WC-3.jpg"
+    "vibrant-metro-wc-1.jpg",
+    "vibrant-metro-wc-2.jpg",
+    "vibrant-metro-wc-3.jpg"
   ];
 
   const openLightbox = (index: number) => {
@@ -52,7 +52,7 @@ export default function VibrantMetroWCPage() {
 
           {/* Supporting images */}
           <div className="gallery-secondary">
-            {["vibrant-metro-WC-1.jpg", "vibrant-metro-WC-2.jpg", "vibrant-metro-WC-3.jpg"].map((img, idx) => (
+            {["vibrant-metro-wc-1.jpg", "vibrant-metro-wc-2.jpg", "vibrant-metro-wc-3.jpg"].map((img, idx) => (
               <div key={img} className="gallery-thumb" onClick={() => openLightbox(idx + 1)}>
                 <Image
                   src={`/images/portfolio/vibrant-metro-wc/${img}`}

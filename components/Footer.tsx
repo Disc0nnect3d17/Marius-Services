@@ -57,7 +57,7 @@ export default function Footer() {
           </div>
 
           <div className="footer-bottom">
-            <p>&copy; {currentYear} Pro Fit Bathroom and Kitchen. All rights reserved. | Website designed with care</p>
+            <p>&copy; {currentYear} Pro Fit Bathroom and Kitchen. All rights reserved.</p>
           </div>
         </div>
       </footer>
