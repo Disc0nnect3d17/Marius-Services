@@ -124,10 +124,15 @@ export default function Reviews() {
         </div>
 
         <div className="google-logo">
-          <p style={{ color: 'var(--medium-gray)', marginTop: '2rem' }}>
+          <a
+            href="https://www.google.com/search?q=profitbathrooms&oq=profitbathrooms&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQIxgnMgoIAhAAGKIEGIkFMgoIAxAAGIAEGKIEMgcIBBAAGO8F0gEIMTM1NmowajeoAgCwAgA&sourceid=chrome&ie=UTF-8&zx=1778244580608"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: 'var(--medium-gray)', marginTop: '2rem', display: 'inline-block', textDecoration: 'none' }}
+          >
             <i className="fab fa-google" style={{ fontSize: '2rem', color: '#4285f4' }}></i><br />
             <strong>Find me on Google Reviews</strong>
-          </p>
+          </a>
         </div>
       </div>
     </section>

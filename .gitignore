@@ -20,6 +20,9 @@
 .DS_Store
 *.pem
 
+# env file with API and credentials
+.env
+
 # debug
 npm-debug.log*
 yarn-debug.log*

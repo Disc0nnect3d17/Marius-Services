@@ -28,6 +28,11 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Pro Fit Bathroom and Kitchen - Professional Renovations in London",
   description: "Expert bathroom and kitchen renovation services in London and surrounding areas. Quality craftsmanship, professional service.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
