@@ -125,7 +125,7 @@ export default function Reviews() {
 
         <div className="google-logo">
           <a
-            href="https://www.google.com/search?q=profitbathrooms&oq=profitbathrooms&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQIxgnMgoIAhAAGKIEGIkFMgoIAxAAGIAEGKIEMgcIBBAAGO8F0gEIMTM1NmowajeoAgCwAgA&sourceid=chrome&ie=UTF-8&zx=1778244580608"
+            href="https://g.page/r/CWsiVFd3fFKdEBM/review"
             target="_blank"
             rel="noopener noreferrer"
             style={{ color: 'var(--medium-gray)', marginTop: '2rem', display: 'inline-block', textDecoration: 'none' }}
